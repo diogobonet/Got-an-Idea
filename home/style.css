@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+@font-face {
+  font-family: Talisso;
+  src: url(../fonts/tussilago_rg.otf);} 
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +10,9 @@
 
 body {
     max-width: 100vw;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0A0A0D;
+    color: white;
 }
 /* estilos padrão para o header */
 .header-main {
@@ -12,6 +20,29 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+  }
+
+  .logo-header {
+    max-width: 100%;
+    max-width: 95px;
+    height: auto;
+    user-select: none;
+  }
+
+  #button-registrar {
+    padding: 12px;
+    border-color: #0583F2;
+    background: none;
+    color: #0583F2;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+  }
+  
+  #button-registrar:hover {
+    background-color: rgb(5, 131, 242, 1);
+    color: white;
   }
   
   /* estilos para telas menores do que 768px */
@@ -39,8 +70,91 @@ body {
 .div-esquerda {
     max-width: 35vw;
     padding: 65px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.h1-main {
+  font-family: Talisso;
+  line-height: 60px;
+  font-size: 50px;
+  font-weight: normal;
+}
+
+.span-h1-main {
+  color: #056CF2;
+}
+
+.p-main {
+  color: gray;
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.button-main {
+  padding: 15px;
+  background: linear-gradient(90deg, rgba(5,151,242,1) 0%, rgba(5,131,242,1) 35%, rgba(5,108,242,1) 100%);
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-learn-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 13px;
+  justify-content: space-between;
+}
+
+.learn-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .div-direita {
     max-width: 75vw;
+    position: relative;
+    width: 70%;
+
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+a:hover {
+  color: white;
+}
+
+/* .div-direita img {
+    max-width: 100%;
+    max-width: 650px;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+} */
+
+.div-direita {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.img-wrapper {
+  width: 100%;
+  user-select: none;
+}
+
+.img-wrapper img {
+  float: right;
+  width: 79%;
 }

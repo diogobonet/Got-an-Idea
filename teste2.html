@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title>got an Idea💡 | Juntar ideias em um único propósito</title>
+    <style>
+            .dynamic-text li{
+                list-style-type: none;
+            }
+
+            .dynamic-text li span::after{
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+
+    </style>
 </head>
 <body>
     <header>
@@ -25,6 +38,10 @@
 
             <div class="div-esquerda">
                 <h1 class="h1-main">Juntar ideias em um único <span class="span-h1-main">propósito</span></h1>
+                <ul class="texto-dinamico">
+                    <li><span>propósito</span></li>
+                    <li><span>lugar</span></li>
+                </ul>
                 <p class="p-main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit vel magni cumque ad possimus illum aliquid culpa suscipit officiis corporis voluptas beatae iusto eum repellendus perspiciatis, dignissimos dolorum sit reiciendis.</p>
                 <div class="button-learn-main">
                     <button class="button-main">Registrar-se</button>
@@ -33,10 +50,7 @@
             </div>
 
             <div class="div-direita">
-                <div class="img-wrapper">
-                    <img class="img-main" src="../img/GB3.png" alt="">
-                </div>
-                
+                <h1>Imagem</h1>
             </div>
             
         </div>
