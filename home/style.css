@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 100vw;
+}
+/* estilos padrão para o header */
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* estilos para telas menores do que 768px */
+  @media (max-width: 768px) {
+    .header-main {
+      flex-direction: column;
+      justify-content: center;
+      height: auto;
+    }
+    
+    /* estilos para o botão de registro */
+    .header-main button {
+      margin-top: 20px;
+    }
+}
+
+/*MAIN*/
+.div-main {
+    display: flex;
+    flex-direction: row;
+    max-width: 100vw;
+    min-width: 55px;
+}
+
+.div-esquerda {
+    max-width: 35vw;
+    padding: 65px;
+}
+
+.div-direita {
+    max-width: 75vw;
+}
