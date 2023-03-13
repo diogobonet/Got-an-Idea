@@ -1,43 +1,55 @@
-class MobileNavBar {
-    constructor(mobileMenu, navList, navLinks){
-        this.mobileMenu = document.querySelector(mobileMenu);
-        this.navList = document.querySelector(navList);
-        this.navLinks = document.querySelectorAll(navLinks);
-        this.activeClass = "active";
+//menu hamburgue
+const btnMobile = document.getElementById('btn-mobile');
 
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    animateLinks() {
-        this.navLinks.forEach((link) => {
-            link.style.animation
-             ? (link.style.animation = "") 
-             : (link.style.animation = `navLinkFade 0.5s ease fowards 0.3s`);
-        });
-    }
-
-    handleClick() {
-        this.navList.classList.toggle(this.activeClass);
-        this.mobileMenu.classList.toggle(this.activeClass);
-        this.animateLinks();
-    }
-
-    addClickEvent() {
-        this.mobileMenu.addEventListener("click", this.handleClick)
-    }
-
-    init() {
-        if (this.mobileMenu) {
-            this.addClickEvent();
-        }
-        return this;
-    }
-
-    const MobileNavBar = new MobileNavBar(
-        ".mobile-menu",
-        ".nav-list",
-        ".nav-list li",
-    );
-
-    MobileNavBar.init();
+function toggleMenu(event) {
+    if (event.type === 'touchstart') event.preventDefault();
+    const nav = document.getElementById('nav-bar');
+    nav.classList.toggle('active');
 }
+
+btnMobile.addEventListener('click', toggleMenu);
+btnMobile.addEventListener('touchstart', toggleMenu);
+
+// Proposito
+document.addEventListener('DOMContentLoaded',function(event){
+    // array with texts to type in typewriter
+    var dataText = [ "propósito", "lugar", "propósito"];
+    
+    // type one text in the typwriter
+    // keeps calling itself until the text is finished
+    function typeWriter(text, i, fnCallback) {
+      // chekc if text isn't finished yet
+      if (i < (text.length)) {
+        // add next character to h1
+        document.querySelector(".span-h1-main").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+  
+        // wait for a while and call this function again for next character
+        setTimeout(function() {
+          typeWriter(text, i + 1, fnCallback)
+        }, 100);
+      }
+      // text finished, call callback if there is a callback function
+      else if (typeof fnCallback == 'function') {
+        // call callback after timeout
+        setTimeout(fnCallback, 700);
+      }
+    }
+    // start a typewriter animation for a text in the dataText array
+     function StartTextAnimation(i) {
+       if (typeof dataText[i] == 'undefined'){
+          setTimeout(function() {
+            StartTextAnimation(0);
+          }, 20000);
+       }
+       // check if dataText[i] exists
+      if (i < dataText[i].length) {
+        // text exists! start typewriter animation
+       typeWriter(dataText[i], 0, function(){
+         // after callback (and whole text has been animated), start next text
+         StartTextAnimation(i + 1);
+       });
+      }
+    }
+    // start the text animation
+    StartTextAnimation(0);
+  });

@@ -9,20 +9,21 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="nav-bar" id="nav-bar">
             <img class="logo-header" src="../img/logo.png" alt="Logo Got an Idea">
-            <div class="mobile-menu">
-                <div class="line1"></div>
-                <div class="line1"></div>
-                <div class="line1"></div>
+            <div class="nav-list">
+                <button id="btn-mobile"><span id="hamburguer"></span></button>
+                <ul id="menu">
+                    <li class="nav-item"><a href="" class="nav-link">Sobre nós</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Nosso projeto</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Comunidade</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Recursos</a></li>
+                    <li class="nav-item" id="hide-this"><a href="" class="link-registrar"><strong>Registrar-se</strong></a></li>
+                </ul>
             </div>
-            <ul class="nav-list">
-                <li><a href="">Sobre nós</a></li>
-                <li><a href="">Nosso projeto</a></li>
-                <li><a href="">Comunidade</a></li>
-                <li><a href="">Recursos</a></li>
-                <li><a id="button-registrar"><strong>Registrar-se</strong></a></li>
-            </ul>
+            <div class="login-button">
+                <button id="button-registrar"><strong>Registrar-se</strong></button>
+            </div>
         </nav>
     </header>
 
@@ -33,6 +34,6 @@
     <footer>
 
     </footer>
-    <script lang="JavaScript" src="mobile-nav-bar.js"></script>
+    <script src="mobile-nav-bar.js"></script>
 </body>
 </html>

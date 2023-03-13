@@ -13,6 +13,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #0A0A0D;
     color: white;
+    font-size: 16px;
 }
 /* estilos padrão para o header */
 .header-main {
@@ -27,9 +28,43 @@ body {
     max-width: 95px;
     height: auto;
     user-select: none;
-  }
+}
 
-  #button-registrar {
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    background-color: #0A0A0D;
+    height: 12vh;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: lightgray;
+}
+
+.nav-link:hover {
+    color: #0583F2;
+}
+
+.login-button button {
     padding: 12px;
     border-color: #0583F2;
     background: none;
@@ -37,27 +72,97 @@ body {
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    transition: background-color 0.5s ease;
-  }
-  
-  #button-registrar:hover {
+    transition: background-color 0.3s ease;
+}
+
+.login-button button:hover {
     background-color: rgb(5, 131, 242, 1);
     color: white;
-  }
-  
-  /* estilos para telas menores do que 768px */
-  @media (max-width: 768px) {
-    .header-main {
-      flex-direction: column;
-      justify-content: center;
-      height: auto;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+#hide-this {
+    visibility: hidden;
+}
+
+.link-registrar {
+    color: #0583F2;
+    text-decoration: none;
+    transition: color 0.6s ease-in-out;
+}
+
+.link-registrar:hover {
+    color: #79bffc;
+}
+
+@media (max-width: 700px) {
+    .login-button{
+        display: none;
     }
-    
-    /* estilos para o botão de registro */
-    .header-main button {
-      margin-top: 20px;
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0;
+        transition: 0.6s;
+        background-color: #0A0A0D;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #hide-this {
+        visibility: visible;
+    }
+    #nav-bar.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+    }
+    #btn-mobile {
+        display: flex;
+        padding: 0.5rem 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+    #hamburguer {
+        display: block;
+        width: 20px;
+        border-top: 2px solid;
+        color: #0583F2;
+    }
+    #hamburguer::after, #hamburguer::before {
+        display: block;
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: 0.4s;
+        position: relative;
+    }
+    #nav-bar.active #hamburguer {
+        border-top-color: transparent;
+    }
+    #nav-bar.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+    #nav-bar.active #hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
     }
 }
+  /* estilos para telas menores do que 768px */
 
 /*MAIN*/
 .div-main {
@@ -78,12 +183,28 @@ body {
 .h1-main {
   font-family: Talisso;
   line-height: 60px;
-  font-size: 50px;
+  font-size: 3.125em; /* ajuste proporcional ao tamanho de fonte do body */
   font-weight: normal;
+}
+
+
+.span-h1-main {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+
 }
 
 .span-h1-main {
   color: #056CF2;
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .p-main {
@@ -100,6 +221,13 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   cursor: pointer;
+}
+
+.button-main:hover {
+  background: transparent;
+  border: #0583F2;
+  color: #0583F2;
+  border: #0583F2 1px solid;
 }
 
 .button-learn-main {
@@ -132,16 +260,6 @@ a:hover {
   color: white;
 }
 
-/* .div-direita img {
-    max-width: 100%;
-    max-width: 650px;
-    user-select: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-} */
-
 .div-direita {
   width: 100%;
   display: flex;
@@ -157,4 +275,26 @@ a:hover {
 .img-wrapper img {
   float: right;
   width: 79%;
+}
+
+
+@media (max-width: 768px) {
+  .header-main {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+  
+  /* estilos para o botão de registro */
+  .header-main button {
+    margin-top: 20px;
+  }
+
+  .h1-main {
+    font-size: 1.5em; /* ajuste para telas menores */
+    line-height: 35px;
+  }
+  .p-main {
+    font-size: 12px;
+  }
 }

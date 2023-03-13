@@ -10,25 +10,34 @@
 </head>
 <body>
     <header>
-        <div class="header-main">
+        <nav class="nav-bar" id="nav-bar">
             <img class="logo-header" src="../img/logo.png" alt="Logo Got an Idea">
-            <a href="">Sobre nós</a>
-            <a href="">Nosso projeto</a>
-            <a href="">Comunidade</a>
-            <a href="">Recursos</a>
-            <button id="button-registrar"><strong>Registrar-se</strong></button>
-        </div>
+            <div class="nav-list">
+                <button id="btn-mobile"><span id="hamburguer"></span></button>
+                <ul id="menu">
+                    <li class="nav-item"><a href="" class="nav-link">Sobre nós</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Nosso projeto</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Comunidade</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Recursos</a></li>
+                    <li class="nav-item" id="hide-this"><a href="" class="link-registrar"><strong>Registrar-se</strong></a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button id="button-registrar"><strong>Registrar-se</strong></button>
+            </div>
+        </nav>
     </header>
 
     <main>
         <div class="div-main">
 
             <div class="div-esquerda">
-                <h1 class="h1-main">Juntar ideias em um único <span class="span-h1-main">propósito</span></h1>
+                <h1 class="h1-main">Juntar ideias em um único <br> <span class="span-h1-main"></span></h1>
+                
                 <p class="p-main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit vel magni cumque ad possimus illum aliquid culpa suscipit officiis corporis voluptas beatae iusto eum repellendus perspiciatis, dignissimos dolorum sit reiciendis.</p>
                 <div class="button-learn-main">
                     <button class="button-main">Registrar-se</button>
-                    <a href="" class="learn-more">Learn More <span class="material-symbols-outlined">arrow_forward_ios</span></a>
+                    <a href="" class="learn-more">Saiba mais <span class="material-symbols-outlined">arrow_forward_ios</span></a>
                 </div>
             </div>
 
@@ -36,14 +45,21 @@
                 <div class="img-wrapper">
                     <img class="img-main" src="../img/GB3.png" alt="">
                 </div>
-                
             </div>
-            
         </div>
+
+        <section>
+            <h1>Sobre nós</h1>
+            
+        </section>
     </main>
 
     <footer>
 
     </footer>
+
+    <script src="mobile-nav-bar.js">
+
+    </script>
 </body>
 </html>
