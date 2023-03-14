@@ -76,7 +76,7 @@ body {
 }
 
 .login-button button:hover {
-    background-color: rgb(5, 131, 242, 1);
+    background-color: #0583f2;
     color: white;
 }
 
