@@ -76,7 +76,7 @@ body {
 }
 
 .login-button button:hover {
-    background-color: rgb(5, 131, 242, 1);
+    background-color: #0583f2;
     color: white;
 }
 
@@ -274,7 +274,7 @@ a:hover {
 
 .img-wrapper img {
   float: right;
-  width: 79%;
+  width: 75%;
 }
 
 
