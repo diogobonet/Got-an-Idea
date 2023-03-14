@@ -298,3 +298,10 @@ a:hover {
     font-size: 12px;
   }
 }
+
+/*     Sobre nós    */
+.h1-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
