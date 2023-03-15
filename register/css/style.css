@@ -23,7 +23,7 @@ body{
 .form-div{
     width:50%; height:60%;
     display: grid; grid-template-columns: 1fr 2fr;
-    border-top-left-radius: 0.5vw; border-bottom-left-radius: 0.5vw;
+    border-radius:0.5vw;
     box-shadow: 0 0 0.5vw #0583F2; 
     animation: neon-glow 1s ease-in-out infinite alternate;
 }
@@ -64,12 +64,16 @@ body{
     display:grid; grid-template-columns: 1fr; grid-template-rows: 50% 50%; gap:5px; 
 }
 
-.form select{
-    width:100%;
+.form label input{
+    padding: 0 0 0 0.5vw;
+    border:none;
+    border-bottom: 0.1vw solid gray;
+    transition: 0.5s;
 }
 
-.form select option{
-    width:100%;
+.form label input:focus{
+    outline: none;
+    box-shadow: rgb(89, 89, 89) 0px 0px 0.2vw; 
 }
 
 .div-button{
@@ -80,9 +84,38 @@ body{
 .button{
     font-size:20px; font-family: 'Poppins', sans-serif; font-weight: bold;
     margin-top:15%;
-    width:60%; height:35px;
+    width:50%; height:35px;
     background-color: #0583f2;
-    border-radius: 5vw;
+    border:none;
+    border-radius: 0.5vw;
+    transition: 0.5s;
+}
+
+.button:hover{
+    width:55%;
+    letter-spacing: 3px;
+    cursor: pointer;
+    box-shadow: 0 0 0.5vw #000000
+}
+
+.div-form-direita p{
+    margin-top:5%;
+    font-size:15px;
+    display:flex; justify-content: center;
+    font-family: Talisso;
+    justify-self: center;
+}
+
+.div-form-direita p a{
+    padding: 0 0 0 0.5vw;
+    text-decoration: none;
+    color: #0583f2;
+    transition: 0.5s;
+}
+
+.div-form-direita p a:hover{
+    font-size:18px;
+    color: #1942fa;
 }
 
 
