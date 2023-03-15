@@ -304,4 +304,32 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Talisso;
+  gap: 5px;
+  padding: 20px;
+}
+
+.h1-about span {
+  display: flex;
+  color: #056CF2;
+}
+
+.about-image{
+  max-width:150px;
+  max-height:150px;
+}
+
+.person-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.person-div h2 {
+  font-size: 17px;
+}
+
+.person-div p {
+  font-size: 14px;
+  color: #0583F2;
 }
