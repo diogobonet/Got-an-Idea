@@ -72,9 +72,15 @@ body{
     width:100%;
 }
 
+.div-button{
+    display:flex; justify-content: center; align-items: center;
+    width:100%;
+}
+
 .button{
+    font-size:20px; font-family: 'Poppins', sans-serif; font-weight: bold;
     margin-top:15%;
-    width:60%;
+    width:60%; height:35px;
     background-color: #0583f2;
     border-radius: 5vw;
 }
