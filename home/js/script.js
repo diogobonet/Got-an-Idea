@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function(event){
   openLink.addEventListener('click', () => {
     // Altera a classe da janela modal de "hidden" para "static"
     dialogDiv.classList.remove('hidden');
-    dialogDiv.classList.add('fixed');
+    dialogDiv.classList.add('static');
   });
   
   // Seleciona o botão de Fechar
@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', function(event){
   // Adiciona um ouvinte de eventos ao botão de Fechar para quando ele for clicado
   closeButton.addEventListener('click', () => {
     // Altera a classe da janela modal de "static" para "hidden"
-    dialogDiv.classList.remove('fixed');
+    dialogDiv.classList.remove('static');
     dialogDiv.classList.add('hidden');
   });
 
+  // Acordeao

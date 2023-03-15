@@ -209,20 +209,26 @@ body {
   color: #3899ee;
 }
 
-.div-main {
-    display: flex;
-    flex-direction: row;
-    max-width: 100vw;
-    min-width: 55px;
-}
+    .div-main {
+        display: flex;
+        flex-direction: row;
+        max-width: 100vw;
+        min-width: 55px;
+    }
 
-.div-esquerda {
-    max-width: 35vw;
-    padding: 65px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
+    .div-esquerda {
+        max-width: 35vw;
+        padding: 65px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .div-direita {
+      max-width: 75vw;
+      position: relative;
+      width: 70%;
+  }
 
 .h1-main {
   font-family: Talisso;
@@ -286,13 +292,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.div-direita {
-    max-width: 75vw;
-    position: relative;
-    width: 70%;
-
 }
 
 a {
@@ -410,6 +409,7 @@ dialog {
   margin: 0 auto;
   max-width: 800px;
   min-width: 320px;
+  height: 360px;
   z-index: 11;
   padding: 30px;
   border-radius: 20px;
@@ -425,7 +425,8 @@ dialog {
   display: none;
 }
 .static {
-  display: fixed;
+  display: static;
+
 }
 .dialog-enter {
   padding: 20px;
@@ -461,3 +462,43 @@ dialog button {
 dialog button:hover {
   background-color: #3899ee;
 }
+
+.objetivos-section {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+}
+
+.objetivo-div-esquerda {
+      max-width: 75vw;
+      position: relative;
+      width: 70%;
+}
+
+.objetivo-div-esquerda .img-wrapper img {
+  -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.objetivo-div-direita {
+      max-width: 35vw;
+        padding: 65px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+}
+
+.objetivo-div-direita h1 {
+  font-family: Talisso;
+  text-align: center;
+  color: #056CF2;
+}
+
+.objetivo-div-direita p {
+  font-size: 1em;
+  color: grey;
+}
+
+/* ACORDEÃO */
