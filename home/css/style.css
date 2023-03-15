@@ -69,8 +69,9 @@ body {
     color: #0583F2;
 }
 
-.login-button button {
+.botao-registrar {
     padding: 12px;
+    border: solid 2px;
     border-color: #0583F2;
     background: none;
     color: #0583F2;
@@ -80,7 +81,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.login-button button:hover {
+.botao-registrar:hover {
     background-color: #0583f2;
     color: white;
 }
@@ -103,7 +104,7 @@ body {
     color: #79bffc;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 933px) {
     .login-button{
         display: none;
     }

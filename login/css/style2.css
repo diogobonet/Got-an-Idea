@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+@font-face {
+  font-family: Talisso;
+  src: url(../../home/fonts/tussilago_rg.otf);} 
+
+@font-face {
+  font-family: Helga;
+  src: url(../../fonts/Helga.ttf);} 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: #0A0A0D;
+    color: #0583F2;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+  .container2 {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /*.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }*/
+  
+  .login-box {
+    background-color: #28292d;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 340px;
+    height: 380px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 10px #0583F2;
+    animation: neon-glow 1s ease-in-out infinite alternate;
+  }
+  
+  h2 {
+    font-family: Talisso;
+    font-weight: 60px;
+    padding: 20px;
+    color: #0583F2;
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .form1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+  }
+  
+  .input-group {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    background: #28292d;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.5s;
+  }
+  .input-group span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: #8f8f8f;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+.input-group input:valid ~ span, 
+.input-group input:focus ~ span {
+    color: white;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #0583F2;
+    border-left: 1px solid #0583F2;
+    border-right: 1px solid #0583F2;
+    border-radius: 2px;
+    letter-spacing: 0.2em;
+}
+.input-group input:valid, 
+.input-group input:focus {
+    border: 1px solid #0583F2;
+    border-radius: 5px;
+}
+  
+  button {
+    background-color: #0583F2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s;
+    width: 95%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  button:hover {
+    background-color: #034b90;
+  }
+  
+  @keyframes neon-glow {
+    0% {
+        box-shadow: 0 0 10px #0583F2;
+    }
+    100% {
+        box-shadow: 0 0 20px #0583F2;
+    }
+}
+
+button[type="submit"]:hover {
+    background-color: #0583F2;
+    letter-spacing: 3px;
+    width: 100%;
+    box-shadow: 0 0 0px #0583F2, 0 0 0px #0583F2, 0 0 0px #0583F2, 0 0 0px #0583F2, 0 0 0px #0583F2, 0 0 10px #0583F2, 0 0 15px #0583F2;
+    animation: neon-pulse 1.5s ease-in-out infinite alternate;
+}
+
+
+@keyframes neon-pulse {
+    from {
+        opacity: 1;
+        text-shadow: 0 0 20px #0583F2;
+    }
+    to {
+        opacity: 0.8;
+        text-shadow: none;
+    }
+}
+
+.links {
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+.links a {
+    margin-top: 8px;
+    text-decoration: none;
+    color: #8f8f8f;
+    transition: 0.4s;
+}
+.links a:hover {
+    color: #0583F2;
+}
