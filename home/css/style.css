@@ -3,6 +3,11 @@
 @font-face {
   font-family: Talisso;
   src: url(../fonts/tussilago_rg.otf);} 
+
+@font-face {
+  font-family: Helga;
+  src: url(../fonts/Helga.ttf);} 
+
 * {
     margin: 0;
     padding: 0;
@@ -300,33 +305,57 @@ a:hover {
 }
 
 /*     Sobre nós    */
+
+.div-about-top{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-width: 300px; max-width:800px;
+  min-height:300px; max-height:800px;
+  margin: 0 auto;
+}
+
+.div-about-base{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-width: 300px; max-width:800px;
+  min-height:300px; max-height:800px;
+  margin: 0 auto;
+}
+
 .h1-about {
+  font-size:60px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Talisso;
-  gap: 5px;
   padding: 20px;
 }
 
-.h1-about span {
-  display: flex;
+.span-nosso{
+  color: white;
+  font-family: Talisso;
+}
+
+.span-time{
   color: #056CF2;
+  font-family: Helga;
 }
 
 .about-image{
-  max-width:150px;
-  max-height:150px;
+  width:150px;
+  height:150px;
 }
 
 .person-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width:200px; height:200px;
+  display: flex; flex-direction: column;
+  align-self: center; justify-self: center;
+  align-items: center; justify-content: center;
 }
 
+
 .person-div h2 {
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .person-div p {
