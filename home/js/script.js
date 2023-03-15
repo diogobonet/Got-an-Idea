@@ -10,7 +10,7 @@ function toggleMenu(event) {
 btnMobile.addEventListener('click', toggleMenu);
 btnMobile.addEventListener('touchstart', toggleMenu);
 
-// Proposito
+// REACT DO H1 PROPÓSITO
 document.addEventListener('DOMContentLoaded', function(event){
     // array with texts to type in typewriter
     var dataText = [ "propósito", "lugar", "propósito"];
@@ -55,3 +55,32 @@ document.addEventListener('DOMContentLoaded', function(event){
     // start the text animation
     StartTextAnimation(0);
   });
+
+  // Aceitar cookies
+  function aceitarCookies() {
+    document.cookie = "aceitou_cookies=true";
+    document.getElementById("cookie-popup").style.display = "none";
+  }
+
+  // Política de cookies
+  // obtém o link e o dialog
+  const openLink = document.querySelector('.link-open-modal');
+  const dialogDiv = document.querySelector('.dialog-div');
+  
+  // Adiciona um ouvinte de eventos ao link para quando ele for clicado
+  openLink.addEventListener('click', () => {
+    // Altera a classe da janela modal de "hidden" para "static"
+    dialogDiv.classList.remove('hidden');
+    dialogDiv.classList.add('fixed');
+  });
+  
+  // Seleciona o botão de Fechar
+  const closeButton = document.querySelector('.close-dialog');
+  
+  // Adiciona um ouvinte de eventos ao botão de Fechar para quando ele for clicado
+  closeButton.addEventListener('click', () => {
+    // Altera a classe da janela modal de "static" para "hidden"
+    dialogDiv.classList.remove('fixed');
+    dialogDiv.classList.add('hidden');
+  });
+
