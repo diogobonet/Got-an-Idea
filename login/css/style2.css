@@ -11,10 +11,13 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
+
 body {
+    min-height: 100vh;
     background-color: #0A0A0D;
     color: #0583F2;
     font-family: Arial, sans-serif;
@@ -22,19 +25,53 @@ body {
     margin: 0;
 }
 
-  .container2 {
+.fundo {
+    position: relative;
     width: 100%;
-    margin: 0 auto;
-  }
-  
-  /*.container2 {
+    height: 100vh;
+    overflow: hidden;
+}
+.bolhas {
+    position: relative;
+    display: flex;
+}
+.bolhas #span-bolhas {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #0583F2;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #0583f246, 0 0 50px #0583F2, 0 0 100px #0583F2;
+    animation: estrelas 15s linear infinite;
+    animation-duration: calc(140s / var(--i));
+}
+.bolhas #span-bolhas:nth-child(even) {
+    background: #89c8ff;
+    box-shadow: 0 0 0 10px #89c8f246, 0 0 50px #89c8ff, 0 0 100px #89c8ff;
+}
+@keyframes estrelas {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+/*.container2 {
+width: 100%;
+margin: 0 auto;
+}*/
+
+.container2 {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }*/
-  
-  .login-box {
+}
+
+.login-box {
     background-color: #28292d;
     padding: 20px;
     border-radius: 10px;
@@ -45,33 +82,33 @@ body {
     position: relative;
     box-shadow: 0 0 10px #0583F2;
     animation: neon-glow 1s ease-in-out infinite alternate;
-  }
-  
-  h2 {
+}
+
+h2 {
     font-family: Talisso;
     font-weight: 60px;
-    padding: 20px;
+    padding: 10px;
     color: #0583F2;
     font-size: 30px;
     margin-bottom: 30px;
-  }
-  
-  .form1 {
+}
+
+.form1 {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     align-items: center;
-  }
-  
-  .input-group {
+}
+
+.input-group {
     font-family: 'Poppins', sans-serif;
     display: flex;
     position: relative;
     width: 100%;
     margin-bottom: 20px;
     text-align: left;
-  }
-  .input-group input {
+}
+.input-group input {
     width: 100%;
     padding: 10px;
     border: none;
@@ -81,8 +118,8 @@ body {
     color: #fff;
     font-size: 1em;
     transition: 0.5s;
-  }
-  .input-group span {
+}
+.input-group span {
     position: absolute;
     left: 0;
     padding: 10px;
@@ -91,7 +128,7 @@ body {
     color: #8f8f8f;
     text-transform: uppercase;
     transition: 0.5s;
-  }
+}
 .input-group input:valid ~ span, 
 .input-group input:focus ~ span {
     color: white;
@@ -109,8 +146,8 @@ body {
     border: 1px solid #0583F2;
     border-radius: 5px;
 }
-  
-  button {
+
+button {
     background-color: #0583F2;
     color: #fff;
     border: none;
@@ -122,15 +159,15 @@ body {
     font-weight: bold;
     transition: 0.5s;
     width: 95%;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #034b90;
-  }
-  
-  @keyframes neon-glow {
+}
+
+@keyframes neon-glow {
     0% {
         box-shadow: 0 0 10px #0583F2;
     }
@@ -143,7 +180,7 @@ button[type="submit"]:hover {
     background-color: #0583F2;
     letter-spacing: 3px;
     width: 100%;
-    box-shadow: 0 0 0px #0583F2, 0 0 0px #0583F2, 0 0 0px #0583F2, 0 0 0px #0583F2, 0 0 0px #0583F2, 0 0 10px #0583F2, 0 0 15px #0583F2;
+    box-shadow: 0 0 10px #0583F2, 0 0 15px #0583F2;
     animation: neon-pulse 1.5s ease-in-out infinite alternate;
 }
 
