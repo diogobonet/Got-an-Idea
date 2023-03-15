@@ -171,6 +171,44 @@ body {
   /* estilos para telas menores do que 768px */
 
 /*MAIN*/
+#cookie-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 95%;
+  background-color: #dbd4d4;
+  color: black;
+  padding: 15px;
+  text-align: center;
+  z-index: 10;
+  margin: 15px 15px 15px 15px;
+  margin-right: 10px;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#cookie-popup button {
+  background-color: #0583f2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+#cookie-popup button:hover {
+  background-color: #3899ee;
+}
+#cookie-popup a {
+  color: #056CF2;
+}
+
+#cookie-popup a:hover {
+  color: #3899ee;
+}
+
 .div-main {
     display: flex;
     flex-direction: row;
@@ -362,4 +400,64 @@ a:hover {
 .person-div p {
   font-size: 14px;
   color: #0583F2;
+}
+
+/*      Estilização do Dialog (popup de Politicas)    */
+dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 800px;
+  min-width: 320px;
+  z-index: 11;
+  padding: 30px;
+  border-radius: 20px;
+  border: none;
+}
+
+.dialog-div {
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+.static {
+  display: fixed;
+}
+.dialog-enter {
+  padding: 20px;
+  background-color: rgb(231, 227, 227);
+  border: none;
+  max-height: 250px;
+  overflow: auto;
+  border-radius: 20px;
+}
+
+dialog ol {
+  padding: 10px;
+}
+
+dialog ol li span {
+  font-size: 10px;
+  opacity: 60%;
+}
+
+dialog button {
+  justify-content: center;
+  align-self: center;
+  background-color: #0583f2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-top: 30px;
+  max-width: 100px;
+}
+
+dialog button:hover {
+  background-color: #3899ee;
 }

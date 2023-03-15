@@ -29,8 +29,42 @@
     </header>
 
     <main>
-        <div class="div-main">
+        
+        <div id="cookie-popup">
+            <p>Nós utilizamos cookies🍪 para garantir a melhor experiência em nosso site. Ao continuar navegando, você concorda com a nossa <a class="link-open-modal" href="#">política de cookies</a>.</p>
+            <button onclick="aceitarCookies()">Aceitar</button>
+          </div>
 
+          <div class="dialog-div hidden">
+              <dialog>
+                <h1>Politicas de Uso de Dados</h1>
+                <div class="dialog-enter">
+                    <p>
+                        A <strong>Política de Proteção de Dados Pessoais</strong> tem por finalidade estabelecer diretrizes,
+                        princípios, objetivos e conceitos a serem seguidos por todas as partes relacionadas com a
+                        Conab visando o cumprimento da Lei Geral de Proteção de Dados Pessoais (LGPD)
+                        Lei n.º 13.709/2018.
+                    </p>
+                        <ol>
+                            <li>O usuário concorda em fornecer seus dados tais como <strong>nome e sobrenome, email, senha</strong>, para utilização exclusivamente e somente no sistema e suas API's.</li>
+                            <li>O usuário está ciente que caso os seus dados sejam vazados, a empresa <span>não</span> se responsabiliza com os dados vazados</li>
+                            <li>As medidas de segurança, técnicas e administrativas para proteção de dados pessoais deverão ser observadas desde a fase de concepção do produto ou do serviço até a sua
+                            execução, conceito denominado Privacidade desde a Concepção.</li>
+                            <li>Dado pessoal: informação relacionada a pessoa natural identificada
+                                ou identificável;</li>
+                                <li>Tratamento: toda operação realizada com dados pessoais, como as que se
+                                    referem a coleta, produção, recepção, classificação, utilização, acesso,
+                                    reprodução, transmissão, distribuição, processamento, arquivamento,
+                                    armazenamento, eliminação, avaliação ou controle da informação, modificação,
+                                    comunicação, transferência, difusão ou extração;</li>
+                        </ol>
+                </div>
+                <button class="close-dialog">Fechar</button>
+              </dialog>
+              
+          </div>
+
+        <div class="div-main">
             <div class="div-esquerda">
                 <h1 class="h1-main">Juntar ideias em um único <br> <span class="span-h1-main"></span></h1>
                 
@@ -86,7 +120,7 @@
 
     </footer>
 
-    <script src="js/mobile-nav-bar.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
