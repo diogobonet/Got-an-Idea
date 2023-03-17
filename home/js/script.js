@@ -85,3 +85,16 @@ document.addEventListener('DOMContentLoaded', function(event){
   });
 
   // Acordeao
+  const myDetails = document.getElementById('my-details');
+  const mySummary = myDetails.querySelector('summary');
+  var openS = false;
+  
+  myDetails.removeAttribute('open'); // remove o atributo "open" inicialmente
+  
+  mySummary.addEventListener('click', function() {
+    if (myDetails.hasAttribute('open')) {
+      myDetails.removeAttribute('open');
+    } else {
+      myDetails.setAttribute('open', '');
+    }
+  });

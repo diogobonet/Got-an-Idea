@@ -26,7 +26,17 @@
         }
 
         header {
-            padding: 20px;
+            padding: 25px;
+            margin-left: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        header a:hover {
+            color: rgb(189, 185, 185)
         }
 
         .material-symbols-outlined {
@@ -54,7 +64,7 @@
         .div-escolhas {
             display: flex;
             flex-direction: column;
-            border: 1px solid #0583f2;
+            border: 2px solid #0583f2;
             padding: 30px;
             max-width: 300px;
             height: 300px;
@@ -62,14 +72,21 @@
             align-items: center;
             text-align: center;
             cursor: pointer;
+            border-radius: 20px;
         }
 
         .div-escolhas:hover {
-            border: 1.5px solid #0d67b6;
+            border: 2.5px solid #0d67b6;
+            background-color: #343441;
         }
 
         .div-escolhas h1 {
             margin: 30px;
+            margin-top: 10px;
+        }
+
+        span {
+            user-select: none;
         }
 
         </style>
@@ -77,14 +94,16 @@
 </head>
 <body>
     <header>
-        <span class="material-symbols-outlined">
-            arrow_back
-            </span>
+        <a href="index.html">
+            <span class="material-symbols-outlined">
+                arrow_back
+                </span>
+        </a>
     </header>
 
     <main>
         <section class="container">
-            <h1>Qual é o seu proposito?</h1>
+            <h1>Qual é o seu propósito?</h1>
 
             <div id="div-center">
                 <div class="div-escolhas">
@@ -92,14 +111,12 @@
                         psychology_alt
                         </span>
                     <h1>Idealizador</h1>
-                    <p>Você tem uma ideia, e está pronto para compartilhar com o mundo!</p>
+                    <p>Você tem uma ideia e quer que ela se concretize rapidamente, e está pronto para compartilhar com o mundo!</p>
                 </div>
                 <div class="div-escolhas">
-                    <span class="material-symbols-outlined">
-                        person_play
-                        </span>
-                    <h1>Desenvolvedor</h1>
-                    <p>Você gostaria de ajudar a desenvolver uma ideia, e está pronto para mostrar para o mundo o seu conhecimento!</p>
+                    <span class="material-symbols-outlined">partner_exchange</span> 
+                    <h1>Colaboradores</h1>
+                    <p>Você gostaria de colaborar para colocar a ideia em prática, e está pronto para mostrar para o mundo o seu conhecimento!</p>
                 </div>
                 <div class="div-escolhas">
                     <span class="material-symbols-outlined">
