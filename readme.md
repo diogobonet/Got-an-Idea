@@ -10,7 +10,7 @@ desenvolvedor e/ou investidores
 * Possibilitar pessoas a concretizar suas
 ideias
 
-* Formentar o mercado de Startups
+* Fomentar o mercado de Startups
 
 ---
 ### O que está sendo desenvolvido atualmente?
