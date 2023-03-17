@@ -24,6 +24,11 @@
             color: white;
             font-family: 'Poppins', sans-serif;
         }
+
+        header {
+            padding: 20px;
+        }
+
         .material-symbols-outlined {
           font-variation-settings:
           'FILL' 0,
@@ -49,28 +54,32 @@
         .div-escolhas {
             display: flex;
             flex-direction: column;
-            border: 1px solid blue;
-            padding: 40px;
+            border: 1px solid #0583f2;
+            padding: 30px;
             max-width: 300px;
             height: 300px;
             justify-content: center;
             align-items: center;
             text-align: center;
+            cursor: pointer;
+        }
+
+        .div-escolhas:hover {
+            border: 1.5px solid #0d67b6;
         }
 
         .div-escolhas h1 {
             margin: 30px;
         }
 
-        .div-escolhas span {
-            font: 4em;
-        }
         </style>
     <title>Registro 2</title>
 </head>
 <body>
     <header>
-        <img src="img/arrow_back_FILL0_wght700_GRAD200_opsz48.svg" alt="">
+        <span class="material-symbols-outlined">
+            arrow_back
+            </span>
     </header>
 
     <main>
@@ -79,17 +88,23 @@
 
             <div id="div-center">
                 <div class="div-escolhas">
-                    <img src="img/psychology_alt_FILL0_wght700_GRAD200_opsz48.svg" alt="">
+                    <span class="material-symbols-outlined">
+                        psychology_alt
+                        </span>
                     <h1>Idealizador</h1>
                     <p>Você tem uma ideia, e está pronto para compartilhar com o mundo!</p>
                 </div>
                 <div class="div-escolhas">
-                    
+                    <span class="material-symbols-outlined">
+                        person_play
+                        </span>
                     <h1>Desenvolvedor</h1>
                     <p>Você gostaria de ajudar a desenvolver uma ideia, e está pronto para mostrar para o mundo o seu conhecimento!</p>
                 </div>
                 <div class="div-escolhas">
-                    
+                    <span class="material-symbols-outlined">
+                        attach_money
+                        </span>
                     <h1>Investidor</h1>
                     <p>Você tem o interesse de investir em uma ideia para ajudar a avançarmos como sociedade, e está pronto para dar dinheiro!</p>
                 </div>
