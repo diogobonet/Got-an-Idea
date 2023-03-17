@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        /* font-family: 'Poppins', sans-serif; */
+        @font-face {
+        font-family: Talisso;
+        src: url(../fonts/tussilago_rg.otf);} 
+
+        @font-face {
+        font-family: Helga;
+        src: url(../fonts/Helga.ttf);} 
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0A0A0D;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 700,
+          'GRAD' 0,
+          'opsz' 48
+          
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #div-center {
+            display: flex;
+            flex-direction: row;
+            padding: 60px;
+            gap: 20px;
+        }
+        .div-escolhas {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid blue;
+            padding: 40px;
+            max-width: 300px;
+            height: 300px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .div-escolhas h1 {
+            margin: 30px;
+        }
+
+        .div-escolhas span {
+            font: 4em;
+        }
+        </style>
+    <title>Registro 2</title>
+</head>
+<body>
+    <header>
+        <img src="img/arrow_back_FILL0_wght700_GRAD200_opsz48.svg" alt="">
+    </header>
+
+    <main>
+        <section class="container">
+            <h1>Qual é o seu proposito?</h1>
+
+            <div id="div-center">
+                <div class="div-escolhas">
+                    <img src="img/psychology_alt_FILL0_wght700_GRAD200_opsz48.svg" alt="">
+                    <h1>Idealizador</h1>
+                    <p>Você tem uma ideia, e está pronto para compartilhar com o mundo!</p>
+                </div>
+                <div class="div-escolhas">
+                    
+                    <h1>Desenvolvedor</h1>
+                    <p>Você gostaria de ajudar a desenvolver uma ideia, e está pronto para mostrar para o mundo o seu conhecimento!</p>
+                </div>
+                <div class="div-escolhas">
+                    
+                    <h1>Investidor</h1>
+                    <p>Você tem o interesse de investir em uma ideia para ajudar a avançarmos como sociedade, e está pronto para dar dinheiro!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
