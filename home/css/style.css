@@ -502,12 +502,6 @@ dialog button:hover {
 }
 
 /* ACORDEÃO */
-
-.my-details {
-  background: linear-gradient(to right rgb(182, 179, 179) #0A0A0D);
-}
-
-
 details div {
 	border-left: 2px solid #a1a1a1;
 	border-right: 2px solid #726b6b;
@@ -537,7 +531,8 @@ summary::-webkit-details-marker {
 }
 
 summary {
-	border: 2px solid #000;
+	border: 2px solid gray;
+  border-radius: 10px;
 	padding: .75em 1em;
 	cursor: pointer;
 	position: relative;
@@ -552,8 +547,8 @@ summary:before {
 	content: "↓";
 	width: 1.75rem;
 	height: 1.75rem;
-	background-color: #000;
-	color: #FFF;
+	background-color: #0A0A0D;
+	color: white;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -561,13 +556,14 @@ summary:before {
 }
 
 details[open] summary {
-	background-color: #eee;
+	background: radial-gradient(circle, rgba(5,108,242,1) 0%, rgba(5,209,242,0.9864320728291317) 34%, rgba(5,108,242,1) 100%);
 }
 
 details[open] summary:before {
 	content: "↑";
+  background-color: #0A0A0D;
 }
 
 summary:hover {
-	background-color: #eee;
+	background-color: #0583f2;
 }
