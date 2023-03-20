@@ -463,6 +463,8 @@ dialog button:hover {
   background-color: #3899ee;
 }
 
+/*        Objetivos        */
+
 .objetivos-section {
   display: flex;
   flex-direction: row;
@@ -503,11 +505,9 @@ dialog button:hover {
 
 /* ACORDEÃO */
 details div {
-	border-left: 2px solid #a1a1a1;
-	border-right: 2px solid #726b6b;
-	border-bottom: 2px solid #7f8c9b;
+  border: none;
 	padding: 1.5em;
-  background-color: rgb(240, 238, 238);
+  background-color: red;
 }
 
 details div > * + * {
@@ -556,14 +556,51 @@ summary:before {
 }
 
 details[open] summary {
-	background: radial-gradient(circle, rgba(5,108,242,1) 0%, rgba(5,209,242,0.9864320728291317) 34%, rgba(5,108,242,1) 100%);
+	background: linear-gradient(90deg, rgba(56,153,238,1) 0%, rgba(5,131,242,1) 50%, rgba(56,153,238,1) 100%);
+  border: none;
 }
 
 details[open] summary:before {
 	content: "↑";
-  background-color: #0A0A0D;
+  background: #3899ee;
 }
 
 summary:hover {
 	background-color: #0583f2;
+}
+
+
+
+/* FOOOOOOOOOOOOOOTER */
+footer {
+  background-color: #2f2f35;
+  height: 70vh;
+  border-top: gray 1px solid;
+}
+
+footer img {
+  max-width: 100px;
+  max-height: 100px;
+  user-select: none;
+  padding: 80px;
+}
+
+.links-footer {
+  padding-left: 80px;
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links h2 {
+  font-size: 16px;
+}
+
+.footer-links a {
+  font-size: 13px;
 }
