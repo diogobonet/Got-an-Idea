@@ -189,7 +189,7 @@ body {
 }
 
 #cookie-popup button {
-  background-color: #0583f2;
+  
   color: white;
   padding: 10px 20px;
   border: none;
@@ -198,15 +198,28 @@ body {
   margin: 5px;
 }
 
-#cookie-popup button:hover {
+.aceitarCookies {
+  background-color: #0583f2;
+}
+
+.aceitarCookies:hover {
   background-color: #3899ee;
 }
+
 #cookie-popup a {
   color: #056CF2;
 }
 
 #cookie-popup a:hover {
   color: #3899ee;
+}
+
+#cookie-recusar {
+  background-color: rgb(228, 38, 38);
+}
+
+#cookie-recusar:hover {
+  background-color: rgb(218, 73, 73);
 }
 
     .div-main {
@@ -507,7 +520,11 @@ dialog button:hover {
 details div {
   border: none;
 	padding: 1.5em;
-  background-color: red;
+  display: block;
+  background-color: #25252c;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
 details div > * + * {
@@ -516,6 +533,7 @@ details div > * + * {
 
 details div {
   font-size: 12px;
+  color: white;
 }
 
 details + details {
@@ -531,7 +549,6 @@ summary::-webkit-details-marker {
 }
 
 summary {
-	border: 2px solid gray;
   border-radius: 10px;
 	padding: .75em 1em;
 	cursor: pointer;
@@ -544,10 +561,9 @@ summary:before {
 	top: 50%;
 	transform: translateY(-50%);
 	left: .75rem;
-	content: "↓";
+	content: "+";
 	width: 1.75rem;
 	height: 1.75rem;
-	background-color: #0A0A0D;
 	color: white;
 	display: inline-flex;
 	justify-content: center;
@@ -561,7 +577,7 @@ details[open] summary {
 }
 
 details[open] summary:before {
-	content: "↑";
+	content: "-";
   background: #3899ee;
 }
 
@@ -574,7 +590,7 @@ summary:hover {
 /* FOOOOOOOOOOOOOOTER */
 footer {
   background-color: #2f2f35;
-  height: 70vh;
+  height: 67vh;
   border-top: gray 1px solid;
 }
 
@@ -590,11 +606,14 @@ footer img {
   display: flex;
   flex-direction: row;
   gap: 200px;
+  border-bottom: gray 1px solid;
+  padding-bottom: 50px;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
+  
 }
 
 .footer-links h2 {
@@ -603,4 +622,16 @@ footer img {
 
 .footer-links a {
   font-size: 13px;
+}
+
+.final-line {
+  display: flex;
+  flex-direction: row;
+  padding: 9px;
+  padding-left: 80px;
+  font-size: 12px;
+  text-align: center;
+  justify-content: flex-start;
+  gap: 30px;
+  font-weight: normal;
 }
