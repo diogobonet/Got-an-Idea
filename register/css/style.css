@@ -41,7 +41,6 @@ body{
 
 /* Lado direito da página de registro (onde se encontra o formulário) */
 .div-form-direita{
-    border-top-right-radius: 0.5vw; border-bottom-right-radius: 0.5vw;
     width:100%; height:100%;
     background-color: #ffffff;
 }
@@ -121,8 +120,43 @@ body{
     color: #1942fa;
 }
 
+@media only screen and (max-width: 1000px) {
+    .div-form{
+        width:80%; height:80%;
+        display: grid; grid-template-columns: 0fr 1fr; /* Apagando a logo ao diminuir a tela */
+        animation:none; /*A animação passará a ser utilizada pelo lado direito (para não ter problema com o tamanho)*/
+    }
+    .form label{ /*Diminuindo textos presentes em cima dos inputs*/
+        font-size:10px;
+    }
+    .form{ /*Formulário presente na div da direita*/
+        display:flex; flex-direction: column;
+    }
+    .form label{ /*Diminuindo a fonte e margens entre o input e as labels*/
+        align-self: center; justify-self: center;
+        font-size:15px; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%;
+        display:flex; gap:0px; 
+    }
+    .form input{ /*Diminuindo a fonte utilizada nos inputs*/
+        font-size:10px;
+    }
+    .div-form-direita{ /*Ao utilizar uma tela menor que 1000px, a animação será alterada para o fomulário*/
+        animation: neon-glow 1s ease-in-out infinite alternate;
+    }
+    .div-form-direita p{ /*Texto embaixo do botão (Já possui uma conta?)*/
+        font-size:15px;
+    }
+    .div-form-direita h1{ /*Diminuindo a fonte e a margem utilizada*/
+        margin-top:5%;
+        font-size:25px;
+    }
+    }
 
-
+    @media only screen and (max-width: 310px) {
+        .div-form-direita p{
+            display:flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+    }
 
 
 
