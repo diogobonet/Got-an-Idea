@@ -17,6 +17,7 @@ body{
     background-color: #0A0A0D;
     color: white;
     font-size: 16px;
+    min-width: 320px;
 }
 
 
@@ -269,14 +270,20 @@ article {
     margin-top: 30px;
     color: white;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    gap: 50px;
 }
 
-.sec-article div {
+.sec-article div.sec-article-esquerda {
     display: flex;
-    flex-direction: row;
-    gap: 80px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sec-article-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .sec-article div .info-user {
@@ -289,4 +296,30 @@ section.active {
 
 section:target {
     z-index: 2
+}
+
+section.active:first-of-type:target + section.ideas {
+    display: none;
+}
+
+.ideas div {
+    position: relative; top: 0; left: 0;
+    background-color: #212125;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.ideas div button {
+    background-color: #0583F2;
+    border: none;
+    padding: 7px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Poppins';
+    align-self: center;
+    cursor: pointer;
+}
+
+.ideas div button:hover {
+    background-color: #489ee9;
 }
