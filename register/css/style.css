@@ -42,7 +42,7 @@ body{
 /* Lado direito da página de registro (onde se encontra o formulário) */
 .div-form-direita{
     width:100%; height:100%;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .div-form-direita h1{
@@ -150,6 +150,9 @@ body{
         margin-top:5%;
         font-size:25px;
     }
+    .button{ /*Diminuindo a margem entre o formulario e o botão */
+        margin-top:5%;
+    }
     }
 
     @media only screen and (max-width: 310px) {
@@ -168,3 +171,40 @@ body{
         box-shadow: 0 0 20px #0583F2;
     }
 }
+
+@media only screen and (max-height: 660px) {
+    .div-form{
+        width:80%; height:80%;
+        display: grid; grid-template-columns: 0fr 1fr; /* Apagando a logo ao diminuir a tela */
+        animation:none; /*A animação passará a ser utilizada pelo lado direito (para não ter problema com o tamanho)*/
+    }
+    .form label{ /*Diminuindo textos presentes em cima dos inputs*/
+        font-size:15px;
+    }
+    .form label{ /*Diminuindo a fonte e margens entre o input e as labels*/
+        font-size:15px; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%; gap:0px; 
+    }
+    .form input{ /*Diminuindo a fonte utilizada nos inputs*/
+        margin-top: 10px;
+        font-size:10px;
+    }
+    .div-form-direita{ /*Ao utilizar uma tela menor que 1000px, a animação será alterada para o fomulário*/
+        animation: neon-glow 1s ease-in-out infinite alternate;
+    }
+    .div-form-direita p{ /*Texto embaixo do botão (Já possui uma conta?)*/
+        font-size:15px;
+    }
+    .div-form-direita h1{ /*Diminuindo a fonte e a margem utilizada*/
+        margin-top:5%;
+        font-size:25px;
+    }
+    .button{ /*Diminuindo a margem entre o formulario e o botão */
+        margin-top:5%;
+    }
+    }
+
+    @media only screen and (max-width: 310px) { /* Ao alcançar menos de 310px de largura, o texto Já possuí uma conta é separado em 2 partes (cima e baixo)*/
+        .div-form-direita p{
+            display:flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+    }
