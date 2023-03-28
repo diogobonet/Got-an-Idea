@@ -541,6 +541,7 @@ details + details {
 }
 
 summary {
+  transition: background 0.5s ease-in-out;
 	list-style: none;
 }
 
@@ -571,9 +572,13 @@ summary:before {
 	flex-shrink: 0;
 }
 
-details[open] summary {
+details[open] summary{
 	background: linear-gradient(90deg, rgba(56,153,238,1) 0%, rgba(5,131,242,1) 50%, rgba(56,153,238,1) 100%);
   border: none;
+}
+
+details[open] summary ~ *{ /* PROTÓTIPO Alteração GB */ /* Para tudo que for aberto dentro do sumario, utilizará a animação "suavidade" */ 
+  animation: suavidade .5s ease-in-out;
 }
 
 details[open] summary:before {
@@ -634,4 +639,13 @@ footer img {
   justify-content: flex-start;
   gap: 30px;
   font-weight: normal;
+}
+
+@keyframes suavidade{
+  0%{
+    opacity:0%
+  }
+  100%{
+    opacity:100%;
+  }
 }
