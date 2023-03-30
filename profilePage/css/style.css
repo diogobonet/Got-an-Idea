@@ -289,18 +289,6 @@ article {
     color:rgb(5, 131, 242);
 }
 
-section.active {
-    z-index: 1;
-}
-
-section:target {
-    z-index: 2
-}
-
-section.active:first-of-type:target + section.ideas {
-    display: none;
-}
-
 .ideas div {
     position: relative; top: 0; left: 0;
     background-color: #212125;
@@ -321,4 +309,14 @@ section.active:first-of-type:target + section.ideas {
 
 .ideas div button:hover {
     background-color: #489ee9;
+}
+
+/* Teste para arrumar os TABS */
+
+.tab_closed{
+    display:none;
+}
+
+.tab_opened{
+    display:flex;
 }
