@@ -21,7 +21,7 @@ body{
 }
 
 .div-form{
-    width:55%; height:60%;
+    width:60%; height:70%;
     display: grid; grid-template-columns: 1fr 1fr;
     border-radius:0.5vw;
     box-shadow: 0 0 0.5vw #0583F2; 
@@ -172,7 +172,7 @@ body{
     }
 }
 
-@media only screen and (max-height: 690px) {
+@media only screen and (max-height: 610px) {
     .div-form{
         width:40%; height:80%;
         display: grid; grid-template-columns: 0fr 1fr; /* Apagando a logo ao diminuir a tela */
