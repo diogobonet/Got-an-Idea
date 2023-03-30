@@ -172,9 +172,9 @@ body{
     }
 }
 
-@media only screen and (max-height: 660px) {
+@media only screen and (max-height: 690px) {
     .div-form{
-        width:80%; height:80%;
+        width:40%; height:80%;
         display: grid; grid-template-columns: 0fr 1fr; /* Apagando a logo ao diminuir a tela */
         animation:none; /*A animação passará a ser utilizada pelo lado direito (para não ter problema com o tamanho)*/
     }
@@ -203,7 +203,10 @@ body{
     }
     }
 
-    @media only screen and (max-width: 310px) { /* Ao alcançar menos de 310px de largura, o texto Já possuí uma conta é separado em 2 partes (cima e baixo)*/
+    @media only screen and (max-width: 400px) { /* Ao alcançar menos de 310px de largura, o texto Já possuí uma conta é separado em 2 partes (cima e baixo)*/
+        .div-form{
+            width:80%; height:80%;
+        }
         .div-form-direita p{
             display:flex; flex-direction: column; justify-content: center; align-items: center;
         }
