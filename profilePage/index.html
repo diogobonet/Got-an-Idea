@@ -53,13 +53,13 @@
 
             <div>
                 <ul class="menu">
-                    <li><a href="#tab1"><span class="material-symbols-outlined">person</span>Informações</a></li>
-                    <li><a href="#tab2"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
+                    <li><a onclick="open_infos()" href="#"><span class="material-symbols-outlined">person</span>Informações</a></li>
+                    <li><a onclick="open_ideas()" href="#"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
                 </ul>
                 
                 <article>
                 
-                    <section id="tab1" class="sec-article active">
+                    <section id="tab1" class="sec-article active tab_opened">
                         <div class="sec-article-esquerda">
                             <p class="">Celular:</p>
                             <p class="">Email:</p>
@@ -77,7 +77,7 @@
                         </div>
                     </section>
                 
-                    <section id="tab2" class="sec-article ideas">
+                    <section id="tab2" class="sec-article ideas tab_closed">
                         <div>
                             <h1>Lampada Quebrada</h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, voluptates unde quasi iusto corporis esse suscipit quae, illo eaque itaque quia assumenda impedit est aut quo delectus dolorem porro amet.</p>
@@ -102,5 +102,6 @@
     <footer>
 
     </footer>
+    <script src="js/control_tabs.js"></script>
 </body>
 </html>
