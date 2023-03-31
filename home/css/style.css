@@ -423,7 +423,8 @@ dialog {
   max-width: 800px;
   min-width: 320px;
   height: 360px;
-  z-index: 11;
+  z-index: 10;
+  position: fixed;
   padding: 30px;
   border-radius: 20px;
   border: none;
