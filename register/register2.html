@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -55,7 +56,7 @@
             justify-content: center;
         }
 
-        #div-center {
+        .div-center {
             display: flex;
             flex-direction: row;
             padding: 60px;
@@ -66,7 +67,7 @@
             flex-direction: column;
             border: 2px solid #0583f2;
             padding: 30px;
-            max-width: 300px;
+            max-width: 200px;
             height: 300px;
             justify-content: center;
             align-items: center;
@@ -89,8 +90,71 @@
             user-select: none;
         }
 
+        @media (max-width: 800px) {
+            .div-center {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        
+        footer {
+        background-color: #2f2f35;
+        height: 50vh;
+        border-top: gray 1px solid;
+        }
+
+        footer img {
+        max-width: 100px;
+        max-height: 100px;
+        user-select: none;
+        padding: 20px;
+        }
+
+        footer a {
+            color: rgb(156, 154, 154);
+        }
+
+        footer a:hover {
+            color: rgb(192, 186, 186);
+        }
+
+        .links-footer {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 200px;
+        border-bottom: gray 1px solid;
+        padding-bottom: 50px;
+        }
+
+        .footer-links {
+        display: flex;
+        flex-direction: column;
+        
+        }
+
+        .footer-links h2 {
+        font-size: 16px;
+        }
+
+        .footer-links a {
+        font-size: 13px;
+        }
+
+        .final-line {
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        padding-left: 20px;
+        font-size: 12px;
+        text-align: center;
+        justify-content: flex-start;
+        gap: 30px;
+        font-weight: normal;
+        }
+
         </style>
-    <title>Registro 2</title>
+    <title>Registro | got an Idea</title>
 </head>
 <body>
     <header>
@@ -105,28 +169,65 @@
         <section class="container">
             <h1>Qual é o seu propósito?</h1>
 
-            <div id="div-center">
-                <div class="div-escolhas">
+            <div class="div-center">
+                <div class="div-escolhas" id="idealizador">
                     <span class="material-symbols-outlined">
                         psychology_alt
                         </span>
                     <h1>Idealizador</h1>
                     <p>Você tem uma ideia e quer que ela se concretize rapidamente, e está pronto para compartilhar com o mundo!</p>
                 </div>
-                <div class="div-escolhas">
+                <div class="div-escolhas" id="colaborador">
                     <span class="material-symbols-outlined">partner_exchange</span> 
                     <h1>Colaboradores</h1>
                     <p>Você gostaria de colaborar para colocar a ideia em prática, e está pronto para mostrar para o mundo o seu conhecimento!</p>
                 </div>
-                <div class="div-escolhas">
+                <div class="div-escolhas" id="investidor">
                     <span class="material-symbols-outlined">
                         attach_money
                         </span>
                     <h1>Investidor</h1>
                     <p>Você tem o interesse de investir em uma ideia para ajudar a avançarmos como sociedade, e está pronto para dar dinheiro!</p>
                 </div>
+
+                <div class="div-escolhas" id="doador">
+                    <span class="material-symbols-outlined">
+                        volunteer_activism
+                        </span>
+                    <h1>Apoiador</h1>
+                    <p>Você quer ver uma ideia ser realizada, portanto contribui com dinheiro sem fins lucrativos futuramente.</p>
+                </div>
             </div>
         </section>
     </main>
+
+
+    <footer>
+            <img class="img-footer" src="img/logo.png" alt="Logo no footer do site">
+            <div class="links-footer">
+                <div class="footer-links">
+                    <h2>SOCIAL</h2>
+                    <a href=""><i class="fa fa-instagram" aria-hidden="true"></i>
+                         Instagram</a>
+                    <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a>
+                    <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a>
+                    <a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i> Youtube</a>
+                </div>
+    
+                <div class="footer-links">
+                    <h2>DOCUMENTAÇÃO</h2>
+                    <a href=""><i class="fa fa-github-square" aria-hidden="true"></i> Repositório</a>
+                    <a href=""><i class="fa fa-book" aria-hidden="true"></i> Docs</a>
+                    <a href=""><i class="fa fa-trello" aria-hidden="true"></i> Trello</a>
+                </div>
+            </div>
+    
+            <div class="final-line"> 
+                <p>&#169; got an Idea Enterprise</p> 
+                <a href="">Termos</a> 
+                <a class="link-open-modal" href="#">Privacidade</a>
+            </div>
+    </footer>
+
 </body>
 </html>
