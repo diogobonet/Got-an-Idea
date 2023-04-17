@@ -180,11 +180,11 @@ body{
         font-size:15px;
     }
     .form label{ /*Diminuindo a fonte e margens entre o input e as labels*/
-        font-size:15px; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%; gap:0px; 
+        font-size:20px; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%; gap:0px; 
     }
     .form input{ /*Diminuindo a fonte utilizada nos inputs*/
         margin-top: 10px;
-        font-size:10px;
+        font-size:15px;
     }
     .div-form-direita{ /*Ao utilizar uma tela menor que 1000px, a animação será alterada para o fomulário*/
         animation: neon-glow 1s ease-in-out infinite alternate;
