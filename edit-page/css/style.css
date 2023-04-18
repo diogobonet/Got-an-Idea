@@ -239,13 +239,13 @@ article {
 .sec-article div.sec-article-esquerda {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
 }
 
 .sec-article-direita {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 45px;
 }
 
 .sec-article div .info-user {
@@ -282,4 +282,19 @@ article {
 
 .tab_opened{
     display:flex;
+}
+
+.sec-article-direita button {
+    background-color: #212125;
+    color: #0583F2;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sec-article-direita button:hover {
+    background-color: #3a3a3b;
 }
