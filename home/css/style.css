@@ -367,7 +367,7 @@ a:hover {
 
 .div-about-base{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   min-width: 300px; max-width:800px;
   min-height:300px; max-height:800px;
   margin: 0 auto;
@@ -394,7 +394,7 @@ a:hover {
 
 .about-image{
   width:150px;
-  height: 180px;
+  height: 200px;
 }
 
 .person-div {
@@ -596,51 +596,59 @@ summary:hover {
 /* FOOOOOOOOOOOOOOTER */
 footer {
   background-color: #2f2f35;
-  height: 72vh;
+  height: 50vh;
   border-top: gray 1px solid;
-}
+  }
 
-footer img {
+  footer img {
   max-width: 100px;
   max-height: 100px;
   user-select: none;
-  padding: 80px;
-}
+  padding: 20px;
+  }
 
-.links-footer {
-  padding-left: 80px;
+  footer a {
+      color: rgb(156, 154, 154);
+  }
+
+  footer a:hover {
+      color: rgb(192, 186, 186);
+  }
+
+  .links-footer {
+  padding-left: 20px;
   display: flex;
   flex-direction: row;
   gap: 200px;
   border-bottom: gray 1px solid;
   padding-bottom: 50px;
-}
+  }
 
-.footer-links {
+  .footer-links {
   display: flex;
   flex-direction: column;
   
-}
+  }
 
-.footer-links h2 {
+  .footer-links h2 {
   font-size: 16px;
-}
+  }
 
-.footer-links a {
+  .footer-links a {
   font-size: 13px;
-}
+  }
 
-.final-line {
+  .final-line {
   display: flex;
   flex-direction: row;
-  padding: 9px;
-  padding-left: 80px;
+  padding: 5px;
+  padding-left: 20px;
   font-size: 12px;
   text-align: center;
   justify-content: flex-start;
   gap: 30px;
   font-weight: normal;
-}
+  }
 
 @keyframes suavidade{
   0%{
