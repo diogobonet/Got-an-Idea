@@ -11,3 +11,9 @@
 - Pequenas alterações no footer do Registro; (Diogo)
 - Organização na pasta das imagens; (Nicolas)
 ### O que precisa implementar
+- Na página de edição de perfil, para trocar do que usuário quer ser abrir um modal
+
+## Data 19/04
+- Hover na div ***sobre-esquerda***;
+- 
+### O que precisa implementar

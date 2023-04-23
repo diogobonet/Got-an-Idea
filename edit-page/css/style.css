@@ -122,6 +122,12 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sobre-divesquerda:hover {
+    background-color: #212125;
 }
 
 .sobre-divesquerda h2{
@@ -287,9 +293,22 @@ article {
     display:flex;
 }
 
-.sec-article-direita button {
+.sec-article-direita .set-button {
     background-color: #212125;
     color: #0583F2;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Poppins';
+}
+
+.null-button {
+    background-color: #212125;
+    color: #0583F2;
+    max-width: 40px;
     border: none;
     display: flex;
     align-items: center;
