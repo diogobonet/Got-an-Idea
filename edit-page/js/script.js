@@ -14,3 +14,15 @@ function open_ideas(){
     tab1_infos.classList.remove('tab_opened'); // remove a classe aberta (display:flex)
     tab1_infos.classList.add('tab_closed'); // adiciona a classe fechada (display:none)
 }
+
+// Limite de Caracteres
+const elementos = document.querySelectorAll('.idea-desc');
+
+elementos.forEach(elemento => {
+  const textoOriginal = elemento.innerHTML;
+  const limiteCaracteres = 190; // Defina o limite de caracteres desejado
+
+  if (textoOriginal.length > limiteCaracteres) {
+    elemento.innerHTML = textoOriginal.slice(0, limiteCaracteres) + "...";
+  }
+});

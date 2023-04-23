@@ -107,6 +107,7 @@ main {
 .div-profileimage {
     max-width: 300px;
     max-height: 300px;
+    cursor: pointer;
 }
 
 .div-profileimage img {
@@ -263,6 +264,8 @@ article {
     background-color: #212125;
     padding: 30px;
     border-radius: 20px;
+    max-height: 330px;
+    min-height: 200px;
 }
 
 .ideas div button {
@@ -299,6 +302,7 @@ article {
     padding: 8px;
     border-radius: 10px;
     cursor: pointer;
+    font-family: 'Poppins';
 }
 
 .null-button {
