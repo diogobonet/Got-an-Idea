@@ -171,20 +171,77 @@ body {
   /* estilos para telas menores do que 768px */
 
 /*MAIN*/
-.div-main {
-    display: flex;
-    flex-direction: row;
-    max-width: 100vw;
-    min-width: 55px;
+#cookie-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 95%;
+  background-color: #dbd4d4;
+  color: black;
+  padding: 15px;
+  text-align: center;
+  z-index: 10;
+  margin: 15px 15px 15px 15px;
+  margin-right: 10px;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.div-esquerda {
-    max-width: 35vw;
-    padding: 65px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+#cookie-popup button {
+  
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  margin: 5px;
 }
+
+.aceitarCookies {
+  background-color: #0583f2;
+}
+
+.aceitarCookies:hover {
+  background-color: #3899ee;
+}
+
+#cookie-popup a {
+  color: #056CF2;
+}
+
+#cookie-popup a:hover {
+  color: #3899ee;
+}
+
+#cookie-recusar {
+  background-color: rgb(228, 38, 38);
+}
+
+#cookie-recusar:hover {
+  background-color: rgb(218, 73, 73);
+}
+
+    .div-main {
+        display: flex;
+        flex-direction: row;
+        max-width: 100vw;
+        min-width: 55px;
+    }
+
+    .div-esquerda {
+        max-width: 35vw;
+        padding: 65px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .div-direita {
+      max-width: 75vw;
+      position: relative;
+      width: 70%;
+  }
 
 .h1-main {
   font-family: Talisso;
@@ -250,13 +307,6 @@ body {
   align-items: center;
 }
 
-.div-direita {
-    max-width: 75vw;
-    position: relative;
-    width: 70%;
-
-}
-
 a {
   text-decoration: none;
   color: gray;
@@ -317,7 +367,7 @@ a:hover {
 
 .div-about-base{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   min-width: 300px; max-width:800px;
   min-height:300px; max-height:800px;
   margin: 0 auto;
@@ -344,7 +394,7 @@ a:hover {
 
 .about-image{
   width:150px;
-  height:150px;
+  height: 200px;
 }
 
 .person-div {
@@ -362,4 +412,249 @@ a:hover {
 .person-div p {
   font-size: 14px;
   color: #0583F2;
+}
+
+/*      Estilização do Dialog (popup de Politicas)    */
+dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 800px;
+  min-width: 320px;
+  height: 360px;
+  z-index: 10;
+  position: fixed;
+  padding: 30px;
+  border-radius: 20px;
+  border: none;
+}
+
+.dialog-div {
+  display: flex;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+.static {
+  display: static;
+
+}
+.dialog-enter {
+  padding: 20px;
+  background-color: rgb(231, 227, 227);
+  border: none;
+  max-height: 250px;
+  overflow: auto;
+  border-radius: 20px;
+}
+
+dialog ol {
+  padding: 10px;
+}
+
+dialog ol li span {
+  font-size: 10px;
+  opacity: 60%;
+}
+
+dialog button {
+  justify-content: center;
+  align-self: center;
+  background-color: #0583f2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-top: 30px;
+  max-width: 100px;
+}
+
+dialog button:hover {
+  background-color: #3899ee;
+}
+
+/*        Objetivos        */
+
+.objetivos-section {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+}
+
+.objetivo-div-esquerda {
+      max-width: 75vw;
+      position: relative;
+      width: 70%;
+}
+
+.objetivo-div-esquerda .img-wrapper img {
+  -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.objetivo-div-direita {
+      max-width: 35vw;
+        padding: 65px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+}
+
+.objetivo-div-direita h1 {
+  font-family: Talisso;
+  text-align: center;
+  color: #056CF2;
+}
+
+.objetivo-div-direita p {
+  font-size: 1em;
+  color: grey;
+}
+
+/* ACORDEÃO */
+details div {
+  border: none;
+	padding: 1.5em;
+  display: block;
+  background-color: #25252c;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+details div > * + * {
+	margin-top: 1.5em;
+}
+
+details div {
+  font-size: 12px;
+  color: white;
+}
+
+details + details {
+	margin-top: .5rem;
+}
+
+summary {
+  transition: background 0.5s ease-in-out;
+	list-style: none;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary {
+  border-radius: 10px;
+	padding: .75em 1em;
+	cursor: pointer;
+	position: relative;
+	padding-left: calc(1.75rem + .75rem + .75rem);
+}
+
+summary:before {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: .75rem;
+	content: "+";
+	width: 1.75rem;
+	height: 1.75rem;
+	color: white;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+details[open] summary{
+	background: linear-gradient(90deg, rgba(56,153,238,1) 0%, rgba(5,131,242,1) 50%, rgba(56,153,238,1) 100%);
+  border: none;
+}
+
+details[open] summary ~ *{ /* PROTÓTIPO Alteração GB */ /* Para tudo que for aberto dentro do sumario, utilizará a animação "suavidade" */ 
+  animation: suavidade .5s ease-in-out;
+}
+
+details[open] summary:before {
+	content: "-";
+  background: #3899ee;
+}
+
+summary:hover {
+	background-color: #0583f2;
+}
+
+
+
+/* FOOOOOOOOOOOOOOTER */
+footer {
+  background-color: #2f2f35;
+  height: 50vh;
+  border-top: gray 1px solid;
+  }
+
+  footer img {
+  max-width: 100px;
+  max-height: 100px;
+  user-select: none;
+  padding: 20px;
+  }
+
+  footer a {
+      color: rgb(156, 154, 154);
+  }
+
+  footer a:hover {
+      color: rgb(192, 186, 186);
+  }
+
+  .links-footer {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+  border-bottom: gray 1px solid;
+  padding-bottom: 50px;
+  }
+
+  .footer-links {
+  display: flex;
+  flex-direction: column;
+  
+  }
+
+  .footer-links h2 {
+  font-size: 16px;
+  }
+
+  .footer-links a {
+  font-size: 13px;
+  }
+
+  .final-line {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  padding-left: 20px;
+  font-size: 12px;
+  text-align: center;
+  justify-content: flex-start;
+  gap: 30px;
+  font-weight: normal;
+  }
+
+@keyframes suavidade{
+  0%{
+    opacity:0%
+  }
+  100%{
+    opacity:100%;
+  }
 }

@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+@font-face {
+    font-family: Talisso;
+    src: url(../fonts/tussilago_rg.otf);} 
+  
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    max-width: 100vw;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0A0A0D;
+    color: white;
+    font-size: 16px;
+    min-width: 320px;
+}
+
+.material-symbols-outlined {
+    user-select: none;
+    
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' -25,
+  'opsz' 24
+}
+
+header {
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    max-width: 100vw;
+    min-width: 320px;
+}
+
+header a {
+    text-decoration: none;
+    color: rgb(110, 109, 109);
+    font-weight: bold;
+}
+
+header a:hover {
+    color: white;
+    font-weight: 300;
+}
+
+header input {
+    background: none;
+    padding: 13px;
+    width: 300px;
+    border: 2px solid rgb(110, 109, 109);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-radius: 40px;
+}
+
+.logo-header {
+    max-width: 95px;
+    height: auto;
+    user-select: none;
+}
+
+.div-userimg{
+    max-width: 2.9em;
+    max-height: 3em;
+}
+
+.user-img {
+    max-width: 100%;
+    height: auto;
+    border: 2px (110, 109, 109) solid;
+    border-radius: 50px;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+/*              SECTION ESQUERDA            */
+
+.sec-esquerda {
+    padding: 30px;
+    width: 25%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.centerimg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 10px;
+}
+
+.div-profileimage {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.div-profileimage img {
+    max-width: 300px;
+    height: 300px;
+    border-radius: 30px;
+}
+
+.sobre-divesquerda {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.sobre-divesquerda h2{
+    font-size: 18px;
+    font-weight: 300;
+    color: #0583F2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-right: 2px solid transparent;
+    border-image: linear-gradient(0.25turn, rgb(5, 131, 242),rgba(56,2,155,0));
+    border-image-slice: 1;
+}
+
+.sobre-divesquerda p {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+/*              SECTION DIREITA           */
+.sec-direita {
+    padding: 45px;
+}
+.div-direitamain {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 350px;
+}
+
+.main-infos h1{
+    font-family: Talisso;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.div-direitamain button {
+    background-color: #0A0A0D;
+    border: none;
+    color: #0583F2;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.div-direitamain span {
+    color: #0583F2;
+}
+
+.div-direitamain button:hover {
+    background-color: #212125;
+    border-radius: 10px;
+    color: #63aff1;
+}
+
+.div-direitamain h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0583F2;
+}
+
+.buttons-user {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.buttons-user button {
+    background-color: #0583F2;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.buttons-user button:hover {
+    background-color: #3c98e9;
+}
+
+.buttons-user a {
+    text-decoration: none;
+    color: #0583F2;
+    font-size: 13px;
+} 
+
+.buttons-user a:hover {
+    color: #63aff1;
+}
+
+/*SELECTS*/
+.menu {
+    list-style: none; 
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding-bottom: 5px;
+    margin-top: 40px;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(0.25turn, rgb(5, 131, 242),rgba(56,2,155,0));
+    border-image-slice: 1;
+    width:100%;
+}
+
+.menu li:checked {
+    background-color: red;
+}
+
+.menu a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(168, 164, 164);
+}
+
+article {
+	position: relative;
+}
+
+.sec-article {
+    position: absolute;
+	padding: 8px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #0A0A0D;
+    height: auto;
+	z-index: 0;
+    margin-top: 30px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.sec-article div.sec-article-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sec-article-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sec-article div .info-user {
+    color:rgb(5, 131, 242);
+}
+
+.ideas div {
+    position: relative; top: 0; left: 0;
+    background-color: #212125;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.ideas div button {
+    background-color: #0583F2;
+    border: none;
+    padding: 7px;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Poppins';
+    align-self: center;
+    cursor: pointer;
+}
+
+.ideas div button:hover {
+    background-color: #489ee9;
+}
+
+/* Teste para arrumar os TABS */
+
+.tab_closed{
+    display:none;
+}
+
+.tab_opened{
+    display:flex;
+}
