@@ -14,17 +14,18 @@
         </div>
         <div class='div-form-direita'>
             <h1>Registro</h1>
-            <form class="form">
-                <label>Nome<input placeholder='ex: Carlos' class= 'info-nome' type="text"></label>
-                <label>Sobrenome<input placeholder='ex: Almeida' class= 'info-sobrenome' type="text"></label>
-                <label>Email<input placeholder='ex: gb@gmail.com.br' class= 'info-email' type="text"></label>
-                <label>Apelido<input placeholder='ex: Carlin2022' class= 'info-apelido' type="text"></label>
-                <label>Senha<input placeholder='Senha' class= 'info-senha' type="text"></label>
-                <label>Confirmar<input placeholder='Confirmar Senha' class= 'info-confirmar' type="text"></label>
+            <form action='exe/register_intoDB.php' class="form">
+                <label>Nome<input name='nome_input' placeholder='Exemplo' class= 'info-nome' type="text"></label>
+                <label>Sobrenome<input name='sobrenome_input' placeholder='Exemplo' class= 'info-sobrenome' type="text"></label>
+                <label>Email<input name='email_input' placeholder='exemplo@ex.com' class= 'info-email' type="text"></label>
+                <label>Apelido<input name='apelido_input' placeholder='ExemploEx' class= 'info-apelido' type="text"></label>
+                <label>Senha<input name='senha_input' placeholder='Senha' class= 'info-senha' type="text"></label>
+                <label>Confirmar<input name='confirmar_input' placeholder='Confirmar Senha' class= 'info-confirmar' type="text"></label>
             </form>
-            <div class="div-button"><button class="button">REGISTRAR</button></div>
-            <p>Já possuí uma conta? <a href="#">Entre aqui</a></p>
+            <div class="div-button"><button id="botao_submit" class="button">REGISTRAR</button></div>
+            <p>Já possuí uma conta? <a href="../login/login2.html">Entre aqui</a></p>
         </div>
     </div>
+    <script src="js/validacao_inputs.js"></script>
 </body>
 </html>
