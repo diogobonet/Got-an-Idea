@@ -47,7 +47,7 @@ body{
 
 .div-form-direita h1{
     height:10%; width:100%;
-    color: #0583F2;
+    color: black;
     margin-top:5%;
     font-size:35px;
     display:flex; justify-content: center;
@@ -62,7 +62,7 @@ body{
 }
 
 .form label{
-    color: #8f8f8f;
+    color: black;
     align-self: center; justify-self: center;
     font-size:20px; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%;
     display:grid; grid-template-columns: 1fr; grid-template-rows: 50% 50%; gap:5px; 
@@ -73,11 +73,12 @@ body{
     border:none;
     border-bottom: 0.1vw solid gray;
     transition: 0.5s;
+    background: rgb(200, 200, 200);
 }
 
 .form label input:focus{
     outline: none;
-    box-shadow: rgb(89, 89, 89) 0px 0px 0.2vw; 
+    box-shadow: rgb(0, 0, 0) 0px 0px 0.2vw;
 }
 
 /* Botão */
