@@ -26,3 +26,28 @@ elementos.forEach(elemento => {
     elemento.innerHTML = textoOriginal.slice(0, limiteCaracteres) + "...";
   }
 });
+
+// Preview Foto
+const image = document.querySelector(".imagem-perfil")
+const input = document.querySelector(".input-imagem")
+
+input.addEventListener("change", () => {image.src = URL.createObjectURL(input.files[0])})
+
+// Seleciona todos os itens do menu
+const menuItems = document.querySelectorAll('.menu li');
+
+// Adiciona a classe "selected" ao primeiro item do menu
+menuItems[0].classList.add('selected');
+
+// Adiciona um ouvinte de eventos a cada item do menu
+menuItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    // Remove a classe "selected" de todos os itens do menu
+    menuItems.forEach((item) => {
+      item.classList.remove('selected');
+    });
+
+    // Adiciona a classe "selected" ao item do menu selecionado
+    item.classList.add('selected');
+  });
+});
