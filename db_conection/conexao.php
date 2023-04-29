@@ -1,8 +1,8 @@
 <?php
-    $host = 'x'; // Conexão no Servidor (Pc do GB) por meio do Radmin VPN.
+    $host = 'x'; // Conexão no Servidor
     $user = 'x';
     $pass = 'x';
-    $db = 'gt_idea_DB';
+    $db = 'x';
     $conn = new mysqli($host, $user, $pass, $db);
 
     if($conn->connect_error){
