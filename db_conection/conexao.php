@@ -1,8 +1,8 @@
 <?php
-    $host = 'x'; // Conexão no Servidor
-    $user = 'x';
-    $pass = 'x';
-    $db = 'x';
+    $host = 'localhost'; // Conexão no Servidor
+    $user = 'gb';
+    $pass = 'mysql@204';
+    $db = 'gt_idea_db';
     $conn = new mysqli($host, $user, $pass, $db);
 
     if($conn->connect_error){
