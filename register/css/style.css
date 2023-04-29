@@ -20,6 +20,8 @@ body{
     background-color: #0A0A0D;
 }
 
+
+/* Formulario */
 .div-form{
     width:60%; height:70%;
     display: grid; grid-template-columns: 1fr 1fr;
@@ -68,17 +70,16 @@ body{
     display:grid; grid-template-columns: 1fr; grid-template-rows: 50% 50%; gap:5px; 
 }
 
-.form label input{
+.form_input{
+    outline: none;
     padding: 0 0 0 0.5vw;
     border:none;
-    border-bottom: 0.1vw solid gray;
     transition: 0.5s;
     background: rgb(200, 200, 200);
 }
 
-.form label input:focus{
-    outline: none;
-    box-shadow: rgb(0, 0, 0) 0px 0px 0.2vw;
+.input_errado{
+    background: rgb(142, 54, 54);
 }
 
 /* Botão */
@@ -127,15 +128,16 @@ body{
 
 @media only screen and (max-width: 1000px) {
     .div-form{
+        font-size:18px;
         width:80%; height:80%;
         display: grid; grid-template-columns: 0fr 1fr; /* Apagando a logo ao diminuir a tela */
         animation:none; /*A animação passará a ser utilizada pelo lado direito (para não ter problema com o tamanho)*/
     }
     .form label{ /*Diminuindo textos presentes em cima dos inputs*/
-        font-size:15px;
+        font-size:1.0em;
     }
     .form input{ /*Diminuindo a fonte utilizada nos inputs*/
-        font-size:15px;
+        font-size:1.0em;
     }
     .div-form-direita{ /*Ao utilizar uma tela menor que 1000px, a animação será alterada para o fomulário*/
         animation: neon-glow 1s ease-in-out infinite alternate;
@@ -145,7 +147,7 @@ body{
     }
     .div-form-direita h1{ /*Diminuindo a fonte e a margem utilizada*/
         margin-top:5%;
-        font-size:25px;
+        font-size:3em;
     }
     .button{ /*Diminuindo a margem entre o formulario e o botão */
         margin-top:5%;
@@ -171,29 +173,31 @@ body{
 
 @media only screen and (max-height: 610px) {
     .div-form{
-        width:40%; height:80%;
+        font-size:16px;
+        width:50%; height:90%;
         display: grid; grid-template-columns: 0fr 1fr; /* Apagando a logo ao diminuir a tela */
         animation:none; /*A animação passará a ser utilizada pelo lado direito (para não ter problema com o tamanho)*/
     }
     .form label{ /*Diminuindo a fonte e margens entre o input e as labels*/
-        font-size:15px; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%; gap:0px; 
+        font-size:1.2em; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%; gap:0px; 
     }
     .form input{ /*Diminuindo a fonte utilizada nos inputs*/
         margin-top: 5px;
-        font-size:15px;
+        font-size:0.8em;
     }
     .div-form-direita{ /*Ao utilizar uma tela menor que 1000px, a animação será alterada para o fomulário*/
         animation: neon-glow 1s ease-in-out infinite alternate;
     }
     .div-form-direita p{ /*Texto embaixo do botão (Já possui uma conta?)*/
-        font-size:15px;
+        font-size:0.8em;
     }
     .div-form-direita h1{ /*Diminuindo a fonte e a margem utilizada*/
-        font-size:25px;
+        font-size:1.5em;
     }
     .button{ /*Diminuindo a margem entre o formulario e o botão */
         margin-top:5%;
-        width:40%; height:30px;
+        font-size:1em;
+        width:40%; height:1.5em;
     }
     }
 
@@ -209,5 +213,10 @@ body{
         }
         .div-form-direita p{
             display:flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+
+        .div-form-direita h1{ /*Diminuindo a fonte e a margem utilizada*/
+            margin-top:5%;
+            font-size:1.5em;
         }
     }
