@@ -17,7 +17,3 @@
 - Hover na div ***sobre-esquerda***;
 - 
 ### O que precisa implementar
-
-## Data 25/04
-- Input de imagem na imagem com preview
-- Aplicando

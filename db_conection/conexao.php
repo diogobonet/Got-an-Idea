@@ -1,5 +1,5 @@
 <?php
-    $host = 'x'; // Conexão no Servidor
+    $host = 'x'; // Conexão no Servidor (Pc do GB) por meio do Radmin VPN.
     $user = 'x';
     $pass = 'x';
     $db = 'x';
