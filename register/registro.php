@@ -33,10 +33,11 @@
             <p>Já possuí uma conta? <a href="../login/login2.html">Entre aqui</a></p>
         </div>
     </div>
+    <script src='js/notificacao.js'></script>
     <script src="js/validacao_inputs.js"></script>
     <script src="js/verificar_erros.js"></script>
     <script>
-        verificar_erros(<?=$_GET['erro']?>);
+        verificar_erros(<?php if(isset($_GET['erro'])){echo $_GET['erro'];}?>); // Caso o php receba um erro, será enviado para o javascript ativar a notificacao.
     </script>
 </body>
 </html>
