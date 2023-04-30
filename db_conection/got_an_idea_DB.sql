@@ -1,8 +1,6 @@
-DROP DATABASE gt_idea_DB;
-
-/* Aqui comça a criação da base de dados (tabelas) */
 CREATE DATABASE gt_idea_DB;
 USE gt_idea_DB;
+SELECT * FROM Usuario;
 
 CREATE TABLE Ideia (
     id int PRIMARY KEY,
@@ -15,10 +13,12 @@ CREATE TABLE Ideia (
 
 CREATE TABLE Usuario (
     email varchar(100) PRIMARY KEY,
+    apelido varchar(25) UNIQUE,
     telefone varchar(100),
     tipo_conta int,
-    senha varchar(25),
+    senha varchar(32),
     cidade varchar(50),
+    bio varchar(100),
     formacao varchar(100)
 );
 
