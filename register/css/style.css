@@ -56,6 +56,7 @@ body{
     animation: timer_noti 8s ease-in-out;
 }
 #notificacao_div p{
+    display:flex;
     font-size:1.2em;
 }
 

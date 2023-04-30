@@ -1,5 +1,9 @@
 <?php
+    require('../../db_conection/conexao.php');
+
     class Registro{
+        public mysqli $mysql_conection;
+
         public readonly string $email;
         public readonly string $nome;
         public readonly string $sobrenome;
@@ -16,6 +20,24 @@
         }
     }
 
-    $novoRegistro = new Registro($_POST['email_input'], $_POST['nome_input'], $_POST['sobrenome_input'], $_POST['apelido_input'], md5($_POST['senha_input']));
-    $sql = "INSERT INTO Usuario VALUES ($novoRegistro->email, $novoRegistro->apelido, NULL, 1, $novoRegistro->senha, NULL, NULL, NULL)";
+    $register = new Registro($_POST['email_input'], $_POST['nome_input'], $_POST['sobrenome_input'], $_POST['apelido_input'], md5($_POST['senha_input']));
+
+    $sql = "INSERT INTO Usuario VALUES ('$register->email', '$register->apelido', NULL, 1, '$register->senha', NULL, NULL, NULL)";
+    try{
+        if($conn->query($sql)){ // O objeto Mysqli devolverá um objeto do tipo Mysql_result
+            header('Location: ../../login/login2.html');
+        }
+    } catch(Exception $e){
+        echo "<h1 style='color:red;'>Erro: " . $e->getMessage() . "</h1>";
+        echo "<h2 style='color:green;'>Código do erro: " . $e->getCode() . "</h2>";
+        echo "<h2 style='color:blue;'>Linha do erro: " . $e->getLine() . "</h2>";
+        echo "<h2 style='color:blue;'>Traço do erro: " . $e->getTraceAsString() . "</h2>";
+        if($e->getCode() == 1062){
+            if( str_contains( $e->getMessage(), 'usuario.PRIMARY' ) ){
+                header('Location: ../registro.php?erro=0'); // Se o erro se caracterizar por tentar usar a mesma Primary key, retorna para a página registro o erro "0"
+            } else{
+                header('Location: ../registro.php?erro=1'); // Caso haja uma conta com o mesmo apelido tentando ser utilizado, retornará o valor "1" para identificar o erro
+            }
+        }
+    }
 ?>
