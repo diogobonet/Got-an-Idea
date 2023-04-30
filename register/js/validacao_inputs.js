@@ -1,27 +1,5 @@
 var botao_submit = document.getElementById('botao_submit');
 
-
-function ativar_notificacao(msg, erro_unico){
-    let fundo_not = document.getElementById('fundo_para_notificacao');
-    let not_div = document.getElementById('notificacao_div');
-    let mg_not = document.getElementById('mensagem_notificacao');
-
-    if(erro_unico == true){
-        mg_not.style.alignItems = 'center';
-    }
-
-    fundo_not.classList.remove('hide');
-    fundo_not.classList.add('visible');
-
-    mg_not.textContent = msg;
-
-    setTimeout(()=>{
-        mg_not.style.alignItems = null;
-        fundo_not.classList.remove('visible');
-        fundo_not.classList.add('hide');
-    }, 9000); // Timer para remover a visibilidade da notificacao ao terminar o timer visivel
-}
-
 function validar_inputs(){
 
     let formulario = document.getElementById('form_registro');
@@ -39,7 +17,7 @@ function validar_inputs(){
     const regex_apelido = /^[\w\_]{3,25}$/
 
     if(nome.value.length>0 && sobrenome.value.length>0 && apelido.value.length>0 && email.value.length>0 && senha.value.length>0){
-        let string_erros = ''; // Erros que serão colocados na notificação
+        let string_erros = []; // Erros que serão colocados na notificação
         let acertos = 0;
 
         if(regex_nome.test(nome.value)){
@@ -47,7 +25,7 @@ function validar_inputs(){
             acertos+=1; /* com essa variavel será possível verificar se todas as condições foram atendidas */ 
         }else{
             nome.classList.add('input_errado');
-            string_erros += 'Nome: entre 2&25 caracteres e começar com maiúscula';
+            string_erros.push('Nome: entre 2&25 caracteres e começar com maiúscula');
         }
         
         if(regex_nome.test(sobrenome.value)){
@@ -55,7 +33,7 @@ function validar_inputs(){
             acertos+=1; /* com essa variavel será possível verificar se todas as condições foram atendidas */ 
         }else{
             sobrenome.classList.add('input_errado');
-            string_erros += 'Sobrenome: entre 2&25 caracteres e começar com maiúscula';
+            string_erros.push('Sobrenome: entre 2&25 caracteres e começar com maiúscula');
         }
 
         if(regex_email.test(email.value)){
@@ -63,7 +41,7 @@ function validar_inputs(){
             email.classList.remove('input_errado');
         }else{
             email.classList.add('input_errado');
-            string_erros += 'Email inválido!';
+            string_erros.push('Email inválido!');
         }
 
         if(regex_apelido.test(apelido.value)){
@@ -71,7 +49,7 @@ function validar_inputs(){
             apelido.classList.remove('input_errado');
         }else{
             apelido.classList.add('input_errado');
-            string_erros += 'Apelido: Apenas underlines,letras e números';
+            string_erros.push('Apelido: Apenas underlines,letras e números');
         } 
         
         if(regex_senha.test(senha.value)){ // Teste da senha (Deve conter 8 caracteres incluindo Maiúsculas, mínusculas, números e especiais)
@@ -79,23 +57,23 @@ function validar_inputs(){
             senha.classList.remove('input_errado');
         }else{
             senha.classList.add('input_errado');
-            string_erros += 'Senha: entre 8 e 16 caracteres e ao menos 1 maiúscula e 1 especial';
+            string_erros.push('Senha: entre 8 e 16 caracteres, ao menos 1 maiúscula e especial');
         }
         
-        if(string_erros != ''){
-            ativar_notificacao(string_erros);
+        if(string_erros != []){
+            ativar_notificacao(string_erros, erro_unico=false, lista=true);
         }
 
         if(acertos == 5 && (senha.value == confirmar.value)){
             formulario.submit();
         }else{
             if(senha.value != confirmar.value){
-                ativar_notificacao("As senhas não coincidem... Tente novamente!", erro_unico=true)
+                ativar_notificacao(msg="As senhas não coincidem... Tente novamente!", erro_unico=true, lista=false)
             }
         }
         
     }else{
-        ativar_notificacao("Um dos campos está vazio... Por favor preencha-o!", erro_unico=true);
+        ativar_notificacao("Um dos campos está vazio... Por favor preencha-o!", erro_unico=true, lista=false);
     }
 }
 
