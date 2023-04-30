@@ -90,12 +90,12 @@ function validar_inputs(){
             formulario.submit();
         }else{
             if(senha.value != confirmar.value){
-                ativar_notificacao("As senhas não coincidem... Tente novamente!")
+                ativar_notificacao("As senhas não coincidem... Tente novamente!", erro_unico=true)
             }
         }
         
     }else{
-        ativar_notificacao("Um dos campos está vazio... Por favor preencha-o!");
+        ativar_notificacao("Um dos campos está vazio... Por favor preencha-o!", erro_unico=true);
     }
 }
 
