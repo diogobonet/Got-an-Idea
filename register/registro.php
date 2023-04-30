@@ -35,6 +35,8 @@
     </div>
     <script src="js/validacao_inputs.js"></script>
     <script src="js/verificar_erros.js"></script>
-    <script></script>
+    <script>
+        verificar_erros(<?=$_GET['erro']?>);
+    </script>
 </body>
 </html>

@@ -1,10 +1,14 @@
 var botao_submit = document.getElementById('botao_submit');
 
 
-function ativar_notificacao(msg){
+function ativar_notificacao(msg, erro_unico){
     let fundo_not = document.getElementById('fundo_para_notificacao');
-    // let not_div = document.getElementById('notificacao_div');
+    let not_div = document.getElementById('notificacao_div');
     let mg_not = document.getElementById('mensagem_notificacao');
+
+    if(erro_unico == true){
+        mg_not.style.alignItems = 'center';
+    }
 
     fundo_not.classList.remove('hide');
     fundo_not.classList.add('visible');
@@ -12,6 +16,7 @@ function ativar_notificacao(msg){
     mg_not.textContent = msg;
 
     setTimeout(()=>{
+        mg_not.style.alignItems = null;
         fundo_not.classList.remove('visible');
         fundo_not.classList.add('hide');
     }, 9000); // Timer para remover a visibilidade da notificacao ao terminar o timer visivel
