@@ -8,6 +8,8 @@
     font-family: Helga;
     src: url(../fonts/Helga.ttf);} 
 
+
+
 * {
     margin: 0; padding: 0;
 }
@@ -18,6 +20,48 @@ body{
     background-color: #0A0A0D;
 }
 
+.hide{
+    visibility: hidden;
+    display:none;
+}
+
+.visible{
+    display:block;
+    visibility: visible;
+}
+
+/* Notificacao */
+#fundo_para_notificacao{
+    font-size:16px;
+    width:100%; height:10em;
+    position: absolute; top:0%;
+}
+#notificacao_div{
+    position: relative; top:0%; margin: auto;
+    width: 40em; height:10em;
+    color:rgb(0, 0, 0); font-family: 'Poppins', sans-serif; font-weight: bold;
+    display:flex; justify-content: center; 
+    background-color: #e3e3e3;
+    border-radius: 0.5em;
+    animation: descendo_noti 10s ease-in-out;
+}
+#notificacao_div::before{
+    position:absolute;
+    content: "";
+    bottom:0; left:0;
+    width:40em; height:0.5em;
+    background-color: #0583F2;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    animation: timer_noti 8s ease-in-out;
+}
+#notificacao_div p{
+    display:flex;
+    font-size:1.2em;
+}
+
+
+/* Formulario */
 .div-form{
     width:60%; height:70%;
     display: grid; grid-template-columns: 1fr 1fr;
@@ -46,8 +90,8 @@ body{
 .div-form-direita h1{
     height:10%; width:100%;
     color: #0583F2;
-    margin-top:5%;
-    font-size:35px;
+    margin-top:6%;
+    font-size: 28px;
     display:flex; justify-content: center;
     font-family: 'Poppins';
     justify-self: center;
@@ -60,24 +104,24 @@ body{
 }
 
 .form label{
-    color: #8f8f8f;
+    color: rgb(197, 195, 195);
     align-self: center; justify-self: center;
-    font-size:16px; font-family: 'Poppins', sans-serif; font-weight: 300; margin-top:10%;
-    display:grid; grid-template-columns: 1fr; grid-template-rows: 50% 50%; gap:5px; 
+    font-size:14px; font-family: 'Poppins', sans-serif; font-weight: 300; margin-top:8%;
+    display:grid; grid-template-columns: 1fr; grid-template-rows: 50% 50%;
+
 }
 
-.form label input{
-    padding: 0 0 0 0.5vw;
+.form_input{
+    outline: none;
+    padding: 10px;
     border:none;
-    border-bottom: 0.1vw solid gray;
     transition: 0.5s;
-    border-radius: 10px;
+    border-radius: 2px;
     background: rgb(200, 200, 200);
 }
 
-.form label input:focus{
-    outline: none;
-    box-shadow: rgb(89, 89, 89) 0px 0px 0.2vw; 
+.input_errado{
+    background: rgb(142, 54, 54);
 }
 
 /* Botão */
@@ -110,6 +154,7 @@ body{
     display:flex; justify-content: center;
     font-family: 'Poppins', sans-serif;
     justify-self: center;
+    color: rgb(200, 200, 200);
 }
 
 .div-form-direita p a{
@@ -125,16 +170,20 @@ body{
 }
 
 @media only screen and (max-width: 1000px) {
+    #fundo_para_notificacao{ /*Para diminuir o tamanho da notificacao*/
+        font-size:14px;
+    }
     .div-form{
+        font-size:18px;
         width:80%; height:80%;
         display: grid; grid-template-columns: 0fr 1fr; /* Apagando a logo ao diminuir a tela */
         animation:none; /*A animação passará a ser utilizada pelo lado direito (para não ter problema com o tamanho)*/
     }
     .form label{ /*Diminuindo textos presentes em cima dos inputs*/
-        font-size:15px;
+        font-size:1.0em;
     }
     .form input{ /*Diminuindo a fonte utilizada nos inputs*/
-        font-size:15px;
+        font-size:1.0em;
     }
     .div-form-direita{ /*Ao utilizar uma tela menor que 1000px, a animação será alterada para o fomulário*/
         animation: neon-glow 1s ease-in-out infinite alternate;
@@ -144,7 +193,8 @@ body{
     }
     .div-form-direita h1{ /*Diminuindo a fonte e a margem utilizada*/
         margin-top:5%;
-        font-size:25px;
+        font-size:3em;
+        
     }
     .button{ /*Diminuindo a margem entre o formulario e o botão */
         margin-top:5%;
@@ -168,35 +218,67 @@ body{
     }
 }
 
+@keyframes descendo_noti {
+    0% {
+        top:-200%;
+    }
+    10% {
+        top: 0%;
+    }
+    80%{
+        top:0%;
+    }
+    100%{
+        top:-200%;
+    }
+}
+
+@keyframes timer_noti{
+    0%{
+        width:0em;
+    }
+    100%{
+        width:40em;
+    }
+}
+
 @media only screen and (max-height: 610px) {
+    #fundo_para_notificacao{
+        font-size:10px;
+    }
     .div-form{
-        width:40%; height:80%;
+        font-size:16px;
+        width:50%; height:90%;
         display: grid; grid-template-columns: 0fr 1fr; /* Apagando a logo ao diminuir a tela */
         animation:none; /*A animação passará a ser utilizada pelo lado direito (para não ter problema com o tamanho)*/
     }
     .form label{ /*Diminuindo a fonte e margens entre o input e as labels*/
-        font-size:15px; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%; gap:0px; 
+        font-size:1.2em; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%; gap:0px; 
     }
     .form input{ /*Diminuindo a fonte utilizada nos inputs*/
         margin-top: 5px;
-        font-size:15px;
+        font-size:0.8em;
     }
     .div-form-direita{ /*Ao utilizar uma tela menor que 1000px, a animação será alterada para o fomulário*/
         animation: neon-glow 1s ease-in-out infinite alternate;
     }
     .div-form-direita p{ /*Texto embaixo do botão (Já possui uma conta?)*/
-        font-size:15px;
+        font-size:0.8em;
     }
     .div-form-direita h1{ /*Diminuindo a fonte e a margem utilizada*/
-        font-size:25px;
+        font-size:1.5em;
     }
     .button{ /*Diminuindo a margem entre o formulario e o botão */
         margin-top:5%;
-        width:40%; height:30px;
+        font-size:1em;
+        width:40%; height:1.5em;
     }
     }
 
     @media only screen and (max-width: 400px) { /* Ao alcançar menos de 310px de largura, o texto Já possuí uma conta é separado em 2 partes (cima e baixo)*/
+        #fundo_para_notificacao{
+            font-size:8px;
+        }
         .form label{ /*Diminuindo textos presentes em cima dos inputs*/
             font-size:10px;
         }
@@ -208,5 +290,10 @@ body{
         }
         .div-form-direita p{
             display:flex; flex-direction: column; justify-content: center; align-items: center;
+        }
+
+        .div-form-direita h1{ /*Diminuindo a fonte e a margem utilizada*/
+            margin-top:5%;
+            font-size:1.5em;
         }
     }
