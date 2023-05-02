@@ -1,64 +1,59 @@
-CREATE DATABASE gt_idea_DB;
-USE gt_idea_DB;
-
 CREATE TABLE Ideia (
     id int PRIMARY KEY,
     data_post date,
     filtros int,
     imagem mediumblob,
-    descricao varchar(100),
-    fk_Usuario_email varchar(100)
+    descricao varchar,
+    fk_Usuario_email varchar
 );
 
 CREATE TABLE Usuario (
-    email varchar(100) PRIMARY KEY,
-    apelido varchar(25) UNIQUE,
-    telefone varchar(100),
+    email varchar PRIMARY KEY,
+    telefone varchar,
     tipo_conta int,
-    senha varchar(32),
-    cidade varchar(50),
-    bio varchar(100),
-    formacao varchar(100)
+    senha varchar,
+    cidade varchar,
+    formacao varchar
 );
 
 CREATE TABLE Projeto (
     ID int PRIMARY KEY,
     data_post date,
-    descricao varchar(200),
+    descricao varchar,
     filtros int,
     imagem mediumblob,
-    fk_Usuario_email varchar(100)
+    fk_Usuario_email varchar
 );
 
 CREATE TABLE Trabalha_projeto (
-    fk_Usuario_email varchar(100),
+    fk_Usuario_email varchar,
     fk_Projeto_ID int
 );
 
 CREATE TABLE Comenta_projeto (
-    fk_Usuario_email varchar(100),
+    fk_Usuario_email varchar,
     fk_Projeto_ID int
 );
 
 CREATE TABLE Comenta_ideia (
     fk_Ideia_id int,
-    fk_Usuario_email varchar(100)
+    fk_Usuario_email varchar
 );
 
 CREATE TABLE Seguir_projeto (
-    fk_Usuario_email varchar(100),
+    fk_Usuario_email varchar,
     fk_Projeto_ID int
 );
 
 CREATE TABLE Conectar_ideia (
-    fk_Usuario_email varchar(100),
+    fk_Usuario_email varchar,
     fk_Ideia_id int
 );
 
 CREATE TABLE Doacao_projeto (
-    valor float,
+    valor FLOAT,
     data_post date,
-    fk_Usuario_email varchar(100),
+    fk_Usuario_email varchar,
     fk_Projeto_ID int
 );
  
