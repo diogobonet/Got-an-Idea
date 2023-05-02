@@ -8,6 +8,8 @@
     font-family: Helga;
     src: url(../fonts/Helga.ttf);} 
 
+
+
 * {
     margin: 0; padding: 0;
 }
@@ -87,9 +89,9 @@ body{
 
 .div-form-direita h1{
     height:10%; width:100%;
-    color: black;
-    margin-top:5%;
-    font-size:35px;
+    color: #0583F2;
+    margin-top:6%;
+    font-size: 28px;
     display:flex; justify-content: center;
     font-family: 'Poppins';
     justify-self: center;
@@ -102,18 +104,19 @@ body{
 }
 
 .form label{
-    color: black;
+    color: rgb(197, 195, 195);
     align-self: center; justify-self: center;
-    font-size:16px; font-family: 'Poppins', sans-serif; font-weight: 300; margin-top:10%;
-    display:grid; grid-template-columns: 1fr; grid-template-rows: 50% 50%; gap:5px; 
+    font-size:14px; font-family: 'Poppins', sans-serif; font-weight: 300; margin-top:8%;
+    display:grid; grid-template-columns: 1fr; grid-template-rows: 50% 50%;
+
 }
 
 .form_input{
     outline: none;
-    padding: 0 0 0 0.5vw;
+    padding: 10px;
     border:none;
     transition: 0.5s;
-    border-radius: 10px;
+    border-radius: 2px;
     background: rgb(200, 200, 200);
 }
 
@@ -151,6 +154,7 @@ body{
     display:flex; justify-content: center;
     font-family: 'Poppins', sans-serif;
     justify-self: center;
+    color: rgb(200, 200, 200);
 }
 
 .div-form-direita p a{
@@ -190,6 +194,7 @@ body{
     .div-form-direita h1{ /*Diminuindo a fonte e a margem utilizada*/
         margin-top:5%;
         font-size:3em;
+        
     }
     .button{ /*Diminuindo a margem entre o formulario e o botão */
         margin-top:5%;

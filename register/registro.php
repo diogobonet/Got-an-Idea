@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style2.css">
     <title>Registro | got an Idea💡</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
             <img class='logo' src="img/logo.png">
         </div>
         <div class='div-form-direita'>
-            <h1>Registro</h1>
+            <h1>Criar uma conta</h1>
             <form id='form_registro' action='exe/register_intoDB.php' class="form" method="POST">
                 <label>Nome<input name='nome_input' placeholder='Exemplo' class= 'info-nome form_input' type="text"></label>
                 <label>Sobrenome<input name='sobrenome_input' placeholder='Exemplo' class= 'info-sobrenome form_input' type="text"></label>

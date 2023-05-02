@@ -1,6 +1,5 @@
 CREATE DATABASE gt_idea_DB;
 USE gt_idea_DB;
-SELECT * FROM Usuario;
 
 CREATE TABLE Ideia (
     id int PRIMARY KEY,
