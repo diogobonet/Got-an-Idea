@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+@font-face {
+    font-family: Talisso;
+    src: url(../fonts/tussilago_rg.otf);} 
+
+*{
+    margin: 0; padding:0;
+}
+
+body{
+    max-width: 100vw;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0A0A0D;
+    color: white;
+    font-size: 16px;
+    min-width: 320px;
+}
+
+.material-symbols-outlined {
+    user-select: none;
+    
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' -25,
+  'opsz' 24
+}
+
+header {
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    max-width: 100vw;
+    min-width: 320px;
+}
+
+header a {
+    text-decoration: none;
+    color: rgb(110, 109, 109);
+    font-weight: bold;
+}
+
+header a:hover {
+    color: white;
+    font-weight: 300;
+}
+
+header input {
+    background: none;
+    padding: 13px;
+    width: 300px;
+    border: 2px solid rgb(110, 109, 109);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-radius: 40px;
+}
+
+.logo-header {
+    max-width: 95px;
+    height: auto;
+    user-select: none;
+}
+
+.div-userimg{
+    max-width: 2.9em;
+    max-height: 3em;
+}
+
+.user-img {
+    max-width: 100%;
+    height: auto;
+    border: 2px (110, 109, 109) solid;
+    border-radius: 50px;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.div-main {
+    background-color: #19181A;
+    max-width: 760px;
+    min-width: 320px;
+    max-height: 100vh;
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* POSTAGEM */
+.div-postagem {
+    background-color: #212127;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    min-width: 320px;
+    height: 30vh;
+    margin-top: 15px;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.select-div {
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 90%;
+    padding-bottom: 10px;
+    border-bottom: rgb(5, 72, 242) 2px solid;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-div a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    border-bottom: 2px solid transparent;
+  }
+  
+.select-div a.active {
+    border-image: linear-gradient(0.25turn, rgb(5, 72, 242), rgb(5, 131, 242));
+    border-image-slice: 1;
+}
+
+.cadastro-div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    font-family: Talisso;
+    font-family: 1.3rem;
+}
+
+.cadastro-div button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(5, 131, 242);
+    border: none;
+    color: white;
+    font-family: 'Poppins';
+}
+
+/* POSTS */
+/* USUARIO */
+.div-idea {
+    width: 80%;
+    padding-left: 80px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.infos-user {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border-bottom: 1px solid gray;
+}
+.infos-user-names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nome-user {
+    font-family: Talisso;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.persona-user {
+    font-family: Talisso;
+    font-size: 12px;
+    color: rgb(5, 131, 242);
+    font-weight: 400;
+}
+
+.img-user {
+  width: 50px;
+  height: 50px;   
+  border-radius: 50%;
+}
+
+/* POSTAGEM */
+.infos-ideia {
+    margin-top: 8px;
+}
+
+.titulo-ideia {
+    font-size: 18px;
+    color: rgb(5, 131, 242);
+}
+
+.desc-ideia {
+    font-size: 14px;
+}
+
+/* MELHORES IDEIAS */
+.best-idea  {
+    background: #212127;
+    max-width: 300px;
+    padding: 30px;
+    margin: 50px 30px 30px 30px;
+    border-radius: 20px;
+    height: 60vh;
+}
+
+.title-best {
+    text-align: center;
+    font-family: Talisso;
+}
+
+.melhor-ideia {
+    margin: 17px;
+}
+
+.melhor-ideia h1 {
+    color: rgb(5, 72, 242);
+}
+.melhor-ideia p {
+    font-size: 15px;
+}
+
+.div-flex-ideia {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.div-flex-ideia img {
+    max-width: 20px;
+    min-width: 20px;
+    height: 20px;
+}
