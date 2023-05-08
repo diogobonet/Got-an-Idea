@@ -4,7 +4,7 @@
 @font-face {
     font-family: Talisso;
     src: url(../fonts/tussilago_rg.otf);} 
-
+    
 *{
     margin: 0; padding:0;
 }
@@ -28,7 +28,7 @@ body{
   'opsz' 24
 }
 
-header {
+nav {
     padding: 25px;
     display: flex;
     flex-direction: row;
@@ -39,18 +39,19 @@ header {
     min-width: 320px;
 }
 
-header a {
+nav a {
     text-decoration: none;
     color: rgb(110, 109, 109);
     font-weight: bold;
 }
 
-header a:hover {
+nav a:hover {
     color: white;
     font-weight: 300;
 }
 
-header input {
+nav input {
+
     background: none;
     padding: 13px;
     width: 300px;
@@ -76,7 +77,6 @@ header input {
     height: auto;
     border: 2px (110, 109, 109) solid;
     border-radius: 50px;
-}
 
 /* MAIN */
 main {
