@@ -97,21 +97,20 @@ main {
 /* POSTAGEM */
 .div-postagem {
     background-color: #212127;
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 600px;
     min-width: 320px;
-    height: 30vh;
+    height: 32vh;
     margin-top: 15px;
     border-radius: 10px;
     align-self: center;
 }
 
 .select-div {
-    position:relative;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -146,6 +145,13 @@ main {
     font-family: 1.3rem;
 }
 
+.cadastro-div p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .cadastro-div button {
     padding: 10px;
     border-radius: 10px;
@@ -153,6 +159,11 @@ main {
     border: none;
     color: white;
     font-family: 'Poppins';
+    cursor: pointer;
+}
+
+.cadastro-div button:hover {
+    background-color: rgb(71, 156, 230);
 }
 
 /* POSTS */
@@ -162,6 +173,7 @@ main {
     padding-left: 80px;
     margin-top: 30px;
     margin-bottom: 20px;
+    user-select: none;
 }
 .infos-user {
     display: flex;
@@ -206,6 +218,7 @@ main {
 
 .desc-ideia {
     font-size: 14px;
+    margin-top: 5px;
 }
 
 /* MELHORES IDEIAS */
