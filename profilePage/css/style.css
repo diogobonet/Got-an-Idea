@@ -241,9 +241,14 @@ main {
     border-image-slice: 1;
     width:100%;
 }
+.menu li {
+    padding: 5px;
+}
 
-.menu li:checked {
-    background-color: red;
+.menu li.selected {
+    background-color: #0583F2;
+    color: white;
+    border-radius: 5px;
 }
 
 .menu a {
@@ -251,7 +256,7 @@ main {
     flex-direction: row;
     align-items: center;
     text-decoration: none;
-    color: rgb(168, 164, 164);
+    color: rgb(247, 244, 244);
 }
 
 article {

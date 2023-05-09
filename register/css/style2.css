@@ -63,6 +63,7 @@ body{
 
 /* Formulario */
 .div-form{
+    font-size:18px;
     width:60%; height:70%;
     display: grid; grid-template-columns: 1fr 1fr;
     border-radius:0.5vw;
@@ -112,6 +113,7 @@ body{
 }
 
 .form_input{
+    width: 10rem; height:0.45rem;
     outline: none;
     padding: 10px;
     border:none;
@@ -169,6 +171,13 @@ body{
     color: #1942fa;
 }
 
+@media only screen and (max-width: 1300px){
+    .form_input{
+        width: 8rem; height:0.45rem;
+    }
+}
+
+
 @media only screen and (max-width: 1000px) {
     #fundo_para_notificacao{ /*Para diminuir o tamanho da notificacao*/
         font-size:14px;
@@ -182,8 +191,8 @@ body{
     .form label{ /*Diminuindo textos presentes em cima dos inputs*/
         font-size:1.0em;
     }
-    .form input{ /*Diminuindo a fonte utilizada nos inputs*/
-        font-size:1.0em;
+    .form_input{
+        width: 12rem; height:0.5rem;
     }
     .div-form-direita{ /*Ao utilizar uma tela menor que 1000px, a animação será alterada para o fomulário*/
         animation: neon-glow 1s ease-in-out infinite alternate;
@@ -253,11 +262,10 @@ body{
         animation:none; /*A animação passará a ser utilizada pelo lado direito (para não ter problema com o tamanho)*/
     }
     .form label{ /*Diminuindo a fonte e margens entre o input e as labels*/
-        font-size:1.2em; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:10%; gap:0px; 
+        font-size:1em; font-family: 'Poppins', sans-serif; font-weight: bold; margin-top:5%; gap:0px; 
     }
     .form input{ /*Diminuindo a fonte utilizada nos inputs*/
-        margin-top: 5px;
-        font-size:0.8em;
+        width: 7rem; height:0.25rem;
     }
     .div-form-direita{ /*Ao utilizar uma tela menor que 1000px, a animação será alterada para o fomulário*/
         animation: neon-glow 1s ease-in-out infinite alternate;
@@ -273,7 +281,17 @@ body{
         font-size:1em;
         width:40%; height:1.5em;
     }
+}
+
+@media only screen and (max-width: 600px) { /* Ao alcançar menos de 310px de largura, o texto Já possuí uma conta é separado em 2 partes (cima e baixo)*/
+    .div-form-direita h1{
+        font-size:2em;
     }
+
+    .form_input{
+        width: 8em; height:0.5em;
+    }
+}
 
     @media only screen and (max-width: 400px) { /* Ao alcançar menos de 310px de largura, o texto Já possuí uma conta é separado em 2 partes (cima e baixo)*/
         #fundo_para_notificacao{
