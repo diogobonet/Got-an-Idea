@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title>got an Idea💡 | Login</title>
 </head>
 <body>
+    <div id="fundo_para_notificacao" class="hide">
+        <div id="notificacao_div">
+            <p id="mensagem_notificacao"></p>
+        </div>
+    </div>
     <header>
     </header>
     
@@ -48,6 +53,13 @@
                 <div class="wave wave-3" style="background-image: url(img/3.png);"></div>
             </div>
         </div>
+        <script src='../register/js/notificacao.js'></script>
+        <script src="../register/js/verificar_erros.js"></script>
+        <script src="../register/js/verificar_mensagem.js"></script>
+        <script>
+            verificar_erros(<?php if(isset($_GET['erro'])){echo $_GET['erro'];}?>); // Caso o php receba um erro, será enviado para o javascript ativar a notificacao.
+            verificar_mensagem(<?php if(isset($_GET['msg'])){echo $_GET['msg'];}?>);
+        </script>
     </main>
 
     <footer>

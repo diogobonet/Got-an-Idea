@@ -8,7 +8,6 @@
     <title>Registro | got an Idea💡</title>
 </head>
 <body>
-
     <div id="fundo_para_notificacao" class="hide">
         <div id="notificacao_div">
             <p id="mensagem_notificacao"></p>

@@ -2,13 +2,13 @@
     require('../../db_conection/conexao.php');
 
     class Registro{
-        public mysqli $mysql_conection;
+        public $mysql_conection;
 
-        public readonly string $email;
-        public readonly string $nome;
-        public readonly string $sobrenome;
-        public readonly string $apelido;
-        public readonly string $senha;
+        public $email;
+        public $nome;
+        public $sobrenome;
+        public $apelido;
+        public $senha;
 
         public function __construct(string $email_param, string $nome_param, string $sobrenome_param, string $apelido_param, string $senha_param)
         {
@@ -26,7 +26,7 @@
     
     try{
         if($conn->query($sql)){ // O objeto Mysqli devolverá um objeto do tipo Mysql_result
-            header('Location: ../../login/login2.html');
+            header('Location: ../../login/login.php?msg=0');
         }
     } catch(Exception $e){
         echo "<h1 style='color:red;'>Erro: " . $e->getMessage() . "</h1>";
