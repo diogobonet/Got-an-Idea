@@ -1,3 +1,19 @@
+<?php
+    require('../db_conection/conexao.php');
+    session_start();
+
+    $email = $_SESSION['email'];
+
+    $sql = "SELECT * FROM Ideia";
+    try{
+        $conn->query($sql);
+        $result = $conn->query($sql);
+        $ideias = $result->fetch_all(MYSQLI_ASSOC); 
+    } catch(Exception $e){
+        echo"<h1 style='color:red; font-size:45px;'>Erro:</h1>";
+        echo"<h1 style='color:white; font-size:35px;'>" . $e->getMessage() . "</h1>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,20 +33,21 @@
                         <span id="close_button_cadastro_ideia" class="material-symbols-outlined close_button" onclick="click">close</span>
                     </div>
                     
-                    <form class="modal-idea" action="">
+                    <form class="modal-idea" action="exe/cadastrar_ideiaProjeto.php" method='POST'>
                         <div class="modal-idea-row">
-                            <input class="input-title" type="text" placeholder="Titulo...">
-                            <select id="meu-select" name="opcao">
+                            <input name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
+                            <select id="meu-select" name="input-select-opcao">
                                 <option value="opcao1">Categoria</option>
                                 <option value="opcao2">Tecnologia</option>
                                 <option value="opcao3">Culinaria</option>
                                 <option value="opcao4">Engenharia</option>
                             </select>
                         </div>
-                        <div class="div-textarea"><textarea placeholder="Descrição..." name="" id="" cols="30" rows="10"></textarea></div>
+                        <div class="div-textarea"><textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea></div>
                         <div class="div-save-button">
                             
-                            <button class="save-button">Salvar</button>
+                            <input type='submit' value='Salvar' class="save-button">
+                            
                         </div>
                     </form>
                 </div>
@@ -61,20 +78,22 @@
                     <button id="abrir-modal">Cadastrar Ideia</button>
                 </div>
             </div>
-
-            <div class="div-idea">
-                <div class="infos-user">
-                    <div class="img-user-div"><img class="img-user" src="img/messi.jpeg" alt="Foto de Perfil"></div>
-                    <div class="infos-user-names">
-                        <h1 class="nome-user">Diogo Bonet</h1>
-                        <h2 class="persona-user">Idealizador</h2>
+            <?php foreach($ideias as $ideia) : ?>
+                <div class="div-idea">
+                    <div class="infos-user">
+                        <div class="img-user-div"><img class="img-user" src="img/messi.jpeg" alt="Foto de Perfil"></div>
+                        <div class="infos-user-names">
+                            <h1 class="nome-user"><?php echo $ideia['nome']; ?></h1>
+                            <h2 class="persona-user">Idealizador</h2>
+                        </div>
+                    </div>
+                    <div class="infos-ideia">
+                        <h1 class="titulo-ideia"><?=$ideia['titulo']?></h1>
+                        <p class="desc-ideia"><?=$ideia['descricao']?></p>
                     </div>
                 </div>
-                <div class="infos-ideia">
-                    <h1 class="titulo-ideia">Titulo Ideia</h1>
-                    <p class="desc-ideia">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus magni maiores hic quibusdam iste quas et fugiat delectus, dicta voluptate nisi adipisci. Asperiores sunt necessitatibus illum, incidunt inventore aperiam suscipit!</p>
-                </div>
-            </div>
+            <?php endforeach; ?>
+
 
             <div class="div-idea">
                 <div class="infos-user">
@@ -88,6 +107,8 @@
                     <h1 class="titulo-ideia">Um time de futebol bom</h1>
                     <p class="desc-ideia">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus magni maiores hic quibusdam iste quas et fugiat delectus, dicta voluptate nisi adipisci. Asperiores sunt necessitatibus illum, incidunt inventore aperiam suscipit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio veritatis dicta iusto a deleniti culpa optio animi ullam, amet repellendus distinctio sed ipsum nisi deserunt autem provident non quam officia!</p>
                 </div>
+
+                <a href="../edit-page/edit_Page.php">EAEE</a>
             </div>    
 
             

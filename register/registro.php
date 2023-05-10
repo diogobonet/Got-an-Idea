@@ -29,7 +29,7 @@
                 <label>Confirmar<input name='confirmar_input' placeholder='Senha' class= 'info-confirmar form_input' type="password"></label>
             </form>
             <div class="div-button"><button id="botao_submit" class="button">REGISTRAR</button></div>
-            <p>Já possuí uma conta? <a href="../login/login2.html">Entre aqui</a></p>
+            <p>Já possuí uma conta? <a href="../login/login.php">Entre aqui</a></p>
         </div>
     </div>
     <script src='js/notificacao.js'></script>

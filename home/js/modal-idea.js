@@ -1,14 +1,14 @@
-var modal = document.getElementById("modal-idea");
-var botaoAbrir = document.getElementById("abrir-modal");
-var botaoFechar = document.getElementsByClassName("fechar-modal")[0];
+let modal = document.getElementById("modal");
+let botaoAbrir = document.getElementById("abrir-modal");
+let botaoFechar = document.getElementById("close_button_cadastro_ideia");
 
 botaoAbrir.onclick = function() {
   modal.style.display = "block";
 }
 
-botaoFechar.onclick = function() {
-  modal.style.display = "none";
-}
+botaoFechar.addEventListener('click', ()=>{
+  modal.style.display="none";
+});
 
 window.onclick = function(event) {
   if (event.target == modal) {

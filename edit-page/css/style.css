@@ -353,3 +353,63 @@ article {
 .sec-article-direita button:hover {
     background-color: #3a3a3b;
 }
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#botao-apagar-conta {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: rgb(221, 85, 85);
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+  
+#botao-apagar-conta:hover {
+    background-color: rgb(196, 35, 35);
+    box-shadow: 0px 15px 20px rgba(229, 46, 46, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+  
+#botao-apagar-conta:active {
+    transform: translateY(-1px);
+}
+
+#botao-salvar-conta {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+  
+#botao-salvar-conta:hover {
+    background-color: rgb(28, 202, 28);
+    box-shadow: 0px 15px 20px rgba(28, 202, 28, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+  
+#botao-salvar-conta:active {
+    transform: translateY(-1px);
+}

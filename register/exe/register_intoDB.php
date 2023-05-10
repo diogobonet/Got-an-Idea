@@ -22,8 +22,8 @@
 
     $register = new Registro($_POST['email_input'], $_POST['nome_input'], $_POST['sobrenome_input'], $_POST['apelido_input'], md5($_POST['senha_input']));
 
-    $sql = "INSERT INTO Usuario VALUES ('$register->email', '$register->apelido', NULL, 1, '$register->senha', NULL, NULL, NULL)";
-    
+    $sql = "INSERT INTO Usuario(email, nome, apelido, telefone, tipo_conta, senha, cidade, bio, formacao) VALUES ('$register->email', '$register->nome', '$register->apelido', NULL, 1, '$register->senha', NULL, NULL, NULL)";
+
     try{
         if($conn->query($sql)){ // O objeto Mysqli devolverá um objeto do tipo Mysql_result
             header('Location: ../../login/login.php?msg=0');

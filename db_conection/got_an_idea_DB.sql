@@ -2,16 +2,20 @@ CREATE DATABASE gt_idea_DB;
 USE gt_idea_DB;
 
 CREATE TABLE Ideia (
-    id int PRIMARY KEY,
-    data_post date,
+    id int NOT NULL AUTO_INCREMENT,
+    data_post varchar(13),
     filtros int,
+    titulo varchar(100),
     imagem mediumblob,
     descricao varchar(100),
-    fk_Usuario_email varchar(100)
+    fk_Usuario_email varchar(100),
+    nome varchar(100),
+    PRIMARY KEY(id)
 );
 
 CREATE TABLE Usuario (
     email varchar(100) PRIMARY KEY,
+    nome varchar(100),
     apelido varchar(25) UNIQUE,
     telefone varchar(100),
     tipo_conta int,
@@ -22,12 +26,15 @@ CREATE TABLE Usuario (
 );
 
 CREATE TABLE Projeto (
-    ID int PRIMARY KEY,
-    data_post date,
-    descricao varchar(200),
+    id int NOT NULL AUTO_INCREMENT,
+    data_post varchar(13),
     filtros int,
+    titulo varchar(100),
     imagem mediumblob,
-    fk_Usuario_email varchar(100)
+    descricao varchar(100),
+    fk_Usuario_email varchar(100),
+    nome varchar(100),
+    PRIMARY KEY(id)
 );
 
 CREATE TABLE Trabalha_projeto (
