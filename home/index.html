@@ -10,6 +10,27 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+    <div id="modal-idea" class="modal">
+            <div class="centraliza">
+                <div class="modal-conteudo">
+                    <div class="modal-header">
+                        <h1>Cadastre sua ideia</h1>
+                        <span class="material-symbols-outlined">close</span>
+                    </div>
+                    <form class="modal-idea" action="">
+                    <div class="modal-idea-row">
+                        <input class="input-title" type="text" placeholder="Titulo...">
+                        <select id="meu-select" name="opcao">
+                            <option value="opcao1">Opção 1</option>
+                            <option value="opcao2">Opção 2</option>
+                            <option value="opcao3">Opção 3</option>
+                        </select>
+                    </div>
+                    <textarea placeholder="Descrição..." name="" id="" cols="30" rows="10"></textarea>
+                    </form>
+                </div>
+            </div>
+        </div>
     <header>
         <nav>
             <div class="img-wrapper">
@@ -33,7 +54,7 @@
                 </div>
                 <div class="cadastro-div">
                     <p>Você tem uma ideia?</p>
-                    <button>Cadastrar Ideia</button>
+                    <button id="abrir-modal">Cadastrar Ideia</button>
                 </div>
             </div>
 
@@ -61,10 +82,11 @@
                 </div>
                 <div class="infos-ideia">
                     <h1 class="titulo-ideia">Um time de futebol bom</h1>
-                    <p class="desc-ideia">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus magni maiores hic quibusdam iste quas et fugiat delectus, dicta voluptate nisi adipisci. Asperiores sunt necessitatibus illum, incidunt inventore aperiam suscipit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio veritatis dicta iusto a deleniti culpa optio animi ullam, amet repellendus distinctio sed ipsum nisi deserunt autem provident non quam officia! Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim accusamus quod exercitationem ut ea. Reiciendis perferendis beatae rerum explicabo fugit, dolorum itaque saepe excepturi in, facere reprehenderit magnam dolore? Consectetur.</p>
+                    <p class="desc-ideia">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus magni maiores hic quibusdam iste quas et fugiat delectus, dicta voluptate nisi adipisci. Asperiores sunt necessitatibus illum, incidunt inventore aperiam suscipit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio veritatis dicta iusto a deleniti culpa optio animi ullam, amet repellendus distinctio sed ipsum nisi deserunt autem provident non quam officia!</p>
                 </div>
             </div>    
 
+            
         </section>
 
         <section class="best-idea">
@@ -93,7 +115,12 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
         </section>
+
+        
+        
         <script src="js/script.js"></script>
+        <script src="js/modal-idea.js"></script>
     </main>  
+    
 </body>
 </html>

@@ -88,8 +88,7 @@ main {
 .div-main {
     background-color: #19181A;
     max-width: 760px;
-    min-width: 320px;
-    max-height: 100vh;
+    min-width: 400px;
     margin-left: 60px;
     display: flex;
     flex-direction: column;
@@ -103,9 +102,9 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 600px;
+    width: 45vw;
     min-width: 320px;
-    height: 32vh;
+    height: 30vh;
     margin-top: 15px;
     border-radius: 10px;
     align-self: center;
@@ -116,7 +115,7 @@ main {
     flex-direction: row;
     gap: 20px;
     width: 90%;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     border-bottom: rgb(5, 72, 242) 2px solid;
     justify-content: center;
     align-items: center;
@@ -130,7 +129,7 @@ main {
   }
   
 .select-div a.active {
-    border-image: linear-gradient(0.25turn, rgb(5, 72, 242), rgb(5, 131, 242));
+    border-image: linear-gradient(0.25turn, rgb(5, 72, 242), #0583f2);
     border-image-slice: 1;
 }
 
@@ -170,8 +169,11 @@ main {
 /* POSTS */
 /* USUARIO */
 .div-idea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 80%;
-    padding-left: 80px;
+    margin: auto;
     margin-top: 30px;
     margin-bottom: 20px;
     user-select: none;
@@ -226,10 +228,12 @@ main {
 .best-idea  {
     background: #212127;
     max-width: 300px;
+    min-width: none;
     padding: 30px;
+    margin: auto;
     margin: 50px 30px 30px 30px;
     border-radius: 20px;
-    height: 60vh;
+    height: auto;
 }
 
 .title-best {
@@ -246,6 +250,7 @@ main {
 }
 .melhor-ideia p {
     font-size: 15px;
+    width: 100%;
 }
 
 .div-flex-ideia {
@@ -260,3 +265,60 @@ main {
     min-width: 20px;
     height: 20px;
 }
+
+/* MODAL IDEIA */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh; 
+    overflow: hidden; 
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+  }
+
+ .modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+ }
+
+ .modal-header h1 {
+    font-size: 22px;
+    font-family: Talisso;
+    font-weight: 400;
+    
+ }
+  
+  .modal-conteudo {
+    background-color: #000;
+    margin: 15% auto; 
+    padding: 30px;
+    width: 45%; 
+    height: 60vh;
+    border-radius: 20px;
+    box-shadow: 0px 0px 22px -3px #0583f2;
+  }
+
+  .modal-idea-row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .input-title, select {
+    padding: 10px;
+    border-radius: 50px;
+    width: 17vw;
+    background-color: #343437;
+    border: none;
+  }
+
+  .modal-idea-row::placeholder {
+    color: white;
+  }
