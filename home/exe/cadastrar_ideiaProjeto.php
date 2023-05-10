@@ -28,7 +28,10 @@
             $today = date("d.m.y");
             echo "$today";
             $sql = "INSERT INTO ideia(data_post, filtros, titulo, imagem, descricao, fk_Usuario_email, nome) VALUES ('$today', '$this->opcao', '$this->titulo', NULL, '$this->descricao', '$this->usuario_post', '$this->nome')";
-            try{$this->conexao->query($sql);}
+            try{
+                $this->conexao->query($sql);
+                header("location: ../home.php");
+            }
             catch(Exception $e){
                 echo " Erro";
                 echo "</br>";

@@ -68,11 +68,6 @@
                             <p class="">Celular:</p>
                             <p class="">Cidade:</p>
                             <p class="">Formação:</p>
-                            <form action="../deletarProfile/deletarprofile_exe.php" method="post">
-                                <button id="botao-apagar-conta" name="botao-apagar-conta" type="submit">Apagar minha conta</button>
-
-                                <button id="botao-salvar-conta" name="botao-salvar-conta" type="submit">Salvar</button>
-                            </form>
                         </div>
 
                         <div class="sec-article-direita">
@@ -107,13 +102,18 @@
                 
                 
                 </article>
+                
             </div>
         </section>
-
     </main>
-
+    
     <footer>
-
+        <section class="section-buttons">
+            <form action="../deletarProfile/deletarprofile_exe.php" method="post">
+                  <button id="botao-apagar-conta" name="botao-apagar-conta" type="submit">Apagar minha conta</button>
+                  <button id="botao-salvar-conta" name="botao-salvar-conta" type="submit">Salvar</button>
+            </form>
+            </section>
     </footer>
     <script src="js/script.js"></script>
     <script src="../register/js/verificar_mensagem.js"></script>

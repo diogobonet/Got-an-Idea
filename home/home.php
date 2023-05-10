@@ -26,14 +26,20 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="modal" class="modal">
+
+    <!-- DIV INTEIRA DO MODAL -->
+    <!-- MODAL IDEIA -->
+    <div id="modal-ideia" class="modal">
+            <!-- MODAL -->
                 <div class="modal-conteudo">
                     <div class="modal-header">
                         <h1>Cadastre sua ideia</h1>
                         <span id="close_button_cadastro_ideia" class="material-symbols-outlined close_button" onclick="click">close</span>
                     </div>
                     
+                    <!-- FORMULARIO MODAL -->
                     <form class="modal-idea" action="exe/cadastrar_ideiaProjeto.php" method='POST'>
+
                         <div class="modal-idea-row">
                             <input name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
                             <select id="meu-select" name="input-select-opcao">
@@ -43,15 +49,47 @@
                                 <option value="opcao4">Engenharia</option>
                             </select>
                         </div>
+
                         <div class="div-textarea"><textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea></div>
+
                         <div class="div-save-button">
-                            
                             <input type='submit' value='Salvar' class="save-button">
-                            
                         </div>
                     </form>
                 </div>
         </div>
+
+        <!-- MODAL PROJETO -->
+        <div id="modal-projeto" class="modal">
+            <!-- MODAL -->
+                <div class="modal-conteudo">
+                    <div class="modal-header">
+                        <h1>Cadastre seu projeto</h1>
+                        <span id="close_button_cadastro_ideia" class="material-symbols-outlined close_button" onclick="click">close</span>
+                    </div>
+                    
+                    <!-- FORMULARIO MODAL -->
+                    <form class="modal-idea" action="exe/cadastrar_ideiaProjeto.php" method='POST'>
+
+                        <div class="modal-idea-row">
+                            <input name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
+                            <select id="meu-select" name="input-select-opcao">
+                                <option value="opcao1">Categoria</option>
+                                <option value="opcao2">Tecnologia</option>
+                                <option value="opcao3">Culinaria</option>
+                                <option value="opcao4">Engenharia</option>
+                            </select>
+                        </div>
+
+                        <div class="div-textarea"><textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea></div>
+
+                        <div class="div-save-button">
+                            <input type='submit' value='Salvar' class="save-button">
+                        </div>
+                    </form>
+                </div>
+        </div>
+
     <header>
         <nav>
             <div class="img-wrapper">
@@ -67,51 +105,46 @@
     </header>
 
     <main>
+        <!-- DIV DA PARTE DA CRIAÇÃO DA POSTAGEM E DAS POSTAGENS -->
         <section class="div-main">
-            <div class="div-postagem">
-                <div class="select-div">
-                    <a class="postagem-select active" id="select-ideia" href="#">Ideia</a>
-                    <a class="postagem-select" id="select-projeto" href="#">Projeto</a>
-                </div>
-                <div class="cadastro-div">
-                    <p>Você tem uma ideia?</p>
-                    <button id="abrir-modal">Cadastrar Ideia</button>
-                </div>
+
+        <div class="div-postagem">
+            <div class="select-div">
+                <a class="postagem-select active" id="select-ideia" href="#">Ideia</a>
+                <a class="postagem-select" id="select-projeto" href="#">Projeto</a>
             </div>
-            <?php foreach($ideias as $ideia) : ?>
-                <div class="div-idea">
-                    <div class="infos-user">
+
+            <div class="cadastro-div">
+                <p>Você tem uma ideia?</p>
+                <button id="btn-cadastrar-ideia">Cadastrar ideia</button>
+            </div>
+
+            <div class="cadastro-div" style="display:none;">
+                <p>Você tem um projeto?</p>
+                <button id="btn-cadastrar-projeto">Cadastrar projeto</button>
+            </div>
+        </div>
+
+        <?php foreach ($ideias as $ideia) { ?>
+            <div class="div-idea">
+                <div class="infos-user">
+                    <div class="infos-user-row">
                         <div class="img-user-div"><img class="img-user" src="img/messi.jpeg" alt="Foto de Perfil"></div>
                         <div class="infos-user-names">
                             <h1 class="nome-user"><?php echo $ideia['nome']; ?></h1>
                             <h2 class="persona-user">Idealizador</h2>
                         </div>
                     </div>
-                    <div class="infos-ideia">
-                        <h1 class="titulo-ideia"><?=$ideia['titulo']?></h1>
-                        <p class="desc-ideia"><?=$ideia['descricao']?></p>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-
-
-            <div class="div-idea">
-                <div class="infos-user">
-                    <div class="img-user-div"><img class="img-user" src="img/messi.jpeg" alt="Foto de Perfil"></div>
-                    <div class="infos-user-names">
-                        <h1 class="nome-user">Messi</h1>
-                        <h2 class="persona-user">Idealizador</h2>
+                    <div class="botao-editar-ideia">
+                        <button>Ver Detalhes</button>
                     </div>
                 </div>
                 <div class="infos-ideia">
-                    <h1 class="titulo-ideia">Um time de futebol bom</h1>
-                    <p class="desc-ideia">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus magni maiores hic quibusdam iste quas et fugiat delectus, dicta voluptate nisi adipisci. Asperiores sunt necessitatibus illum, incidunt inventore aperiam suscipit! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio veritatis dicta iusto a deleniti culpa optio animi ullam, amet repellendus distinctio sed ipsum nisi deserunt autem provident non quam officia!</p>
+                    <h1 class="titulo-ideia"><?php echo $ideia['titulo']; ?></h1>
+                    <p class="desc-ideia"><?php echo $ideia['descricao']; ?></p>
                 </div>
-
-                <a href="../edit-page/edit_Page.php">EAEE</a>
             </div>    
-
-            
+        <?php } ?>
         </section>
 
         <section class="best-idea">
@@ -144,7 +177,6 @@
         
         
         <script src="js/script.js"></script>
-        <script src="js/modal-idea.js"></script>
     </main>  
     
 </body>

@@ -1,28 +1,62 @@
-const selectIdeia = document.getElementById('select-ideia');
-const selectProjeto = document.getElementById('select-projeto');
+// ABRIR MODAL
 
-// adiciona o evento de clique em ambos os links
-selectIdeia.addEventListener('click', selecionarIdeia);
-selectProjeto.addEventListener('click', selecionarProjeto);
+const btnCadastrarIdeia = document.getElementById("btn-cadastrar-ideia"); // Pega o botão de cadastrar ideia
+const modalIdeia = document.getElementById("modal-ideia"); // Pega o modal da ideia
 
-function selecionarIdeia() {
-  // remove a classe 'active' de 'select-projeto'
-  selectProjeto.classList.remove('active');
-  // adiciona a classe 'active' em 'select-ideia'
-  selectIdeia.classList.add('active');
-  // atualiza o texto do parágrafo
-  document.querySelector('.cadastro-div p').textContent = 'Você tem uma ideia?';
-  // atualiza o texto do botão
-  document.querySelector('.cadastro-div button').textContent = 'Cadastrar Ideia';
-}
+// Adiciona um evento de clique ao botão de cadastrar ideia
+btnCadastrarIdeia.addEventListener("click", function() {
+  // Exibe o modal da ideia
+  modalIdeia.style.display = "block";
+});
 
-function selecionarProjeto() {
-    // remove a classe 'active' de 'select-ideia'
-    selectIdeia.classList.remove('active');
-    // adiciona a classe 'active' em 'select-projeto'
-    selectProjeto.classList.add('active');
-    // atualiza o texto do parágrafo
-    document.querySelector('.cadastro-div p').textContent = 'Você tem um projeto?';
-    // atualiza o texto do botão
-    document.querySelector('.cadastro-div button').textContent = 'Cadastrar Projeto';
-  }
+
+// Pega o botão de cadastrar projeto
+const btnCadastrarProjeto = document.getElementById("btn-cadastrar-projeto");
+
+// Pega o modal do projeto
+const modalProjeto = document.getElementById("modal-projeto");
+
+// Adiciona um evento de clique ao botão de cadastrar projeto
+btnCadastrarProjeto.addEventListener("click", function() {
+  // Exibe o modal do projeto
+  modalProjeto.style.display = "block";
+});
+
+// Pega o botão de fechar o modal da ideia
+const btnFecharIdeia = modalIdeia.querySelector(".close_button");
+
+// Adiciona um evento de clique ao botão de fechar o modal da ideia
+btnFecharIdeia.addEventListener("click", function() {
+  // Esconde o modal da ideia
+  modalIdeia.style.display = "none";
+});
+
+
+// Pega o botão de fechar o modal do projeto
+const btnFecharProjeto = modalProjeto.querySelector(".close_button");
+
+// Adiciona um evento de clique ao botão de fechar o modal do projeto
+btnFecharProjeto.addEventListener("click", function() {
+  // Esconde o modal do projeto
+  modalProjeto.style.display = "none";
+});
+
+// SELECIONAR ENTRE PROJETO E IDEIA NO HEADER
+const ideiaDiv = document.querySelector('#select-ideia');
+const projetoDiv = document.querySelector('#select-projeto');
+const cadastroIdeiaDiv = document.querySelector('.cadastro-div');
+const cadastroProjetoDiv = document.querySelectorAll('.cadastro-div')[1];
+
+ideiaDiv.addEventListener('click', function() {
+  cadastroIdeiaDiv.style.display = 'flex';
+  cadastroProjetoDiv.style.display = 'none';
+  ideiaDiv.classList.add('active');
+  projetoDiv.classList.remove('active');
+});
+
+projetoDiv.addEventListener('click', function() {
+  cadastroProjetoDiv.style.display = 'flex';
+  cadastroIdeiaDiv.style.display = 'none';
+  projetoDiv.classList.add('active');
+  ideiaDiv.classList.remove('active');
+});
