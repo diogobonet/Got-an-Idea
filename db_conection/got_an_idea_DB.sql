@@ -4,7 +4,7 @@ USE gt_idea_DB;
 CREATE TABLE Ideia (
     id int NOT NULL AUTO_INCREMENT,
     data_post varchar(13),
-    filtros int,
+    filtros varchar(50),
     titulo varchar(100),
     imagem mediumblob,
     descricao varchar(100),
@@ -18,6 +18,7 @@ CREATE TABLE Usuario (
     nome varchar(100),
     apelido varchar(25) UNIQUE,
     telefone varchar(100),
+    imagem mediumblob,
     tipo_conta int,
     senha varchar(32),
     cidade varchar(50),
@@ -28,7 +29,7 @@ CREATE TABLE Usuario (
 CREATE TABLE Projeto (
     id int NOT NULL AUTO_INCREMENT,
     data_post varchar(13),
-    filtros int,
+    filtros varchar(50),
     titulo varchar(100),
     imagem mediumblob,
     descricao varchar(100),

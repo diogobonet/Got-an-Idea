@@ -3,6 +3,7 @@
     session_start();
 
     $email = $_SESSION['email'];
+    $imagem = $_SESSION['imagem'];
 
     $sql = "SELECT * FROM Ideia";
     try{
@@ -37,10 +38,10 @@
                         <div class="modal-idea-row">
                             <input name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
                             <select id="meu-select" name="input-select-opcao">
-                                <option value="opcao1">Categoria</option>
-                                <option value="opcao2">Tecnologia</option>
-                                <option value="opcao3">Culinaria</option>
-                                <option value="opcao4">Engenharia</option>
+                                <option value="Categoria">Categoria</option>
+                                <option value="Tecnologia">Tecnologia</option>
+                                <option value="Culinaria">Culinaria</option>
+                                <option value="Engenharia">Engenharia</option>
                             </select>
                         </div>
                         <div class="div-textarea"><textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea></div>
@@ -62,7 +63,7 @@
                 <a href="">Conectado</a>
                 <a href="">Ranking</a>
                 <div class="div-userimg">
-                <img class="user-img" src="img/messi.jpeg" alt="Imagem do usuário">
+                <?php echo "<img class='user-img' src='data:image;base64,".base64_encode($imagem)."' alt= 'Foto do usuário'>"; ?>
         </nav>
     </header>
 
