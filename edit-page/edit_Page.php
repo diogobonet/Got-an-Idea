@@ -12,8 +12,62 @@
 <body>
     <?php
         session_start();
-        $email = $_SESSION['email'];
+        // $email = $_SESSION['email'];
+        $email = "diogosobezak@gmail.com";
     ?>
+
+    <section id="modal-alterarnome" class="edit-modal-main">
+        <div class="modal-changes-infos" id="change-nome">
+            <div class="modal-header-row">
+                <h1>Alterar nome:</h1>
+                <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
+            </div>
+            <form class="modal-form" action="">
+                <input type="text" placeholder="Digite seu nome: ">
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="modal-alterartelefone" class="edit-modal-main">
+        <div class="modal-changes-infos" id="change-nome">
+            <div class="modal-header-row">
+                <h1>Alterar telefone:</h1>
+                <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
+            </div>
+            <form class="modal-form" action="">
+                <input id="input-telefone" type="tel" placeholder="Digite seu telefone: ">
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="modal-alterarcidade" class="edit-modal-main">
+        <div class="modal-changes-infos" id="change-nome">
+            <div class="modal-header-row">
+                <h1>Alterar cidade:</h1>
+                <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
+            </div>
+            <form class="modal-form" action="">
+                <input type="text" placeholder="Digite sua cidade: ">
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="modal-alterarformacao" class="edit-modal-main">
+        <div class="modal-changes-infos" id="change-nome">
+            <div class="modal-header-row">
+                <h1>Alterar formação:</h1>
+                <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
+            </div>
+            <form class="modal-form" action="">
+                <input type="text" placeholder="Digite sua formação: ">
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </section>
+
     <header>
         <div class="img-wrapper">
             <img class="logo-header" src="img/logo.png" alt="Logo do Header">
@@ -28,6 +82,7 @@
     </header>
 
     <main>
+  
         <section class="sec-esquerda">     
                 <div class="centerimg">
                     <div class="div-profileimage">
@@ -47,9 +102,10 @@
             <div class="div-direitamain">
                 <div class="main-infos">
                     <h1>Diogo Bonet</h1>
-                    <button class="save-profile"><span class="material-symbols-outlined">
+                    <button id="botao-alterarnome" class="save-profile"><span class="material-symbols-outlined">
                         edit
                         </span>Alterar nome</button>
+                    
                 </div>
                 <h2 class="select-user">Colaborador(a)</h2>
             </div>
@@ -72,14 +128,14 @@
 
                         <div class="sec-article-direita">
                             <p class="info-user">gotanidea@contato.com</p>
-                            <p class="info-user">(41)98888-8888  <button class="set-button"><span class="material-symbols-outlined">edit</span></button></p> 
-                            <p class="info-user"><button class="non-button">
+                            <p class="info-user">(41)98888-8888  <button id="botao-alterartelefone" class="set-button" ><span class="material-symbols-outlined">edit</span></button></p> 
+                            <p class="info-user"><button id="botao-alterarcidade" class="non-button">
                                 <span class="material-symbols-outlined">edit</span> Adicione uma informação
                             </button></p>
                             <p class="info-user">
-                                    <button class="non-button">
-                                        <span class="material-symbols-outlined">edit</span> Adicione uma informação
-                                    </button>
+                                <button id="botao-alterarformacao" class="non-button">
+                                    <span class="material-symbols-outlined">edit</span> Adicione uma informação
+                                </button>
                             </p>
                         </div>
                     </section>

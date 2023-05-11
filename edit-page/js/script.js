@@ -1,3 +1,4 @@
+// =================== Transitar entre Informações e Ideias ====================
 tab1_infos = document.querySelector('#tab1');
 tab2_ideas = document.querySelector('#tab2');
 
@@ -15,7 +16,7 @@ function open_ideas(){
     tab1_infos.classList.add('tab_closed'); // adiciona a classe fechada (display:none)
 }
 
-// Limite de Caracteres
+// ======================= Limite de Caracteres =======================
 const elementos = document.querySelectorAll('.idea-desc');
 
 elementos.forEach(elemento => {
@@ -27,7 +28,7 @@ elementos.forEach(elemento => {
   }
 });
 
-// Preview Foto
+// ======================== Preview Foto ===============================
 const image = document.querySelector(".imagem-perfil")
 const input = document.querySelector(".input-imagem")
 
@@ -50,4 +51,67 @@ menuItems.forEach((item, index) => {
     // Adiciona a classe "selected" ao item do menu selecionado
     item.classList.add('selected');
   });
+});
+
+// ============= MODAL VIR FECHADO ============
+let botaoAlterarNome = document.getElementById("botao-alterarnome");
+let modalAlterarNome = document.getElementById("modal-alterarnome");
+var botaoFecharModal = modalAlterarNome.querySelector("#fechar-modal");
+
+botaoAlterarNome.addEventListener("click", function() {
+    modalAlterarNome.style.display = "block";
+});
+
+botaoFecharModal.addEventListener("click", function() {
+    modalAlterarNome.style.display = "none";
+});
+
+let botaoAlterarTelefone = document.getElementById("botao-alterartelefone");
+let modalAlterarTelefone = document.getElementById("modal-alterartelefone");
+var botaoFecharModal = modalAlterarTelefone.querySelector("#fechar-modal");
+
+botaoAlterarTelefone.addEventListener("click", function() {
+    modalAlterarTelefone.style.display = "block";
+});
+
+botaoFecharModal.addEventListener("click", function() {
+    modalAlterarTelefone.style.display = "none";
+});
+
+let botaoAlterarCidade = document.getElementById("botao-alterarcidade");
+let modalAlterarCidade = document.getElementById("modal-alterarcidade");
+var botaoFecharModal = modalAlterarCidade.querySelector("#fechar-modal");
+
+botaoAlterarCidade.addEventListener("click", function() {
+    modalAlterarCidade.style.display = "block";
+});
+
+botaoFecharModal.addEventListener("click", function() {
+    modalAlterarCidade.style.display = "none";
+});
+
+let botaoAlterarFormacao = document.getElementById("botao-alterarformacao");
+let modalAlterarFormacao = document.getElementById("modal-alterarformacao");
+var botaoFecharModal = modalAlterarFormacao.querySelector("#fechar-modal");
+
+botaoAlterarFormacao.addEventListener("click", function() {
+    modalAlterarFormacao.style.display = "block";
+});
+
+botaoFecharModal.addEventListener("click", function() {
+    modalAlterarFormacao.style.display = "none";
+});
+
+// Regex Telefone
+const telefoneInput = document.getElementById('input-telefone');
+
+telefoneInput.addEventListener('input', function () {
+  const cleanedValue = this.value.replace(/[^\d]/g, '');
+  const match = cleanedValue.match(/^(\d{2})(\d{4,5})(\d{4})$/);
+
+  if (match) {
+    this.value = `(${match[1]}) ${match[2]}-${match[3]}`;
+  } else {
+    this.value = cleanedValue.slice(0, 15);
+  }
 });
