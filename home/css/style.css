@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* font-family: 'Poppins', sans-serif; */
 
-<<<<<<< HEAD
 @font-face {
     font-family: Talisso;
     src: url(../fonts/tussilago_rg.otf);} 
     
-=======
->>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
 *{
     margin: 0; padding:0;
 }
@@ -54,10 +51,7 @@ nav a:hover {
 }
 
 nav input {
-<<<<<<< HEAD
 
-=======
->>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
     background: none;
     padding: 13px;
     width: 300px;
@@ -83,7 +77,6 @@ nav input {
     height: auto;
     border: 2px (110, 109, 109) solid;
     border-radius: 50px;
-<<<<<<< HEAD
 }
 
 /* MAIN */
@@ -437,6 +430,3 @@ main {
     cursor: pointer;
     margin: auto;
   }
-=======
-}
->>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
