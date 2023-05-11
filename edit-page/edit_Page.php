@@ -22,8 +22,8 @@
                 <h1>Alterar nome:</h1>
                 <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
             </div>
-            <form class="modal-form" action="">
-                <input type="text" placeholder="Digite seu nome: ">
+            <form class="modal-form" action="exe/edit_Page_exe.php" method="POST">
+                <input type="text" name="alterar-nome" placeholder="Digite seu nome: ">
                 <button type="submit">Salvar</button>
             </form>
         </div>
@@ -35,8 +35,8 @@
                 <h1>Alterar telefone:</h1>
                 <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
             </div>
-            <form class="modal-form" action="">
-                <input id="input-telefone" type="tel" placeholder="Digite seu telefone: ">
+            <form class="modal-form" action="exe/edit_Page_exe.php" method="POST">
+                <input id="input-telefone" type="tel" name="alterar-telefone" placeholder="Digite seu telefone: ">
                 <button type="submit">Salvar</button>
             </form>
         </div>
@@ -48,8 +48,8 @@
                 <h1>Alterar cidade:</h1>
                 <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
             </div>
-            <form class="modal-form" action="">
-                <input type="text" placeholder="Digite sua cidade: ">
+            <form class="modal-form" action="exe/edit_Page_exe.php" method="POST">
+                <input type="text" name="alterar-cidade" placeholder="Digite sua cidade: ">
                 <button type="submit">Salvar</button>
             </form>
         </div>
@@ -61,8 +61,8 @@
                 <h1>Alterar formação:</h1>
                 <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
             </div>
-            <form class="modal-form" action="">
-                <input type="text" placeholder="Digite sua formação: ">
+            <form class="modal-form" action="exe/edit_Page_exe.php" method="POST">
+                <input type="text" name="alterar-formacao" placeholder="Digite sua formação: ">
                 <button type="submit">Salvar</button>
             </form>
         </div>
