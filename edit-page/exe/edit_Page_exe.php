@@ -38,9 +38,9 @@
             header ("Location: ../edit_Page.php?msg=sucesso");
             break;
         case 4: //FORMAÇÃO
-            $cidade = $_POST['alterar-cidade'];
+            $formacao = $_POST['alterar-formacao'];
 
-            $sql = "UPDATE usuario SET cidade = '$cidade' WHERE email = '$email'";
+            $sql = "UPDATE usuario SET formacao = '$formacao' WHERE email = '$email'";
             $result = $conn->query($sql);
 
             header ("Location: ../edit_Page.php?msg=sucesso");
