@@ -53,53 +53,37 @@ menuItems.forEach((item, index) => {
   });
 });
 
-// ============= MODAL VIR FECHADO ============
+// ============= ABRIR E FECHAR MODAL ============
+function abrirModal(modalId) {
+  let modal = document.getElementById(modalId);
+  let botaoFecharModal = modal.querySelector(".button-close");
+
+  modal.style.display = "block";
+
+  botaoFecharModal.addEventListener("click", function() {
+      modal.style.display = "none";
+  });
+}
+
 let botaoAlterarNome = document.getElementById("botao-alterarnome");
-let modalAlterarNome = document.getElementById("modal-alterarnome");
-var botaoFecharModal = modalAlterarNome.querySelector("#fechar-modal");
+let botaoAlterarTelefone = document.getElementById("botao-alterartelefone");
+let botaoAlterarCidade = document.getElementById("botao-alterarcidade");
+let botaoAlterarFormacao = document.getElementById("botao-alterarformacao");
 
 botaoAlterarNome.addEventListener("click", function() {
-    modalAlterarNome.style.display = "block";
+  abrirModal("modal-alterarnome");
 });
-
-botaoFecharModal.addEventListener("click", function() {
-    modalAlterarNome.style.display = "none";
-});
-
-let botaoAlterarTelefone = document.getElementById("botao-alterartelefone");
-let modalAlterarTelefone = document.getElementById("modal-alterartelefone");
-var botaoFecharModal = modalAlterarTelefone.querySelector("#fechar-modal");
 
 botaoAlterarTelefone.addEventListener("click", function() {
-    modalAlterarTelefone.style.display = "block";
+  abrirModal("modal-alterartelefone");
 });
-
-botaoFecharModal.addEventListener("click", function() {
-    modalAlterarTelefone.style.display = "none";
-});
-
-let botaoAlterarCidade = document.getElementById("botao-alterarcidade");
-let modalAlterarCidade = document.getElementById("modal-alterarcidade");
-var botaoFecharModal = modalAlterarCidade.querySelector("#fechar-modal");
 
 botaoAlterarCidade.addEventListener("click", function() {
-    modalAlterarCidade.style.display = "block";
+  abrirModal("modal-alterarcidade");
 });
-
-botaoFecharModal.addEventListener("click", function() {
-    modalAlterarCidade.style.display = "none";
-});
-
-let botaoAlterarFormacao = document.getElementById("botao-alterarformacao");
-let modalAlterarFormacao = document.getElementById("modal-alterarformacao");
-var botaoFecharModal = modalAlterarFormacao.querySelector("#fechar-modal");
 
 botaoAlterarFormacao.addEventListener("click", function() {
-    modalAlterarFormacao.style.display = "block";
-});
-
-botaoFecharModal.addEventListener("click", function() {
-    modalAlterarFormacao.style.display = "none";
+  abrirModal("modal-alterarformacao");
 });
 
 // Regex Telefone
