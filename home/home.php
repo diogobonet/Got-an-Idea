@@ -144,8 +144,28 @@
                     <h1 class="titulo-ideia"><?php echo $ideia['titulo']; ?></h1>
                     <p class="desc-ideia"><?php echo $ideia['descricao']; ?></p>
                 </div>
-            </div>    
+            </div>
+            
         <?php } ?>
+
+            <div class="div-idea">
+                <div class="infos-user">
+                    <div class="infos-user-row">
+                        <div class="img-user-div"><img class="img-user" src="img/messi.jpeg" alt="Foto de Perfil"></div>
+                        <div class="infos-user-names">
+                            <h1 class="nome-user">Messi</h1>
+                            <h2 class="persona-user">Idealizador</h2>
+                        </div>
+                    </div>
+                    <div class="botao-editar-ideia">
+                        <button>Ver Detalhes</button>
+                    </div>
+                </div>
+                <div class="infos-ideia">
+                    <h1 class="titulo-ideia">Time Bom</h1>
+                    <p class="desc-ideia">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ut distinctio a dignissimos corporis excepturi eum, quisquam cupiditate ipsam vel fugiat, cumque quibusdam dolores, quo eius? Ipsa architecto incidunt sint? Lorem</p>
+                </div>
+            </div>   
         </section>
 
         <section class="best-idea">

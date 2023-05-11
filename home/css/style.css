@@ -92,6 +92,8 @@ main {
     margin-left: 60px;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 /* POSTAGEM */
