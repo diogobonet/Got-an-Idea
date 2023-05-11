@@ -17,7 +17,9 @@
 
          $_SESSION['email'] = $row['email'];
          $_SESSION['nome'] = $row['nome'];
-         $_SESSION['imagem'] = $row['imagem'];
+         $_SESSION['imagem'] = base64_encode($row['imagem']);
+         // Transformar mediumblob em string
+
 
          header('Location: ../../home/home.php');
 

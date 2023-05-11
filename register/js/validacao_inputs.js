@@ -11,7 +11,7 @@ function validar_inputs(){
     let senha = document.querySelector('.info-senha');
     let confirmar = document.querySelector('.info-confirmar');
     
-    const regex_nome = /^[A-Z]{1}[a-z]{1,24}$/;
+    const regex_nome = /^(\s?[A-Z]{1}[a-z]{1,24}(\sde|\sdi)?){1,4}$/;
     const regex_senha = /^(?=.*[0-9])(?=.*[A-Z])(?=.*[\!\@\#\$\%\¨\&\*\(\)\<\>\"\']).{8,16}$/;
     const regex_email = /^\w{1,}\@\w{1,}\.\w{1,}(\.\w{1,})?$/
     const regex_apelido = /^[\w\_]{3,25}$/

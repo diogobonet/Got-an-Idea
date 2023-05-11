@@ -29,10 +29,6 @@
             header('Location: ../../login/login.php?msg=0');
         }
     } catch(Exception $e){
-        echo "<h1 style='color:red;'>Erro: " . $e->getMessage() . "</h1>";
-        echo "<h2 style='color:green;'>Código do erro: " . $e->getCode() . "</h2>";
-        echo "<h2 style='color:blue;'>Linha do erro: " . $e->getLine() . "</h2>";
-        echo "<h2 style='color:blue;'>Traço do erro: " . $e->getTraceAsString() . "</h2>";
         if($e->getCode() == 1062){
             if( str_contains( $e->getMessage(), 'usuario.PRIMARY' ) ){
                 header('Location: ../registro.php?erro=0'); // Se o erro se caracterizar por tentar usar a mesma Primary key, retorna para a página registro o erro "0"
