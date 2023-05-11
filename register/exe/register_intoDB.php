@@ -3,19 +3,28 @@
 
     class Registro{
         public $mysql_conection;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
         public $email;
         public $nome;
         public $sobrenome;
         public $apelido;
         public $senha;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
         public function __construct(string $email_param, string $nome_param, string $sobrenome_param, string $apelido_param, string $senha_param)
         {
             $this->email = $email_param;
             $this->nome = $nome_param." ".$sobrenome_param;
             $this->apelido = $apelido_param;
             $this->senha = $senha_param;
+<<<<<<< HEAD
             
         }
     }
@@ -24,6 +33,16 @@
 
     $sql = "INSERT INTO Usuario(email, nome, apelido, telefone, imagem, tipo_conta, senha, cidade, bio, formacao) VALUES ('$register->email', '$register->nome', '$register->apelido', NULL, NULL, 1, '$register->senha', NULL, NULL, NULL)";
 
+=======
+        }
+    }
+    
+    $register = new Registro($_POST['email_input'], $_POST['nome_input'], $_POST['sobrenome_input'], $_POST['apelido_input'], md5($_POST['senha_input']));
+    
+
+    $sql = "INSERT INTO Usuario VALUES ('$register->email', '$register->apelido', NULL, 1, '$register->senha', NULL, NULL, NULL)";
+    
+>>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
     try{
         if($conn->query($sql)){ // O objeto Mysqli devolverá um objeto do tipo Mysql_result
             header('Location: ../../login/login.php?msg=0');

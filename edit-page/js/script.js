@@ -28,7 +28,11 @@ elementos.forEach(elemento => {
   }
 });
 
+<<<<<<< HEAD
 // ======================== Preview Foto ===============================
+=======
+// Preview Foto
+>>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
 const image = document.querySelector(".imagem-perfil")
 const input = document.querySelector(".input-imagem")
 
@@ -51,6 +55,7 @@ menuItems.forEach((item, index) => {
     // Adiciona a classe "selected" ao item do menu selecionado
     item.classList.add('selected');
   });
+<<<<<<< HEAD
 });
 
 // ============= ABRIR E FECHAR MODAL ============
@@ -98,4 +103,6 @@ telefoneInput.addEventListener('input', function () {
   } else {
     this.value = cleanedValue.slice(0, 15);
   }
+=======
+>>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
 });

@@ -20,6 +20,7 @@ body {
     color: white;
     font-size: 16px;
 }
+<<<<<<< HEAD
 
 /* Notificacao */
 #fundo_para_notificacao{
@@ -80,6 +81,8 @@ body {
   }
 }
 
+=======
+>>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
 /* estilos padrão para o header */
 .header-main {
     display: flex;

@@ -30,7 +30,8 @@
         <section class="sec-esquerda">     
                 <div class="centerimg">
                     <div class="div-profileimage">
-                        <img src="img/messi.jpeg" alt="Imagem de Perfil">
+                        <img class="imagem-perfil" src="img/messi.jpeg" alt="Imagem de Perfil">
+                        <input type="file" class="input-imagem" name="arquivo">
                     </div>
                 </div>
 
@@ -47,7 +48,7 @@
                     <h1>Diogo Bonet</h1>
                     <button class="save-profile"><span class="material-symbols-outlined">bookmark</span>Salvar perfil</button>
                 </div>
-                <h2>Colaborador(a)</h2>
+                <h2 class="select-user">Colaborador(a)</h2>
             </div>
 
             <div class="buttons-user">
@@ -65,19 +66,31 @@
                 
                     <section id="tab1" class="sec-article active tab_opened">
                         <div class="sec-article-esquerda">
-                            <p class="">Celular:</p>
                             <p class="">Email:</p>
+                            <p class="">Celular:</p>
                             <p class="">Cidade:</p>
-                            <p class="">Ocupação:</p>
-                            <p class="">Frase Favorita: </p>
+                            <p class="">Formação:</p>
                         </div>
 
                         <div class="sec-article-direita">
+<<<<<<< HEAD:profilePage/index.php
                             <p class="info-user">(41)98857-8331</p>
                             <p class="info-user">gotanidea@contato.com</p>
                             <p class="info-user">Curitiba</p>
                             <p class="info-user">Desempregado 😒</p>
                             <p class="info-user">Olha a pedra!</p>
+=======
+                            <p class="info-user">gotanidea@contato.com</p>
+                            <p class="info-user">(41)98888-8888  <button class="set-button"><span class="material-symbols-outlined">edit</span></button></p> 
+                            <p class="info-user"><button class="non-button">
+                                <span class="material-symbols-outlined">edit</span> Adicione uma informação
+                            </button></p>
+                            <p class="info-user">
+                                    <button class="non-button">
+                                        <span class="material-symbols-outlined">edit</span> Adicione uma informação
+                                    </button>
+                            </p>
+>>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f:edit-page/index.html
                         </div>
                     </section>
                 
@@ -90,7 +103,12 @@
 
                         <div>
                             <h1>Olha a pedra</h1>
+<<<<<<< HEAD:profilePage/index.php
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos dicta nisi ipsum ex consectetur reprehenderit fuga, nostrum, qui sapiente tenetur quod omnis modi vitae tempora magnam asperiores dolore illum! Quo?</p>
+=======
+                            <p class="idea-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos dicta nisi ipsum ex consectetur reprehenderit fuga, nostrum, qui sapiente tenetur quod omnis modi vitae tempora magnam asperiores dolore illum! Quo?</p>
+
+>>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f:edit-page/index.html
                             <button>Detalhes</button>
                         </div>
 
