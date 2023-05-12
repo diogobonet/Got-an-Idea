@@ -18,6 +18,7 @@
          $_SESSION['email'] = $row['email'];
          $_SESSION['nome'] = $row['nome'];
          $_SESSION['imagem'] = base64_encode($row['imagem']);
+         $_SESSION['logado'] = true; // Caso o usuário já tenha realizado login.
          // Transformar mediumblob em string
 
 
