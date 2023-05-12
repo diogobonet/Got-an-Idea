@@ -54,48 +54,24 @@ menuItems.forEach((item, index) => {
 });
 
 // ============= ABRIR E FECHAR MODAL ============
-function abrirModal(modalId) {
-  let modal = document.getElementById(modalId);
-  let botaoFecharModal = modal.querySelector(".button-close");
-
-  modal.style.display = "block";
-
-  botaoFecharModal.addEventListener("click", function() {
-      modal.style.display = "none";
-  });
+function configurarModal(botao, modal) {
+  const botaoFechar = modal.querySelector("#fechar-modal");
+  botao.addEventListener("click", () => modal.style.display = "block");
+  botaoFechar.addEventListener("click", () => modal.style.display = "none");
 }
 
-let botaoAlterarNome = document.getElementById("botao-alterarnome");
-let botaoAlterarTelefone = document.getElementById("botao-alterartelefone");
-let botaoAlterarCidade = document.getElementById("botao-alterarcidade");
-let botaoAlterarFormacao = document.getElementById("botao-alterarformacao");
+const botaoAlterarNome = document.getElementById("botao-alterarnome");
+const modalAlterarNome = document.getElementById("modal-alterarnome");
+configurarModal(botaoAlterarNome, modalAlterarNome);
 
-botaoAlterarNome.addEventListener("click", function() {
-  abrirModal("modal-alterarnome");
-});
+const botaoAlterarTelefone = document.getElementById("botao-alterartelefone");
+const modalAlterarTelefone = document.getElementById("modal-alterartelefone");
+configurarModal(botaoAlterarTelefone, modalAlterarTelefone);
 
-botaoAlterarTelefone.addEventListener("click", function() {
-  abrirModal("modal-alterartelefone");
-});
+const botaoAlterarCidade = document.getElementById("botao-alterarcidade");
+const modalAlterarCidade = document.getElementById("modal-alterarcidade");
+configurarModal(botaoAlterarCidade, modalAlterarCidade);
 
-botaoAlterarCidade.addEventListener("click", function() {
-  abrirModal("modal-alterarcidade");
-});
-
-botaoAlterarFormacao.addEventListener("click", function() {
-  abrirModal("modal-alterarformacao");
-});
-
-// Regex Telefone
-const telefoneInput = document.getElementById('input-telefone');
-
-telefoneInput.addEventListener('input', function () {
-  const cleanedValue = this.value.replace(/[^\d]/g, '');
-  const match = cleanedValue.match(/^(\d{2})(\d{4,5})(\d{4})$/);
-
-  if (match) {
-    this.value = `(${match[1]}) ${match[2]}-${match[3]}`;
-  } else {
-    this.value = cleanedValue.slice(0, 15);
-  }
-});
+const botaoAlterarFormacao = document.getElementById("botao-alterarformacao");
+const modalAlterarFormacao = document.getElementById("modal-alterarformacao");
+configurarModal(botaoAlterarFormacao, modalAlterarFormacao);
