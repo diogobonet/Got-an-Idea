@@ -1,5 +1,5 @@
 # 👨‍💻 Protótipos do Sistema
-Realizado por Nicolas Peralta
+Realizado por @nicolasperalta0
 
 ## Logo 😎
 ---
