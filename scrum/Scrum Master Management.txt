@@ -1,0 +1,64 @@
+PBIS -
++ PREENCHER FORMULÁRIO DE POSTAGEMS
+	- precisa ser feito a checklist (finalizado)
+	- precisa começar
+
++ GERENCIAR CONTEÚDO
+	- precisa ser feito a checklist (finalizado)
+	- precisa começar
+
++ REALIZAR CADASTRO (FINALIZADO)
+
+
+
+PBIS NÃO LISTADOS -
+	+ LOGIN (foi feito a parte visual)
+	+ EDITAR DADOS CADASTRAIS DE USUÁRIO (FINALIZADO)
+	+ CHAT (foi feito a parte visual)
+
+
+
+COISAS REALIZADAS -
+	+ MODELOS GERAIS
+
+
+
+DESIGN - 
+	+ LOGO
+	+ IDENTIDADE VISUAL
+	+ LANDING PAGE
+	+ HOME PAGE
+	+ PAGINA DE PERFIL
+	+ APRESENTAÇÃO DO GRUPO
+	
+
+
+SCRUM - 
+	+ PRECISA SER ATUALIZADO O CANVAS (finalizado)
+	+ PRECISA SER FEITO ULTIMOS CRITÉRIOS DE ACEITE (finalizado)
+	+ PRECISA SER CRIADO AS CHECKLISTS (finalizado)
+
+arrumar o documento e especificação
+preencher templates
+histórias de usuário precisam ser corretamente seguidas
+segundo criterio de aceite triste
+comitar mudanças, templates
+
+
+
+ideia e participação no canvas 
+- tres positivos e negativos 
+- interpretação da técnica
+
+apresentação - mostrar funcionamento com base na user story
+
+
+
+
+
+
+
+
+
+
+	
