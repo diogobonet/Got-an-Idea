@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Got an Idea</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="chat-container" id="chat-container">
+		<div class="header">
+			<img src="gai.png" alt="Logo">
+			<h1>Mensagens</h1>
+		</div>
+		<div class="chat-box" id="chat-box">
+			<div class="chat-header">  
+				<img src="gb.png" alt="Avatar">
+				<h2>Gabriel Mocellin</h2>
+			</div>
+			<div  class="chat-messages" id="chat-messages">
+				<div class="message from-me">
+				</div>
+			</div>
+		</div>
+		<div class="chat-input" id="chat-input">
+			<input type="text" id="user-input" placeholder="Escreva sua mensagem aqui...">
+			<button onclick="sendMessage()">Enviar
+			<img src="" alt="">
+			</button>
+		</div>
+	</div>
+	<script>
+		function sendMessage() {
+			
+			// Captura o valor digitado pelo usuário
+			const message = document.getElementById("user-input").value;
+
+			// Cria um novo elemento HTML com a mensagem
+			const newMessage = document.createElement("div");
+			newMessage.className = "message from-me";
+			newMessage.textContent = message;
+
+			// Adiciona o novo elemento HTML ao chat
+			const chatMessages = document.getElementById("chat-messages");
+			chatMessages.appendChild(newMessage);
+
+			// Limpa o campo de entrada de texto
+			document.getElementById("user-input").value = "";
+
+			//ARRUMAR SCROLL AUTOMÁTICO DO CHAT:
+		
+			// Verifica se o topo da última mensagem é maior ou igual à altura do chat
+			//const lastMessage = chatMessages.lastChild;
+			//const lastMessageTop = lastMessage.offsetTop;
+			//const chatHeight = chatMessages.offsetHeight;
+			//if (lastMessageTop >= chatHeight) {
+				// Se sim, faz o scroll automático para a última mensagem
+				//chatMessages.scrollTop += 15;
+			}
+		
+		function toggleChat() {
+		  const chatContainer = document.getElementById("chat-container");
+		  chatContainer.classList.toggle("show");
+		}
+			//minimiza o chat
+		function minimizeChat() {
+  			const chatContainer = document.querySelector('.chat-container');
+  			const header = chatContainer.querySelector('.header');
+  			const chatInput = chatContainer.querySelector('.chat-input');
+  			chatContainer.classList.toggle('minimized');
+  			header.classList.toggle('hidden');
+  			chatInput.classList.toggle('hidden');
+}
+			const userInput = document.getElementById("user-input");
+			userInput.addEventListener("keyup", function(event) {
+  			// Verifica se a tecla pressionada é "Enter"
+  				if (event.keyCode === 13) {
+    		// Chama a função sendMessage() ao pressionar a tecla "Enter"
+    			sendMessage();
+  				}
+			});
+	</script>
+	<button class="minimize-btn" id="minimize-btn" onclick="minimizeChat()">
+  		<img src="gai.png" alt="Minimizar">
+	</button>
+</body>
+</html>
