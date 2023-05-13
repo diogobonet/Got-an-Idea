@@ -1,3 +1,41 @@
+<?php
+        require('../db_conection/conexao.php');
+
+        session_start();
+
+        $emailUsu = $_SESSION['email'];
+        $imagemUsu = $_SESSION['imagem'];
+        $nomeUsu = $_SESSION['nome'];
+
+        try{
+
+            $sql = "SELECT telefone, cidade, bio, formacao, apelido from Usuario WHERE email = '$emailUsu'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+
+            $telefoneUsu = $row['telefone'];
+            $cidadeUsu = $row['cidade'];
+            $bioUsu = $row['bio'];
+            $formacaoUsu = $row['formacao'];
+            $apelidoUsu = $row['apelido'];
+
+        } catch(Exception $e){
+
+            echo "<h1>Erro ao recuperar dados do banco</h1>";
+            die('Tente novamente...');
+
+        }
+
+        function validate_data($variavel_para_teste, $id_botao){
+            if($variavel_para_teste != null){
+                echo"<p class='info-user'>$variavel_para_teste<button id='$id_botao' class='set-button' ><span class='material-symbols-outlined'>edit</span></button></p>";
+            }else{
+                echo"<p class='info-user'>$variavel_para_teste<button id='$id_botao' class='non-button' ><span class='material-symbols-outlined'>edit</span> Adicione uma informação</button></p>";
+            }
+        }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,14 +45,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="img/lampada gotanidea.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Diogo Bonet | Got an Idea💡</title>
+    <title><?= $nomeUsu ?> | Got an Idea💡</title>
 </head>
 <body>
-    <?php
-        session_start();
-        // $email = $_SESSION['email'];
-        $email = "diogosobezak@gmail.com";
-    ?>
 
     <section id="modal-alterarnome" class="edit-modal-main">
         <div class="modal-changes-infos" id="change-nome">
@@ -78,7 +111,7 @@
                 <a href="">Conectado</a>
                 <a href="">Ranking</a>
                 <div class="div-userimg">
-                    <img class="user-img" src="img/messi.jpeg" alt="Imagem do usuário">
+                <?php echo "<img class='user-img' src='data:image;base64,$imagemUsu' alt= 'Foto do usuário logado'>"; ?>
     </header>
 
     <main>
@@ -86,7 +119,7 @@
         <section class="sec-esquerda">     
                 <div class="centerimg">
                     <div class="div-profileimage">
-                        <img class="imagem-perfil" src="img/messi.jpeg" alt="Imagem de Perfil">
+                        <?php echo "<img class='imagem-perfil' src='data:image;base64,$imagemUsu' alt= 'Foto do Perfil'>"; ?>
                         <input type="file" class="input-imagem" name="arquivo">
                     </div>
                 </div>
@@ -101,13 +134,15 @@
 
             <div class="div-direitamain">
                 <div class="main-infos">
-                    <h1>Diogo Bonet</h1>
+                    <h1><?= $nomeUsu ?></h1>
                     <button id="botao-alterarnome" class="save-profile"><span class="material-symbols-outlined">
                         edit
                         </span>Alterar nome</button>
                     
                 </div>
-                <h2 class="select-user">Colaborador(a)</h2>
+                <h2 class="select-user">@<?=$apelidoUsu?></h2>
+                <!-- Ideia enquanto não foi resolvido o que faremos com os tipos de conta, resolvi colocar o "@" (apelido) -->
+                <!-- Código retirado: <h2 class="select-user">@Colaborador(a)</h2> -->
             </div>
 
             <div>
@@ -127,16 +162,10 @@
                         </div>
 
                         <div class="sec-article-direita">
-                            <p class="info-user">gotanidea@contato.com</p>
-                            <p class="info-user">(41)98888-8888  <button id="botao-alterartelefone" class="set-button" ><span class="material-symbols-outlined">edit</span></button></p> 
-                            <p class="info-user"><button id="botao-alterarcidade" class="non-button">
-                                <span class="material-symbols-outlined">edit</span> Adicione uma informação
-                            </button></p>
-                            <p class="info-user">
-                                <button id="botao-alterarformacao" class="non-button">
-                                    <span class="material-symbols-outlined">edit</span> Adicione uma informação
-                                </button>
-                            </p>
+                            <p class="info-user"><?=$emailUsu?></p>
+                            <?php validate_data($telefoneUsu, 'botao-alterartelefone'); ?>
+                            <?php validate_data($cidadeUsu, 'botao-alterarcidade'); ?>
+                            <?php validate_data($formacaoUsu, 'botao-alterarformacao'); ?>
                         </div>
                     </section>
                 
