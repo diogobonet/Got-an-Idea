@@ -1,7 +1,7 @@
 <?php
     $host = 'localhost'; // Conexão no Servidor
-    $user = 'root';
-    $pass = '';
+    $user = 'gb';
+    $pass = 'mysql@204';
     $db = 'gt_idea_db';
 
     try{
