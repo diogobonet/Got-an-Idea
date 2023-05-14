@@ -49,13 +49,6 @@
 </head>
 <body>
 
-    <!-- NOTIFICACAO -->
-    <div id="fundo_para_notificacao" class="hide">
-        <div id="notificacao_div">
-            <p id="mensagem_notificacao"></p>
-        </div>
-    </div>
-
     <section id="modal-alterarnome" class="edit-modal-main">
         <div class="modal-changes-infos" id="change-nome">
             <div class="modal-header-row">
@@ -114,7 +107,7 @@
         </div>
            
                 <input placeholder="Pesquisar" type="search" name="" id="">
-                <a href="../home/home.php">Encontre ideias</a>
+                <a href="">Encontre ideias</a>
                 <a href="">Conectado</a>
                 <a href="">Ranking</a>
                 <div class="div-userimg">
@@ -154,8 +147,8 @@
 
             <div>
                 <ul class="menu">
-                    <li class="selected"><a href="#"><span class="material-symbols-outlined">person</span>Informações</a></li>
-                    <li><a href="edit_ideia_Page.php"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
+                    <li><a onclick="open_infos()" href="#"><span class="material-symbols-outlined">person</span>Informações</a></li>
+                    <li><a onclick="open_ideas()" href="#"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
                 </ul>
                 
                 <article>
@@ -163,8 +156,8 @@
                     <section id="tab1" class="sec-article active tab_opened">
                         <div class="sec-article-esquerda">
                             <p class="">Email:</p>
-                            <p class="">Telefone:</p>
-                            <p class="">Cidade:</p>
+                            <p class="">Limpador de parabrisa:</p>
+                            <p class="">Resumera:</p>
                             <p class="">Formação:</p>
                         </div>
 
@@ -207,7 +200,6 @@
             </section>
     </footer>
     <script src="js/script.js"></script>
-    <script src="../register/js/notificacao.js"></script>
     <script src="../register/js/verificar_mensagem.js"></script>
         <script>
             verificar_mensagem(<?php if(isset($_GET['msg'])){echo $_GET['msg'];}?>);
