@@ -29,16 +29,16 @@
 
     <!-- DIV INTEIRA DO MODAL -->
     <!-- MODAL IDEIA -->
-    <div id="modal-ideia" class="modal">
+    <div id="modal" class="modal">
             <!-- MODAL -->
                 <div class="modal-conteudo">
                     <div class="modal-header">
-                        <h1>Cadastre sua ideia</h1>
+                        <h1 id='modal-titulo'></h1>
                         <span id="close_button_cadastro_ideia" class="material-symbols-outlined close_button" onclick="click">close</span>
                     </div>
                     
                     <!-- FORMULARIO MODAL -->
-                    <form class="modal-idea" action="exe/cadastrar_ideiaProjeto.php" method='POST'>
+                    <form id='form-modal' class="modal-idea" action="" method='POST'>
 
                         <div class="modal-idea-row">
                             <input name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
@@ -47,37 +47,6 @@
                                 <option value="Tecnologia">Tecnologia</option>
                                 <option value="Culinaria">Culinaria</option>
                                 <option value="Engenharia">Engenharia</option>
-                            </select>
-                        </div>
-
-                        <div class="div-textarea"><textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea></div>
-
-                        <div class="div-save-button">
-                            <input type='submit' value='Salvar' class="save-button">
-                        </div>
-                    </form>
-                </div>
-        </div>
-
-        <!-- MODAL PROJETO -->
-        <div id="modal-projeto" class="modal">
-            <!-- MODAL -->
-                <div class="modal-conteudo">
-                    <div class="modal-header">
-                        <h1>Cadastre seu projeto</h1>
-                        <span id="close_button_cadastro_ideia" class="material-symbols-outlined close_button" onclick="click">close</span>
-                    </div>
-                    
-                    <!-- FORMULARIO MODAL -->
-                    <form class="modal-idea" action="exe/cadastrar_ideiaProjeto.php" method='POST'>
-
-                        <div class="modal-idea-row">
-                            <input name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
-                            <select id="meu-select" name="input-select-opcao">
-                                <option value="opcao1">Categoria</option>
-                                <option value="opcao2">Tecnologia</option>
-                                <option value="opcao3">Culinaria</option>
-                                <option value="opcao4">Engenharia</option>
                             </select>
                         </div>
 
@@ -148,25 +117,6 @@
             </div>
             
         <?php } ?>
-
-            <div class="div-idea">
-                <div class="infos-user">
-                    <div class="infos-user-row">
-                        <div class="img-user-div"><img class="img-user" src="img/messi.jpeg" alt="Foto de Perfil"></div>
-                        <div class="infos-user-names">
-                            <h1 class="nome-user">Messi</h1>
-                            <h2 class="persona-user">Idealizador</h2>
-                        </div>
-                    </div>
-                    <div class="botao-editar-ideia">
-                        <button>Ver Detalhes</button>
-                    </div>
-                </div>
-                <div class="infos-ideia">
-                    <h1 class="titulo-ideia">Time Bom</h1>
-                    <p class="desc-ideia">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ut distinctio a dignissimos corporis excepturi eum, quisquam cupiditate ipsam vel fugiat, cumque quibusdam dolores, quo eius? Ipsa architecto incidunt sint? Lorem</p>
-                </div>
-            </div>   
         </section>
 
         <section class="best-idea">

@@ -83,11 +83,12 @@ nav input {
 main {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .div-main {
     background-color: #19181A;
-    max-width: 760px;
+    width: 60%;
     min-width: 400px;
     margin-left: 60px;
     display: flex;
