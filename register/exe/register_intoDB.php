@@ -26,7 +26,9 @@
 
     try{
         if($conn->query($sql)){ // O objeto Mysqli devolverá um objeto do tipo Mysql_result
-            header('Location: ../../login/login.php?msg=0');
+            session_start();
+            $_SESSION["email_firstregister"] = $register->email;
+            header('Location: ../registro2.php');
         }
     } catch(Exception $e){
         if($e->getCode() == 1062){
