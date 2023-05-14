@@ -119,8 +119,8 @@
                     ?>
                     <?php foreach ($ideias as $ideia) { ?>
                     <form action="exe/form_edit_ideia_exe.php" method="POST">
-                        <input type="text" name="alterar-titulo" placeholder="<?php echo $ideia['titulo']; ?>">
-                        <textarea name="alterar-descricao" placeholder="<?php echo $ideia['descricao']; ?>"></textarea>
+                        <input type="text" name="alterar-titulo" placeholder="<?php echo $ideia['titulo']; ?>" value="<?php echo $ideia['titulo']; ?>">
+                        <textarea name="alterar-descricao" placeholder="<?php echo $ideia['descricao']; ?>"><?php echo $ideia['descricao']; ?></textarea>
                         <input type="hidden" name="id_Ideia" value="<?php echo $id_Ideia ?>">
                         <button type="submit">Salvar</button>
                     </form>

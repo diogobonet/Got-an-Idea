@@ -60,6 +60,13 @@
     <title><?= $nomeUsu ?> (Editar Perfil) | Got an Idea💡</title>
 </head>
 <body>
+    <!-- NOTIFICACAO -->
+    <div id="fundo_para_notificacao" class="hide">
+        <div id="notificacao_div">
+            <p id="mensagem_notificacao"></p>
+        </div>
+    </div>
+
     <section id="modal-alterarnome" class="edit-modal-main">
         <div class="modal-changes-infos" id="change-nome">
             <div class="modal-header-row">
@@ -118,7 +125,7 @@
         </div>
            
                 <input placeholder="Pesquisar" type="search" name="" id="">
-                <a href="">Encontre ideias</a>
+                <a href="../home/home.php">Encontre ideias</a>
                 <a href="">Conectado</a>
                 <a href="">Ranking</a>
                 <div class="div-userimg">
@@ -158,8 +165,8 @@
 
             <div>
                 <ul class="menu">
-                    <li class="selected"><a onclick="open_ideas()" href="#"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
-                    <li><a onclick="open_infos()" href="edit_Page.php"><span class="material-symbols-outlined">person</span>Informações</a></li>
+                    <li class="selected"><a href="#"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
+                    <li><a href="edit_Page.php"><span class="material-symbols-outlined">person</span>Informações</a></li>
                 </ul>
                 
                 <article>
@@ -222,9 +229,11 @@
     <footer>
     </footer>
     <script src="js/script.js"></script>
+    <script src="../register/js/notificacao.js"></script>
     <script src="../register/js/verificar_mensagem.js"></script>
         <script>
             verificar_mensagem(<?php if(isset($_GET['msg'])){echo $_GET['msg'];}?>);
+            alert(<?=$_GET['msg']?>);
         </script>
 </body>
 </html>
