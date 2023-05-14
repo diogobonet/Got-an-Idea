@@ -34,6 +34,18 @@
             }
         }
 
+
+        $email = $_SESSION['email'];
+        $imagem = $_SESSION['imagem'];
+
+        $sql = "SELECT * FROM Ideia WHERE fk_Usuario_email = '$email' ORDER BY id DESC";
+        try{
+            $result = $conn->query($sql);
+            $ideias = $result->fetch_all(MYSQLI_ASSOC);
+        } catch(Exception $e){
+            echo"<h1 style='color:red; font-size:45px;'>Erro:</h1>";
+            echo"<h1 style='color:white; font-size:35px;'>" . $e->getMessage() . "</h1>";
+        }
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +60,6 @@
     <title><?= $nomeUsu ?> (Editar Perfil) | Got an Idea💡</title>
 </head>
 <body>
-
     <section id="modal-alterarnome" class="edit-modal-main">
         <div class="modal-changes-infos" id="change-nome">
             <div class="modal-header-row">
@@ -147,26 +158,42 @@
 
             <div>
                 <ul class="menu">
-                    <li class="selected"><a href="#"><span class="material-symbols-outlined">person</span>Informações</a></li>
-                    <li><a href="edit_ideia_Page.php"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
+                    <li class="selected"><a onclick="open_ideas()" href="#"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
+                    <li><a onclick="open_infos()" href="edit_Page.php"><span class="material-symbols-outlined">person</span>Informações</a></li>
                 </ul>
                 
                 <article>
                 
                     <section id="tab1" class="sec-article active tab_opened">
-                        <div class="sec-article-esquerda">
-                            <p class="">Email:</p>
-                            <p class="">Limpador de parabrisa:</p>
-                            <p class="">Resumera:</p>
-                            <p class="">Formação:</p>
+                    <?php foreach ($ideias as $ideia) { ?>
+                        <div class="div-idea">
+                            <div class="infos-user">
+                                <div class="infos-user-row">
+                                    <div class="img-user-div">
+                                        <?php echo "<img class='img-user' src='data:image;base64,".base64_encode($ideia['imagem'])."' alt= 'Foto do dono da postagem'>"; ?>
+                                    </div>
+                                    <div class="infos-user-names">
+                                        <h1 class="nome-user"><?php echo $ideia['nome']; ?></h1>
+                                        <h2 class="persona-user">Idealizador</h2>
+                                    </div>
+                                </div>
+                                <div class="botao-editar-e-deletar-ideia">
+                                    <form action="form_edit_ideia.php" method="POST">
+                                        <input type="hidden" name="id_Ideia" value="<?php echo $ideia['id'];?>">
+                                        <button class="editar" type="submit">Editar ideia</button>
+                                    </form>
+                                    <form action="exe/delete_ideia_exe.php" method="POST">
+                                        <input type="hidden" name="id_Ideia" value="<?php echo $ideia['id'];?>">
+                                        <button class="deletar" type="submit">Apagar ideia</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="infos-ideia">
+                                <h1 class="titulo-ideia"><?php echo $ideia['titulo']; ?></h1>
+                                <p class="desc-ideia"><?php echo $ideia['descricao']; ?></p>
+                            </div>
                         </div>
-
-                        <div class="sec-article-direita">
-                            <p class="info-user"><?=$emailUsu?></p>
-                            <?php validate_data($telefoneUsu, 'botao-alterartelefone'); ?>
-                            <?php validate_data($cidadeUsu, 'botao-alterarcidade'); ?>
-                            <?php validate_data($formacaoUsu, 'botao-alterarformacao'); ?>
-                        </div>
+                    <?php } ?>
                     </section>
                 
                     <section id="tab2" class="sec-article ideas tab_closed">
@@ -193,11 +220,6 @@
     </main>
     
     <footer>
-        <section class="section-buttons">
-            <form action="../deletarProfile/deletarprofile_exe.php" method="post">
-                  <button id="botao-apagar-conta" name="botao-apagar-conta" type="submit">Apagar minha conta</button>
-            </form>
-            </section>
     </footer>
     <script src="js/script.js"></script>
     <script src="../register/js/verificar_mensagem.js"></script>
