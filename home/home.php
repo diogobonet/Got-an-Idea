@@ -24,6 +24,7 @@
     <link rel="shortcut icon" href="img/lampada gotanidea.png" type="image/x-icon">
     <title>Página Inicial | got an Idea💡</title>
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
 </head>
 <body>
 
@@ -59,19 +60,9 @@
                 </div>
         </div>
 
-    <header>
-        <nav>
-            <div class="img-wrapper">
-                <img class="logo-header" src="img/logo.png" alt="Logo do Header">
-            </div>
-                <input placeholder="Pesquisar" type="search" name="" id="">
-                <a href="">Encontre ideias</a>
-                <a href="">Conectado</a>
-                <a href="">Ranking</a>
-                <div class="div-userimg">
-                <?php echo "<img class='user-img' src='data:image;base64,$imagem' alt= 'Foto do usuário'>"; ?>
-        </nav>
-    </header>
+    <?php
+    require("../cabeçalho/cabecalho.php")
+    ?>
 
     <main>
         <!-- DIV DA PARTE DA CRIAÇÃO DA POSTAGEM E DAS POSTAGENS -->

@@ -6,6 +6,7 @@
         $emailUsu = $_SESSION['email'];
         $imagemUsu = $_SESSION['imagem'];
         $nomeUsu = $_SESSION['nome'];
+        $imagem = $_SESSION['imagem'];
 
         try{
 
@@ -35,20 +36,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="img/lampada gotanidea.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
     <title><?= $nomeUsu ?> | Got an Idea💡</title>
 </head>
 <body>
-    <header>
-        <div class="img-wrapper">
-            <img class="logo-header" src="img/logo.png" alt="Logo do Header">
-        </div>
-            <input placeholder="Pesquisar" type="search" name="" id="">
-            <a href="">Encontre ideias</a>
-            <a href="">Conectado</a>
-            <a href="">Ranking</a>
-            <div class="div-userimg">
-                <img class="user-img" src="img/messi.jpeg" alt="Imagem do usuário">
-    </header>
+    <?php
+    require("../cabeçalho/cabecalho.php")
+    ?>
 
     <main>
         <section class="sec-esquerda">     

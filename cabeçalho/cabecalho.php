@@ -1,6 +1,5 @@
 <?php
     require('../db_conection/conexao.php');
-    session_start();
 
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
@@ -15,11 +14,11 @@
                 <img class="logo-header" src="../img/logowhite.png" alt="Logo do Header">
             </div>
                 <input placeholder="Pesquisar" type="search" name="" id="search-home">
-                <a href="">Encontre ideias</a>
+                <a href="../home/home.php">Encontre ideias</a>
                 <a href="">Conectado</a>
-                <a href="">Ranking</a>
+                <a href="../profilePage/index.php">Perfil</a>
                 <div class="div-userimg">
-                <?php echo "<img class='user-img' onclick='trocarDePagina(" . '"../profilePage/index.php"' . ") src='data:image;base64,". $imagem ."' alt= 'Foto do usuário'>"; ?>
+                <?php echo "<img class='user-img' src='data:image;base64,". $imagem ."' alt= 'Foto do usuário'>"; ?>
         </nav>
 
         <script>
