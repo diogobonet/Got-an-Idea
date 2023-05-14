@@ -17,3 +17,5 @@ ideias
 - [x] Landing Page
 - [x] Página de Login
 - [x] Página de Registro
+- [ ] Página de edição de perfil
+- [ ] Página principal

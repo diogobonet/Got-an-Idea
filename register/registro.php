@@ -8,10 +8,6 @@
     <title>Registro | got an Idea💡</title>
 </head>
 <body>
-<<<<<<< HEAD
-=======
-
->>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
     <div id="fundo_para_notificacao" class="hide">
         <div id="notificacao_div">
             <p id="mensagem_notificacao"></p>
@@ -33,11 +29,7 @@
                 <label>Confirmar<input name='confirmar_input' placeholder='Senha' class= 'info-confirmar form_input' type="password"></label>
             </form>
             <div class="div-button"><button id="botao_submit" class="button">REGISTRAR</button></div>
-<<<<<<< HEAD
             <p>Já possuí uma conta? <a href="../login/login.php">Entre aqui</a></p>
-=======
-            <p>Já possuí uma conta? <a href="../login/login2.html">Entre aqui</a></p>
->>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
         </div>
     </div>
     <script src='js/notificacao.js'></script>

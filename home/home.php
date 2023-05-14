@@ -5,9 +5,8 @@
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
 
-    $sql = "SELECT * FROM Ideia";
+    $sql = "SELECT * FROM Ideia ORDER BY id DESC";
     try{
-        $conn->query($sql);
         $result = $conn->query($sql);
         $ideias = $result->fetch_all(MYSQLI_ASSOC); 
     } catch(Exception $e){
@@ -101,7 +100,7 @@
                 <a href="">Conectado</a>
                 <a href="">Ranking</a>
                 <div class="div-userimg">
-                <?php echo "<img class='user-img' src='data:image;base64,".base64_encode($imagem)."' alt= 'Foto do usuário'>"; ?>
+                <?php echo "<img class='user-img' src='data:image;base64,$imagem' alt= 'Foto do usuário'>"; ?>
         </nav>
     </header>
 
@@ -130,7 +129,9 @@
             <div class="div-idea">
                 <div class="infos-user">
                     <div class="infos-user-row">
-                        <div class="img-user-div"><img class="img-user" src="img/messi.jpeg" alt="Foto de Perfil"></div>
+                        <div class="img-user-div">
+                            <?php echo "<img class='img-user' src='data:image;base64,".base64_encode($ideia['imagem'])."' alt= 'Foto do dono da postagem'>"; ?>
+                        </div>
                         <div class="infos-user-names">
                             <h1 class="nome-user"><?php echo $ideia['nome']; ?></h1>
                             <h2 class="persona-user">Idealizador</h2>
@@ -194,8 +195,6 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
         </section>
-
-        
         
         <script src="js/script.js"></script>
     </main>  

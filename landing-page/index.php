@@ -85,7 +85,7 @@
 
             <div class="div-direita">
                 <div class="img-wrapper">
-                    <img class="img-main" src="img/GB3.png" alt="">
+                    <img id="img-right" class="img-main" src="img/1.png" alt="">
                 </div>
             </div>
         </div>
@@ -131,7 +131,7 @@
         <section class="objetivos-section">
             <div class="objetivo-div-esquerda">
                 <div class="img-wrapper">
-                    <img src="img/GB3.png" alt="">
+                    <img id="img-left" src="img/2.png" alt="">
                 </div>
             </div>
 

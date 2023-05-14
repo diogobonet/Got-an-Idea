@@ -1,3 +1,31 @@
+<?php
+        require('../db_conection/conexao.php');
+
+        session_start();
+
+        $emailUsu = $_SESSION['email'];
+        $imagemUsu = $_SESSION['imagem'];
+        $nomeUsu = $_SESSION['nome'];
+
+        try{
+
+            $sql = "SELECT telefone, cidade, bio, formacao, apelido from Usuario WHERE email = '$emailUsu'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+
+            $telefoneUsu = $row['telefone'];
+            $cidadeUsu = $row['cidade'];
+            $bioUsu = $row['bio'];
+            $formacaoUsu = $row['formacao'];
+            $apelidoUsu = $row['apelido'];
+
+        } catch(Exception $e){
+
+            echo "<h1>Erro ao recuperar dados do banco</h1>";
+            die('Tente novamente...');
+
+        }
+        ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,13 +35,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="img/lampada gotanidea.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Diogo Bonet | Got an Idea💡</title>
+    <title><?= $nomeUsu ?> | Got an Idea💡</title>
 </head>
 <body>
-    <?php 
-        session_start();
-        $email = $_SESSION['email'];
-    ?>
     <header>
         <div class="img-wrapper">
             <img class="logo-header" src="img/logo.png" alt="Logo do Header">
@@ -30,8 +54,7 @@
         <section class="sec-esquerda">     
                 <div class="centerimg">
                     <div class="div-profileimage">
-                        <img class="imagem-perfil" src="img/messi.jpeg" alt="Imagem de Perfil">
-                        <input type="file" class="input-imagem" name="arquivo">
+                    <?php echo "<img class='imagem-perfil' src='data:image;base64,$imagemUsu' alt= 'Foto do Perfil'>"; ?>
                     </div>
                 </div>
 
@@ -45,15 +68,17 @@
 
             <div class="div-direitamain">
                 <div class="main-infos">
-                    <h1>Diogo Bonet</h1>
+                    <h1><?= $nomeUsu ?></h1>
                     <button class="save-profile"><span class="material-symbols-outlined">bookmark</span>Salvar perfil</button>
                 </div>
-                <h2 class="select-user">Colaborador(a)</h2>
+                <h2 class="select-user">@<?=$apelidoUsu?></h2>
+                <!-- Ideia enquanto não foi resolvido o que faremos com os tipos de conta, resolvi colocar o "@" (apelido) -->
+                <!-- Código retirado: <h2 class="select-user">@Colaborador(a)</h2> -->
             </div>
 
             <div class="buttons-user">
-                <button>Conectar-se</button>
-                <a href="#">Reportar usuário</a>
+                <button><a href="../edit-page/edit_Page.php" style="color: white;">Editar Perfil</a></button>
+                <!-- <a href="#">Reportar usuário</a> -->
             </div>
 
             <div>
@@ -73,47 +98,29 @@
                         </div>
 
                         <div class="sec-article-direita">
-<<<<<<< HEAD:profilePage/index.php
-                            <p class="info-user">(41)98857-8331</p>
-                            <p class="info-user">gotanidea@contato.com</p>
-                            <p class="info-user">Curitiba</p>
-                            <p class="info-user">Desempregado 😒</p>
-                            <p class="info-user">Olha a pedra!</p>
-=======
-                            <p class="info-user">gotanidea@contato.com</p>
-                            <p class="info-user">(41)98888-8888  <button class="set-button"><span class="material-symbols-outlined">edit</span></button></p> 
-                            <p class="info-user"><button class="non-button">
-                                <span class="material-symbols-outlined">edit</span> Adicione uma informação
-                            </button></p>
-                            <p class="info-user">
-                                    <button class="non-button">
-                                        <span class="material-symbols-outlined">edit</span> Adicione uma informação
-                                    </button>
-                            </p>
->>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f:edit-page/index.html
+                            <p class="info-user"><?=$emailUsu?></p>
+                            <p class="info-user"><?php echo"$telefoneUsu" ?>
+                            <p class="info-user"><?php echo"$cidadeUsu" ?></p>
+                            <p class="info-user"><?php echo"$formacaoUsu"?></p>
                         </div>
+                    
                     </section>
                 
                     <section id="tab2" class="sec-article ideas tab_closed">
                         <div>
                             <h1>Lampada Quebrada</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, voluptates unde quasi iusto corporis esse suscipit quae, illo eaque itaque quia assumenda impedit est aut quo delectus dolorem porro amet.</p>
+                            <p class="idea-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, voluptates unde quasi iusto corporis esse suscipit quae, illo eaque itaque quia assumenda impedit est aut quo delectus dolorem porro amet.</p>
                             <button>Detalhes</button>
                         </div>
 
                         <div>
                             <h1>Olha a pedra</h1>
-<<<<<<< HEAD:profilePage/index.php
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos dicta nisi ipsum ex consectetur reprehenderit fuga, nostrum, qui sapiente tenetur quod omnis modi vitae tempora magnam asperiores dolore illum! Quo?</p>
-=======
                             <p class="idea-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos dicta nisi ipsum ex consectetur reprehenderit fuga, nostrum, qui sapiente tenetur quod omnis modi vitae tempora magnam asperiores dolore illum! Quo?</p>
 
->>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f:edit-page/index.html
                             <button>Detalhes</button>
                         </div>
 
                     </section>
-                
                 
                 </article>
             </div>

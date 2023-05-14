@@ -281,17 +281,21 @@ article {
 .sec-article div.sec-article-esquerda {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
 }
 
 .sec-article-direita {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
 }
 
 .sec-article div .info-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     color:rgb(5, 131, 242);
+    
 }
 
 .ideas div {
@@ -299,6 +303,8 @@ article {
     background-color: #212125;
     padding: 30px;
     border-radius: 20px;
+    max-height: 330px;
+    min-height: 200px;
 }
 
 .ideas div button {

@@ -147,8 +147,8 @@
 
             <div>
                 <ul class="menu">
-                    <li class="selected"><a href="#"><span class="material-symbols-outlined">person</span>Informações</a></li>
-                    <li><a href="edit_ideia_Page.php"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
+                    <li><a onclick="open_infos()" href="#"><span class="material-symbols-outlined">person</span>Informações</a></li>
+                    <li><a onclick="open_ideas()" href="#"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
                 </ul>
                 
                 <article>

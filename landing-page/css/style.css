@@ -20,7 +20,6 @@ body {
     color: white;
     font-size: 16px;
 }
-<<<<<<< HEAD
 
 /* Notificacao */
 #fundo_para_notificacao{
@@ -81,8 +80,6 @@ body {
   }
 }
 
-=======
->>>>>>> 063fce8d189519cebdfa89104b76ebd5480a468f
 /* estilos padrão para o header */
 .header-main {
     display: flex;
@@ -396,6 +393,10 @@ a:hover {
   width: 79%;
 }
 
+.img-wrapper img#img-left {
+  float: left;
+}
+
 
 @media (max-width: 768px) {
   .header-main {
@@ -550,15 +551,10 @@ dialog button:hover {
 
 .objetivo-div-esquerda {
       max-width: 75vw;
-      position: relative;
-      width: 70%;
-}
-
-.objetivo-div-esquerda .img-wrapper img {
-  -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+      justify-content: center;
 }
 
 .objetivo-div-direita {
