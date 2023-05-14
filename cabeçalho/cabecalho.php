@@ -7,8 +7,8 @@
 ?>
 
 <header>
-    <link rel="stylesheet" href="headerr.css">
-    <!-- IMPORTTANDO OS ICONS DO GOOGLE PARA O PESQUISAR (LUPA) -->
+    <link rel="stylesheet" href="cabecalho.css">
+    <!-- IMPORTANDO OS ICONS DO GOOGLE PARA O PESQUISAR (LUPA) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <nav>
             <div class="img-wrapper">
@@ -19,6 +19,13 @@
                 <a href="">Conectado</a>
                 <a href="">Ranking</a>
                 <div class="div-userimg">
-                <?php echo "<img class='user-img' src='data:image;base64,".base64_encode($imagem)."' alt= 'Foto do usuário'>"; ?>
+                <?php echo "<img class='user-img' onclick='trocarDePagina(" . '"../profilePage/index.php"' . ") src='data:image;base64,". $imagem ."' alt= 'Foto do usuário'>"; ?>
         </nav>
+
+        <script>
+            function trocarDePagina(link){
+                document.location.href = link;
+            }
+        </script>
     </header>
+

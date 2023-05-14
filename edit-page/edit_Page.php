@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="img/lampada gotanidea.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
-    <title><?= $nomeUsu ?> | Got an Idea💡</title>
+    <title><?= $nomeUsu ?> (Editar Perfil) | Got an Idea💡</title>
 </head>
 <body>
 
@@ -111,7 +111,7 @@
                 <a href="">Conectado</a>
                 <a href="">Ranking</a>
                 <div class="div-userimg">
-                <?php echo "<img class='user-img' src='data:image;base64,$imagemUsu' alt= 'Foto do usuário logado'>"; ?>
+                <?php echo "<img href='../profilePage/index.php' class='user-img' src='data:image;base64,$imagemUsu' alt= 'Foto do usuário logado'>"; ?>
     </header>
 
     <main>
@@ -196,7 +196,6 @@
         <section class="section-buttons">
             <form action="../deletarProfile/deletarprofile_exe.php" method="post">
                   <button id="botao-apagar-conta" name="botao-apagar-conta" type="submit">Apagar minha conta</button>
-                  <button id="botao-salvar-conta" name="botao-salvar-conta" type="submit">Salvar</button>
             </form>
             </section>
     </footer>
