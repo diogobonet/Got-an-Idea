@@ -31,7 +31,7 @@
                 </ul>
             </div>
             <div class="login-button">
-                <a href="../login/login.html" class="botao-registrar"><strong>Registrar-se</strong></a>
+                <a href="../register/registro.php" class="botao-registrar"><strong>Registrar-se</strong></a>
             </div>
         </nav>
     </header>
@@ -76,9 +76,9 @@
             <div class="div-esquerda">
                 <h1 class="h1-main">Juntar ideias em um único <br> <span class="span-h1-main"></span></h1>
                 
-                <p class="p-main">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit vel magni cumque ad possimus illum aliquid culpa suscipit officiis corporis voluptas beatae iusto eum repellendus perspiciatis, dignissimos dolorum sit reiciendis.</p>
+                <p class="p-main">O Got an Idea é uma rede social, onde possibilita que pessoas postem suas ideias e as concretize através da ajuda de colaboradores, investidores e doadores.</p>
                 <div class="button-learn-main">
-                    <button class="button-main">Registrar-se</button>
+                    <button class="button-main"><a href="../register/registro.php" style="color: white; font-weight: 400;">Registrar-se</a></button>
                     <a href="" class="learn-more">Saiba mais <span class="material-symbols-outlined">arrow_forward_ios</span></a>
                 </div>
             </div>
@@ -101,29 +101,29 @@
                 <div class="person-div">
                     <img class="about-image" src="img/gb.png">
                     <h2>Gabriel Mocellin</h2>
-                    <p>Product Owner</p>
+                    <p>Full-Stack Developer</p>
                 </div>
                 <div class="person-div">
                     <img class="about-image" src="img/felipevermelho.png">
                     <h2>Felipe Vermelho</h2>
-                    <p>Database Developer</p>
+                    <p>Full-Stack Developer</p>
                 </div>
             </div>
             <div class="div-about-base">
                 <div class="person-div">
                     <img class="about-image" src="img/diogo.png">
                     <h2>Diogo Bonet</h2>
-                    <p>Front-end Developer</p>
+                    <p>Full-Stack Developer</p>
                 </div>
                 <div class="person-div">
                     <img class="about-image" src="img/nicolas.png">
                     <h2>Nicolas Peralta</h2>
-                    <p>Front-end Developer</p>
+                    <p>Web Designer</p>
                 </div>
                 <div class="person-div">
                     <img class="about-image" src="img/jgstresser.png">
                     <h2>João Trigo</h2>
-                    <p>Full-Stack Developer</p>
+                    <p>Product Owner</p>
                 </div>
             </div>
         </section>
@@ -183,9 +183,9 @@
 
             <div class="footer-links">
                 <h2>DOCUMENTAÇÃO</h2>
-                <a href=""><i class="fa fa-github-square" aria-hidden="true"></i> Repositório</a>
-                <a href=""><i class="fa fa-book" aria-hidden="true"></i> Docs</a>
-                <a href=""><i class="fa fa-trello" aria-hidden="true"></i> Trello</a>
+                <a target="_blank" href="https://github.com/diogobonet/Got-an-Idea/"><i class="fa fa-github-square" aria-hidden="true"></i> Repositório</a>
+                <a target="_blank" href="#"><i class="fa fa-book" aria-hidden="true"></i> Docs</a>
+                <a target="_blank" href="https://trello.com/b/WYlQSE99/got-an-idea"><i class="fa fa-trello" aria-hidden="true"></i> Trello</a>
             </div>
         </div>
 
