@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="img/lampada gotanidea.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
     <title><?= $nomeUsu ?> (Editar Perfil) | Got an Idea💡</title>
 </head>
 <body>
@@ -108,18 +109,10 @@
         </div>
     </section>
 
-    <header>
-        <div class="img-wrapper">
-            <img class="logo-header" src="img/logo.png" alt="Logo do Header">
-        </div>
-           
-                <input placeholder="Pesquisar" type="search" name="" id="">
-                <a href="../home/home.php">Encontre ideias</a>
-                <a href="">Conectado</a>
-                <a href="">Ranking</a>
-                <div class="div-userimg">
-                <?php echo "<img href='../profilePage/index.php' class='user-img' src='data:image;base64,$imagemUsu' alt= 'Foto do usuário logado'>"; ?>
-    </header>
+    <?php
+    require("../cabeçalho/cabecalho.php")
+    ?>
+
 
     <main>
   
