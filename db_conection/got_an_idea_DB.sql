@@ -6,10 +6,8 @@ CREATE TABLE Ideia (
     data_post varchar(13),
     filtros varchar(50),
     titulo varchar(100),
-    imagem mediumblob,
     descricao varchar(100),
     fk_Usuario_email varchar(100),
-    nome varchar(100),
     PRIMARY KEY(id)
 );
 

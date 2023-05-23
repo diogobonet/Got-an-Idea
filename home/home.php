@@ -5,7 +5,7 @@
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
 
-    $sql = "SELECT * FROM Ideia ORDER BY id DESC";
+    $sql = "SELECT * FROM ideia INNER JOIN usuario ON ideia.fk_usuario_email = usuario.email";
     try{
         $result = $conn->query($sql);
         $ideias = $result->fetch_all(MYSQLI_ASSOC); 
@@ -31,7 +31,6 @@
     <!-- DIV INTEIRA DO MODAL -->
     <!-- MODAL IDEIA -->
     <div id="modal" class="modal">
-            <!-- MODAL -->
                 <div class="modal-conteudo">
                     <div class="modal-header">
                         <h1 id='modal-titulo'></h1>
