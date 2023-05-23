@@ -3,10 +3,11 @@
 
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
+
 ?>
 
 <header>
-    <link rel="stylesheet" href="cabecalho.css">
+    <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
     <!-- IMPORTANDO OS ICONS DO GOOGLE PARA O PESQUISAR (LUPA) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <nav>

@@ -7,6 +7,7 @@
         $imagemUsu = $_SESSION['imagem'];
         $nomeUsu = $_SESSION['nome'];
 
+
         try{
 
             $sql = "SELECT telefone, cidade, bio, formacao, apelido from Usuario WHERE email = '$emailUsu'";
