@@ -3,6 +3,10 @@
 
         session_start();
 
+        if(!isset($_SESSION['email'])) {
+            header ("Location: ../login/login.php");
+        }
+        
         $emailUsu = $_SESSION['email'];
         $imagemUsu = $_SESSION['imagem'];
         $nomeUsu = $_SESSION['nome'];

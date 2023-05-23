@@ -1,3 +1,12 @@
+<?php
+    require('../db_conection/conexao.php');
+
+    session_start();
+    
+    if(!isset($_SESSION['email'])) {
+        header ("Location: ../login/login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -111,7 +120,6 @@
             <h1>Aletração de ideia</h1>
                 <div class="div-center">
                     <?php
-                        require('../db_conection/conexao.php');
                         $id_Ideia = $_POST['id_Ideia'];
                         $sql = "SELECT * FROM Ideia WHERE id = '$id_Ideia'";
                         $result = $conn->query($sql);
