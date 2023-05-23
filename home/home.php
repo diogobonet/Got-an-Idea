@@ -2,6 +2,10 @@
     require('../db_conection/conexao.php');
     session_start();
 
+    if(!isset($_SESSION['email'])) {
+        header ("Location: ../login/login.php");
+    }
+
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
 
