@@ -3,6 +3,11 @@
 
         session_start();
 
+        if(!isset($_SESSION['email'])) {
+            header ("Location: ../login/login.php");
+        }
+        
+
         $emailUsu = $_SESSION['email'];
         $imagemUsu = $_SESSION['imagem'];
         $nomeUsu = $_SESSION['nome'];
@@ -123,8 +128,11 @@
     </main>
 
     <footer>
-
+        <section class="section-buttons">
+            <button id="botao-logout" class="botao-logout" onclick="redirecionar_para_logout()" name="" type="submit">Sair da conta</button>
+        </section>
     </footer>
     <script src="js/control_tabs.js"></script>
+    <script src="js/redirecionar.js"></script>
 </body>
 </html>

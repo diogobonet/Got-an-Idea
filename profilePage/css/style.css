@@ -281,3 +281,27 @@ article {
 .tab_opened{
     display:flex;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botao-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(230, 51, 51);
+    border: none;
+    font-family: "Poppins";
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#botao-logout:hover {
+    background-color: rgb(222, 80, 80);
+}
