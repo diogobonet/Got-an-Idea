@@ -75,3 +75,7 @@ configurarModal(botaoAlterarCidade, modalAlterarCidade);
 const botaoAlterarFormacao = document.getElementById("botao-alterarformacao");
 const modalAlterarFormacao = document.getElementById("modal-alterarformacao");
 configurarModal(botaoAlterarFormacao, modalAlterarFormacao);
+
+const botaoApagar = document.getElementById("botao-apagar");
+const modalApagar = document.getElementById("modal-apagar");
+configurarModal(botaoApagar, modalApagar);

@@ -45,9 +45,14 @@
                             <input name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
                             <select id="meu-select" name="input-select-opcao">
                                 <option value="Categoria">Categoria</option>
-                                <option value="Tecnologia">Tecnologia</option>
-                                <option value="Culinaria">Culinaria</option>
+                                <option value="Tecnologia">Ciência e Tecnologia</option>
+                                <option value="Culinaria">Culinária</option>
                                 <option value="Engenharia">Engenharia</option>
+                                <option value="Saúde e Bem-estar">Saúde e Bem-estar</option>
+                                <option value="Automobilística">Automobilística</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Negócios e Empreendedorismo">Negócios e Empreendedorismo</option>
+                                <option value="Finanças e Investimentos">Finanças e Investimentos</option>
                             </select>
                         </div>
 

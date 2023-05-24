@@ -288,7 +288,7 @@ footer {
     align-items: center;
 }
 
-#botao-logout {
+#botao-logout, #botao-logout-test {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -302,6 +302,90 @@ footer {
     cursor: pointer;
 }
 
-#botao-logout:hover {
+#botao-logout, #botao-logout-test:hover {
     background-color: rgb(222, 80, 80);
+}
+
+/* MODAL */
+.edit-modal-main {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+  }
+
+.modal-changes-infos {
+    position: absolute;
+    background-color: #3a3a43;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    max-width: 50%;
+    min-width: 50%;
+    border-radius: 10px;
+}
+
+.modal-changes-infos h1 {
+    font-weight: 400;
+}
+
+.modal-changes-infos input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #494951;
+    border: none;
+    border-radius: 10px;
+    max-height: none;
+    color: white;
+    font-family: "Poppins";
+}
+
+.modal-header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal-header-row span {
+    cursor: pointer;
+}
+
+.modal-header-row span:hover {
+    color: rgb(242, 86, 86);
+}
+
+.modal-changes-infos input::placeholder {
+    color: rgb(133, 133, 133);
+    padding-left: 2px;
+}
+
+.modal-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-form button {
+    padding: 8px;
+    max-width: 80px;
+    min-width: none;
+    font-family: "Poppins";
+    margin-top: 20px;
+    background-color: #0583F2;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-changes-infos form button:hover {
+    background-color: #4397e0;
 }

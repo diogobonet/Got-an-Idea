@@ -42,12 +42,24 @@
     <link rel="shortcut icon" href="img/lampada gotanidea.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
+    <!-- <link rel="stylesheet" href="../edit-page/css/style.css"> -->
     <title><?= $nomeUsu ?> | Got an Idea💡</title>
 </head>
 <body>
     <?php
     require("../cabeçalho/cabecalho.php")
     ?>
+
+    <section id="modal-deslogar" class="edit-modal-main">
+            <div class="modal-changes-infos" id="change-nome">
+                <div class="modal-header-row">
+                    <h1>Sair da conta</h1>
+                    <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
+                </div>
+                <p>Você tem certeza que quer sair da sua conta?</p>
+                <button id="botao-logout" class="botao-logout" onclick="redirecionar_para_logout()" name="" type="submit">Sair da conta</button>
+            </div>
+        </section>
 
     <main>
         <section class="sec-esquerda">     
@@ -129,10 +141,11 @@
 
     <footer>
         <section class="section-buttons">
-            <button id="botao-logout" class="botao-logout" onclick="redirecionar_para_logout()" name="" type="submit">Sair da conta</button>
+            <button id="botao-logout-test" class="botao-logout-test">Sair da conta</button>
         </section>
     </footer>
     <script src="js/control_tabs.js"></script>
     <script src="js/redirecionar.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 </html>

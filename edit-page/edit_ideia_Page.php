@@ -57,6 +57,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="img/lampada gotanidea.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
     <title><?= $nomeUsu ?> (Editar Perfil) | Got an Idea💡</title>
 </head>
 <body>
@@ -119,18 +120,9 @@
         </div>
     </section>
 
-    <header>
-        <div class="img-wrapper">
-            <img class="logo-header" src="img/logo.png" alt="Logo do Header">
-        </div>
-           
-                <input placeholder="Pesquisar" type="search" name="" id="">
-                <a href="../home/home.php">Encontre ideias</a>
-                <a href="">Conectado</a>
-                <a href="">Ranking</a>
-                <div class="div-userimg">
-                <?php echo "<img href='../profilePage/index.php' class='user-img' src='data:image;base64,$imagemUsu' alt= 'Foto do usuário logado'>"; ?>
-    </header>
+    <?php
+    require("../cabeçalho/cabecalho.php")
+    ?>
 
     <main>
   
@@ -171,7 +163,7 @@
                 
                 <article>
                 
-                    <section id="tab1" class="sec-article active tab_opened">
+                    <section id="tab1" class="sec-article active tab_opened sec-article-idea">
                     <?php foreach ($ideias as $ideia) { ?>
                         <div class="div-idea">
                             <div class="infos-user">
@@ -201,22 +193,6 @@
                             </div>
                         </div>
                     <?php } ?>
-                    </section>
-                
-                    <section id="tab2" class="sec-article ideas tab_closed">
-                        <div>
-                            <h1>Lampada Quebrada</h1>
-                            <p class="idea-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, voluptates unde quasi iusto corporis esse suscipit quae, illo eaque itaque quia assumenda impedit est aut quo delectus dolorem porro amet.</p>
-                            <button>Detalhes</button>
-                        </div>
-
-                        <div>
-                            <h1>Olha a pedra</h1>
-                            <p class="idea-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos dicta nisi ipsum ex consectetur reprehenderit fuga, nostrum, qui sapiente tenetur quod omnis modi vitae tempora magnam asperiores dolore illum! Quo?</p>
-
-                            <button>Detalhes</button>
-                        </div>
-
                     </section>
                 
                 
