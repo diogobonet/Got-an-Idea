@@ -381,3 +381,8 @@ main {
     cursor: pointer;
     margin: auto;
   }
+  @media only screen and (max-width: 768px) {
+    .best-idea {
+      display: none;
+    }
+  }

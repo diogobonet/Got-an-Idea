@@ -268,7 +268,6 @@ article {
 
 .sec-article {
     position: absolute;
-	padding: 8px;
     border-radius: 10px;
     width: 100%;
     background-color: #0A0A0D;
@@ -279,6 +278,11 @@ article {
     display: flex;
     flex-direction: row;
     gap: 50px;
+}
+
+.sec-article-idea {
+    display: flex;
+    flex-direction: column;
 }
 
 .sec-article div.sec-article-esquerda {
@@ -375,7 +379,13 @@ article {
     padding-bottom: 10px;
 }
 
-#botao-apagar-conta {
+#modal-apagar form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botao-apagar-conta, #botao-apagar {
     padding: 1.3em 3em;
     font-size: 12px;
     text-transform: uppercase;
@@ -390,14 +400,15 @@ article {
     outline: none;
     border-radius: 10px;
     font-family: "Poppins";
+    margin-top: 2px;
 }
   
-#botao-apagar-conta:hover {
+/* #botao-apagar-conta, #botao-apagar {
     background-color: rgb(196, 35, 35);
     box-shadow: 0px 15px 20px rgba(229, 46, 46, 0.4);
     color: #fff;
     transform: translateY(-7px);
-}
+} */
   
 #botao-apagar-conta:active {
     transform: translateY(-1px);

@@ -1,4 +1,3 @@
-<?php
         require('../db_conection/conexao.php');
 
         session_start();
@@ -209,4 +208,6 @@
             verificar_mensagem(<?php if(isset($_GET['msg'])){echo $_GET['msg'];}?>);
         </script>
 </body>
+</html>
+
 </html>

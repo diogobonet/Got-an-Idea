@@ -114,6 +114,20 @@
         </div>
     </section>
 
+    <section id="modal-apagar" class="edit-modal-main">
+        <div class="modal-changes-infos" id="change-nome">
+            <div class="modal-header-row">
+                <h1>Apagar a Conta</h1>
+                <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
+            </div>
+            <p>Você tem certeza que quer apagar sua conta?</p>
+            <form action="../deletarProfile/deletarprofile_exe.php" method="post">
+                    
+                  <button id="botao-apagar-conta" name="botao-apagar-conta" type="submit">Apagar minha conta</button>
+            </form>
+        </div>
+    </section>
+
     <?php
     require("../cabeçalho/cabecalho.php")
     ?>
@@ -199,10 +213,8 @@
     
     <footer>
         <section class="section-buttons">
-            <form action="../deletarProfile/deletarprofile_exe.php" method="post">
-                  <button id="botao-apagar-conta" name="botao-apagar-conta" type="submit">Apagar minha conta</button>
-            </form>
-            </section>
+            <button id="botao-apagar" name="botao-apagar">Apagar minha conta</button>
+        </section>
     </footer>
     <script src="js/script.js"></script>
     <script src="../register/js/notificacao.js"></script>
