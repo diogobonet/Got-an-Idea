@@ -15,7 +15,7 @@
 
         try{
 
-            $sql = "SELECT telefone, cidade, bio, formacao, apelido from Usuario WHERE email = '$emailUsu'";
+            $sql = "SELECT telefone, cidade, bio, formacao, apelido, tipo_conta from Usuario WHERE email = '$emailUsu'";
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
 
@@ -24,6 +24,19 @@
             $bioUsu = $row['bio'];
             $formacaoUsu = $row['formacao'];
             $apelidoUsu = $row['apelido'];
+            $tipoUsu = $row['tipo_conta'];
+
+            if ($tipoUsu == 1) {
+                $tipoUsu = "Idealizador";
+            } elseif ($tipoUsu == 2) {
+                $tipoUsu = "Colaborador";
+            } elseif ($tipoUsu == 3) {
+                $tipoUsu = "Investidor";
+            } elseif ($tipoUsu == 4) {
+                $tipoUsu = "Doador";
+            } else {
+                $tipoUsu = "Idealizador";
+            }
 
         } catch(Exception $e){
 
@@ -82,7 +95,7 @@
                     <h1><?= $nomeUsu ?></h1>
                     <button class="save-profile"><span class="material-symbols-outlined">bookmark</span>Salvar perfil</button>
                 </div>
-                <h2 class="select-user">@<?=$apelidoUsu?></h2>
+                <h2 class="select-user">@<?=$apelidoUsu?> | <?=$tipoUsu?></h2>
                 <!-- Ideia enquanto não foi resolvido o que faremos com os tipos de conta, resolvi colocar o "@" (apelido) -->
                 <!-- Código retirado: <h2 class="select-user">@Colaborador(a)</h2> -->
             </div>

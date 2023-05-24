@@ -14,7 +14,7 @@
 
         try{
 
-            $sql = "SELECT telefone, cidade, bio, formacao, apelido from Usuario WHERE email = '$emailUsu'";
+            $sql = "SELECT telefone, cidade, bio, formacao, apelido, tipo_conta from Usuario WHERE email = '$emailUsu'";
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
 
@@ -23,6 +23,20 @@
             $bioUsu = $row['bio'];
             $formacaoUsu = $row['formacao'];
             $apelidoUsu = $row['apelido'];
+            $tipoUsu = $row['tipo_conta'];
+
+            if ($tipoUsu == 1) {
+                $tipoUsu = "Idealizador";
+            } elseif ($tipoUsu == 2) {
+                $tipoUsu = "Colaborador";
+            } elseif ($tipoUsu == 3) {
+                $tipoUsu = "Investidor";
+            } elseif ($tipoUsu == 4) {
+                $tipoUsu = "Doador";
+            } else {
+                $tipoUsu = "Idealizador";
+            }
+
 
         } catch(Exception $e){
 
@@ -82,7 +96,7 @@
                 <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
             </div>
             <form class="modal-form" action="exe/edit_Page_exe.php" method="POST">
-                <input id="input-telefone" type="tel" name="alterar-telefone" placeholder="Digite seu telefone: ">
+                <input id="input-telefone" type="num" name="alterar-telefone"  oninput="formatarTelefone(this)" placeholder="Digite seu telefone: ">
                 <button type="submit">Salvar</button>
             </form>
         </div>
@@ -159,7 +173,7 @@
                         </span>Alterar nome</button>
                     
                 </div>
-                <h2 class="select-user">@<?=$apelidoUsu?></h2>
+                <h2 class="select-user">@<?=$apelidoUsu?> | <?=$tipoUsu?></h2>
                 <!-- Ideia enquanto não foi resolvido o que faremos com os tipos de conta, resolvi colocar o "@" (apelido) -->
                 <!-- Código retirado: <h2 class="select-user">@Colaborador(a)</h2> -->
             </div>
@@ -186,22 +200,6 @@
                             <?php validate_data($cidadeUsu, 'botao-alterarcidade'); ?>
                             <?php validate_data($formacaoUsu, 'botao-alterarformacao'); ?>
                         </div>
-                    </section>
-                
-                    <section id="tab2" class="sec-article ideas tab_closed">
-                        <div>
-                            <h1>Lampada Quebrada</h1>
-                            <p class="idea-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, voluptates unde quasi iusto corporis esse suscipit quae, illo eaque itaque quia assumenda impedit est aut quo delectus dolorem porro amet.</p>
-                            <button>Detalhes</button>
-                        </div>
-
-                        <div>
-                            <h1>Olha a pedra</h1>
-                            <p class="idea-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos dicta nisi ipsum ex consectetur reprehenderit fuga, nostrum, qui sapiente tenetur quod omnis modi vitae tempora magnam asperiores dolore illum! Quo?</p>
-
-                            <button>Detalhes</button>
-                        </div>
-
                     </section>
                 
                 

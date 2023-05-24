@@ -79,3 +79,13 @@ configurarModal(botaoAlterarFormacao, modalAlterarFormacao);
 const botaoApagar = document.getElementById("botao-apagar");
 const modalApagar = document.getElementById("modal-apagar");
 configurarModal(botaoApagar, modalApagar);
+
+// Telefone REGEX
+function formatarTelefone(input) {
+  var numero = input.value.replace(/\D/g, '');
+
+  // Formatação do telefone
+  var formatado = numero.replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, '($1) $2 $3-$4');
+
+  input.value = formatado;
+}
