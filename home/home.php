@@ -5,7 +5,9 @@
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
 
-    $sql = "SELECT * FROM ideia INNER JOIN usuario ON ideia.fk_usuario_email = usuario.email";
+    $sql = "SELECT * FROM ideia 
+    INNER JOIN usuario ON ideia.fk_usuario_email = usuario.email 
+    INNER JOIN projeto ON ideia.fk_usuario_email = projeto.fk_usuario_email ORDER BY id_ideia DESC, id_projeto DESC";
     try{
         $result = $conn->query($sql);
         $ideias = $result->fetch_all(MYSQLI_ASSOC); 
