@@ -36,3 +36,7 @@ Aprendemos com esse projeto na prática como utilizar **Relação de Artefatos**
 
 ### Como está o desenvolvimento do projeto?
 Atualmente o projeto está em desenvolvimento. E ficará em desenvolvimento até o dia **26/06/2023**.
+
+### Links
+- [Prototipação 😎](https://github.com/diogobonet/Got-an-Idea/blob/main/doc/prototype/readme.md)
+- [Modelos do Sistema](https://github.com/diogobonet/Got-an-Idea/tree/main/model)
