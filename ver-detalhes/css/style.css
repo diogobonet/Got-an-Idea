@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+@font-face {font-family: Talisso; src: url(../../home/fonts/tussilago_rg.otf);} 
+* {
+    padding: 0;
+    margin: 0;
+} .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+/* HEADER */
+
+.header-details {
+    display: flex; flex-direction: row; padding: 15px; align-items: center; gap: 5%; 
+} .header-details h2 {
+    font-weight: 500;
+} .header-details span {
+    cursor: pointer;
+    user-select: none;
+} .header-details span:hover {
+    color: rgb(197, 193, 193);
+}
+/* MAIN */
+main {
+    padding: 15px;
+}
+
+.sec-infouser {
+    display: flex; flex-direction: row; justify-content: space-between; align-items: center;
+    border-bottom: rgb(5, 72, 242) 2px solid;
+}
+
+.div-img, .div-namephoto {
+    display: flex;
+    align-items: center;
+}
+
+.div-img {
+    max-width: 100px;
+    min-width: none;
+    height: 100px;
+}
+
+.div-img img {
+    max-width: 100%;
+    height: 50%;
+    border-radius: 100%;
+}
+
+.div-namephoto {
+    display: flex; flex-direction: row;
+}
+
+.nome-function {
+    display: flex; flex-direction: column; margin-left: 15px;
+}
+
+.nome-function h1, h2 {
+    font-weight: 400; font-family: Talisso;
+} .nome-function h2 {
+    color: rgb(5, 131, 242);
+    font-size: 14px;
+}
+.nome-function h1 {
+    font-size: 20px;
+}
+.data-postagem {
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(151, 151, 151);
+}
+/* SECTION CONTENT */
+.section-content {
+    margin-top: 15px;
+}
+.section-content h1 {
+    font-size: 21px; font-weight: 600;
+    color: rgb(5, 131, 242);
+}
+.filtro-h1 {
+    font-family: Talisso; font-weight: 600; font-size: 14px;
+} .section-content p {
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+/* SECTION DONATION */
+.sec-donation {
+    display: flex; flex-direction: column;
+    margin-top: 5%;
+    justify-content: end;
+    align-items: end;
+}
+
+.sec-donation button {
+    padding: 10px; background-color: rgb(52, 180, 69); border: none; color: white;
+    font-family: 'Poppins'; border-radius: 20px; max-width: 12%;  min-width: 10%;
+    cursor: pointer; 
+}
+
+.sec-donation button:hover {
+    background-color: rgb(99, 185, 110);
+}
+
+/* MODAL */
+.edit-modal-main {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+  }
+
+.modal-changes-infos {
+    position: absolute;
+    background-color: #3a3a43;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    max-width: 50%;
+    min-width: 50%;
+    border-radius: 10px;
+}
+
+.modal-changes-infos h1 {
+    font-weight: 400;
+}
+
+.modal-changes-infos input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #494951;
+    border: none;
+    border-radius: 10px;
+    max-height: none;
+    color: white;
+    font-family: "Poppins";
+}
+
+.modal-header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.modal-header-row span {
+    cursor: pointer;
+}
+
+.modal-header-row span:hover {
+    color: rgb(242, 86, 86);
+}
+
+.modal-changes-infos input::placeholder {
+    color: rgb(133, 133, 133);
+    padding-left: 2px;
+}
+
+.modal-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-form button {
+    padding: 8px;
+    max-width: 80px;
+    min-width: none;
+    font-family: "Poppins";
+    margin-top: 20px;
+    background-color: rgb(52, 180, 69);
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-changes-infos form button:hover {
+    background-color: rgb(83, 223, 125);
+}
