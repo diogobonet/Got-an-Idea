@@ -30,7 +30,7 @@
 
         public function salvar():void{
             $today = date("d.m.y");
-            if($this->tipo_postagem == 1){
+            if($this->tipo_postagem == 1){ // Cadastro para ideias (meta e valor NULOS)
                 $sql = "INSERT INTO postagens(data_post, filtros, titulo, descricao, fk_email, fk_idPost, meta_de_arrecadacao, valor_arrecadado) VALUES (?, ?, ?, ?, ?, ?, NULL, NULL)";
                 try{
                     $sql_preparado = $this->conexao->prepare($sql);
@@ -44,7 +44,7 @@
                     echo "</br>";
                     echo $e->getMessage();
                 }
-            } else if($this->tipo_postagem == 2){
+            } else if($this->tipo_postagem == 2){ // Cadastro para projetos (meta e valor zerados de inicio)
                 $sql = "INSERT INTO postagens(data_post, filtros, titulo, descricao, fk_email, fk_idPost, meta_de_arrecadacao, valor_arrecadado) VALUES (?, ?, ?, ?, ?, ?, 0, 0)";
                 try{
                     $sql_preparado = $this->conexao->prepare($sql);

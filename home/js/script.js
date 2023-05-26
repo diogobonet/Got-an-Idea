@@ -55,7 +55,6 @@ projetoDiv.addEventListener('click', function() {
 
 // REDIRECIONAR VIA GET
 function verDetalhes() {
-  var url = "../../ver-detalhes/index.php"
+  var url = "../ver-detalhes/index.php"
   window.location.href = url
 }
-
