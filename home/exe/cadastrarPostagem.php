@@ -31,7 +31,7 @@
         public function salvar():void{
 
             $today = date("d.m.y");
-            $sql = "INSERT INTO postagens(data_post, filtros, titulo, descricao, fk_email, fk_idTipoPostagem) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO postagens(data_post, filtros, titulo, descricao, fk_email, fk_idPost) VALUES (?, ?, ?, ?, ?, ?)";
             try{
 
                 $sql_preparado = $this->conexao->prepare($sql);
