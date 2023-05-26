@@ -1,4 +1,5 @@
 // ABRIR MODAL
+const inputTipoPostagem = document.getElementById('inputTipoPostagem'); // Input tipo de Postagem
 
 const btnCadastrarIdeia = document.getElementById("btn-cadastrar-ideia"); // Pega o botão de cadastrar ideia
 const btnCadastrarProjeto = document.getElementById("btn-cadastrar-projeto"); // Pega o botão de cadastrar projeto
@@ -11,7 +12,7 @@ const formModal = document.getElementById('form-modal');
 // Adiciona um evento de clique ao botão de cadastrar ideia
 btnCadastrarIdeia.addEventListener("click", function() {
   modal.style.display = "block";
-  formModal.action = "exe/cadastrar_ideia.php";
+  inputTipoPostagem.value = 1;
   tituloModal.textContent = 'Cadastre sua ideia';
 
 });
@@ -19,7 +20,7 @@ btnCadastrarIdeia.addEventListener("click", function() {
 // Adiciona um evento de clique ao botão de cadastrar projeto
 btnCadastrarProjeto.addEventListener("click", function() {
   modal.style.display = "block";
-  formModal.action = "exe/cadastrar_projeto.php";
+  inputTipoPostagem.value = 2;
   tituloModal.textContent = 'Cadastre seu projeto';
 
 });

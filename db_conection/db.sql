@@ -1,5 +1,7 @@
-CREATE DATABASE gt_idea_DB;
-USE gt_idea_DB;
+CREATE DATABASE gaidb;
+USE gaidb;
+
+
 
 CREATE TABLE Usuario (
     email varchar(100) PRIMARY KEY,
@@ -14,35 +16,28 @@ CREATE TABLE Usuario (
     formacao varchar(100)
 );
 
-CREATE TABLE Ideia (
-    id_ideia int NOT NULL AUTO_INCREMENT,
+CREATE TABLE Postagens (
+    id int NOT NULL AUTO_INCREMENT,
     data_post varchar(13),
     filtros varchar(50),
     titulo varchar(100),
     descricao varchar(100),
-    fk_usuario_email varchar(100),
-    PRIMARY KEY(id_ideia),
-    CONSTRAINT FK_Ideia_2
-    FOREIGN KEY (fk_usuario_email)
-    REFERENCES Usuario (email)
-    ON DELETE CASCADE
+    fk_email varchar(100),
+    fk_idTipoPostagem int,
+    PRIMARY KEY(id),
+    CONSTRAINT FK_emails FOREIGN KEY (fk_email) REFERENCES Usuario (email) ON DELETE CASCADE,
+    CONSTRAINT FK_tipos_de_postagem FOREIGN KEY (fk_idTipoPostagem) REFERENCES TiposPostagem (id) ON DELETE CASCADE
 );
 
-
-CREATE TABLE Projeto (
-    id_projeto int NOT NULL AUTO_INCREMENT,
-    data_post varchar(13),
-    filtros varchar(50),
-    titulo varchar(100),
-    descricao varchar(100),
-    fk_usuario_email varchar(100),
-    PRIMARY KEY(id_projeto),
-    CONSTRAINT FK_Projeto_2
-    FOREIGN KEY (fk_usuario_email)
-    REFERENCES Usuario (email)
-    ON DELETE CASCADE
+CREATE TABLE TiposPostagem (
+    id int NOT NULL,
+    tipoDaPostagem varchar(100) NOT NULL,
 );
 
+-- INSERÇÃO DOS TIPOS DE POSTAGEM NA TABELA 'TiposPostagem' : --
+INSERT INTO `tipospostagem` (`id`, `tipoDaPostagem`) VALUES ('1', 'Ideia');
+INSERT INTO `tipospostagem` (`id`, `tipoDaPostagem`) VALUES ('2', 'Projeto');
+--
 --
 -- Acionadores `usuario`
 --

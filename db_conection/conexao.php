@@ -1,8 +1,8 @@
 <?php
     $host = 'localhost'; // Conexão no Servidor
-    $user = 'root';
-    $pass = '';
-    $db = 'gt_idea_db';
+    $user = 'root'; // alt
+    $pass = ''; // alt
+    $db = 'gaidb';
 
     try{
         $conn = new mysqli($host, $user, $pass, $db);
