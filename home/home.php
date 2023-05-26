@@ -9,9 +9,7 @@
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
 
-    $sql = "SELECT * FROM ideia 
-    INNER JOIN usuario ON ideia.fk_usuario_email = usuario.email 
-    INNER JOIN projeto ON ideia.fk_usuario_email = projeto.fk_usuario_email ORDER BY id_ideia DESC, id_projeto DESC";
+    $sql = "SELECT Postagens.*, usuario.imagem, usuario.apelido, usuario.nome FROM Postagens INNER JOIN usuario ON Postagens.fk_email = usuario.email";
     try{
         $result = $conn->query($sql);
         $ideias = $result->fetch_all(MYSQLI_ASSOC); 
@@ -44,7 +42,8 @@
                     </div>
                     
                     <!-- FORMULARIO MODAL -->
-                    <form id='form-modal' class="modal-idea" action="" method='POST'>
+                    <form id='form-modal' class="modal-idea" action="exe/cadastrarPostagem.php" method='POST'>
+                        <input id='inputTipoPostagem' name='input-tipo-postagem' style='visibility:hidden; display:none;' type='text'>
 
                         <div class="modal-idea-row">
                             <input name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
