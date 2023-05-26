@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="botao-editar-ideia">
-                        <button>Ver Detalhes</button>
+                        <button onclick="verDetalhes()">Ver Detalhes</button>
                     </div>
                 </div>
                 <div class="infos-ideia">

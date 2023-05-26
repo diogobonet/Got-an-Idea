@@ -89,10 +89,9 @@ main {
 
 /* SECTION DONATION */
 .sec-donation {
-    display: flex; flex-direction: column;
+    display: flex; flex-direction: row;
     margin-top: 5%;
-    justify-content: end;
-    align-items: end;
+    justify-content: space-between;
 }
 
 .sec-donation button {
@@ -103,6 +102,29 @@ main {
 
 .sec-donation button:hover {
     background-color: rgb(99, 185, 110);
+}
+
+#doacao_barra{
+    position:relative;
+    width:70%;
+    height: 30px;
+    background-color: gray;
+}
+#doacao_barra::after{
+    content: '';
+    position:absolute;
+    background-color: green;
+    width:70%;
+    height: 30px;
+    bottom: 0;
+}
+#doacao_barra::before{
+    display:flex; justify-content: center; 
+    content: '70%';
+    z-index: 10000;
+    position: absolute;
+    width:100%; height:30px;
+    bottom: 0;
 }
 
 /* MODAL */

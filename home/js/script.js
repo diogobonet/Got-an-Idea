@@ -52,3 +52,10 @@ projetoDiv.addEventListener('click', function() {
   projetoDiv.classList.add('active');
   ideiaDiv.classList.remove('active');
 });
+
+// REDIRECIONAR VIA GET
+function verDetalhes() {
+  var url = "../../ver-detalhes/index.php"
+  window.location.href = url
+}
+

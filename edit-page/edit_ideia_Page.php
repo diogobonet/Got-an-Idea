@@ -1,5 +1,6 @@
 <?php
         require('../db_conection/conexao.php');
+        require('exe/verificarInfos.php');
 
         session_start();
 
@@ -13,7 +14,7 @@
 
         try{
 
-            $sql = "SELECT telefone, cidade, bio, formacao, apelido from Usuario WHERE email = '$emailUsu'";
+            $sql = "SELECT telefone, cidade, bio, formacao, apelido, tipo_conta from Usuario WHERE email = '$emailUsu'";
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
 
@@ -22,6 +23,8 @@
             $bioUsu = $row['bio'];
             $formacaoUsu = $row['formacao'];
             $apelidoUsu = $row['apelido'];
+            $tipoUsu = $row['tipo_conta'];
+
 
         } catch(Exception $e){
 
@@ -42,10 +45,11 @@
         $email = $_SESSION['email'];
         $imagem = $_SESSION['imagem'];
 
-        $sql = "SELECT * FROM Ideia WHERE fk_Usuario_email = '$email' ORDER BY id DESC";
+        $sql = "SELECT Postagens.*, usuario.imagem, usuario.apelido, usuario.nome FROM Postagens 
+        INNER JOIN usuario ON Postagens.fk_email = '$email' ";
         try{
             $result = $conn->query($sql);
-            $ideias = $result->fetch_all(MYSQLI_ASSOC);
+            $postagens = $result->fetch_all(MYSQLI_ASSOC);
         } catch(Exception $e){
             echo"<h1 style='color:red; font-size:45px;'>Erro:</h1>";
             echo"<h1 style='color:white; font-size:35px;'>" . $e->getMessage() . "</h1>";
@@ -154,7 +158,7 @@
                         </span>Alterar nome</button>
                     
                 </div>
-                <h2 class="select-user">@<?=$apelidoUsu?></h2>
+                <h2 class="select-user">@<?=$apelidoUsu?> | <?=obterTipoConta($tipoUsu);?></h2>
                 <!-- Ideia enquanto não foi resolvido o que faremos com os tipos de conta, resolvi colocar o "@" (apelido) -->
                 <!-- Código retirado: <h2 class="select-user">@Colaborador(a)</h2> -->
             </div>
@@ -168,32 +172,32 @@
                 <article>
                 
                     <section id="tab1" class="sec-article active tab_opened sec-article-idea">
-                    <?php foreach ($ideias as $ideia) { ?>
+                    <?php foreach ($postagens as $post) { ?>
                         <div class="div-idea">
                             <div class="infos-user">
                                 <div class="infos-user-row">
                                     <div class="img-user-div">
-                                        <?php echo "<img class='img-user' src='data:image;base64,".base64_encode($ideia['imagem'])."' alt= 'Foto do dono da postagem'>"; ?>
+                                        <?php echo "<img class='img-user' src='data:image;base64,".base64_encode($post['imagem'])."' alt= 'Foto do dono da postagem'>"; ?>
                                     </div>
                                     <div class="infos-user-names">
-                                        <h1 class="nome-user"><?php echo $ideia['nome']; ?></h1>
-                                        <h2 class="persona-user">Idealizador</h2>
+                                        <h1 class="nome-user"><?php echo $post['nome']; ?></h1>
+                                        <h2 class="persona-user">Idealizador | <?= verificarTipo($post['fk_idPost'])?></h2>
                                     </div>
                                 </div>
                                 <div class="botao-editar-e-deletar-ideia">
                                     <form action="form_edit_ideia.php" method="POST">
-                                        <input type="hidden" name="id_Ideia" value="<?php echo $ideia['id'];?>">
-                                        <button class="editar" type="submit">Editar ideia</button>
+                                        <input type="hidden" name="id_Post" value="<?= $post['id'];?>">
+                                        <button class="editar" type="submit">Editar <?= verificarTipo($post['fk_idPost'])?></button>
                                     </form>
                                     <form action="exe/delete_ideia_exe.php" method="POST">
-                                        <input type="hidden" name="id_Ideia" value="<?php echo $ideia['id'];?>">
-                                        <button class="deletar" type="submit">Apagar ideia</button>
+                                        <input type="hidden" name="id_Post" value="<?= $post['id'];?>">
+                                        <button class="deletar" type="submit">Apagar <?= verificarTipo($post['fk_idPost'])?></button>
                                     </form>
                                 </div>
                             </div>
                             <div class="infos-ideia">
-                                <h1 class="titulo-ideia"><?php echo $ideia['titulo']; ?></h1>
-                                <p class="desc-ideia"><?php echo $ideia['descricao']; ?></p>
+                                <h1 class="titulo-ideia"><?php echo $post['titulo']; ?></h1>
+                                <p class="desc-ideia"><?php echo $post['descricao']; ?></p>
                             </div>
                         </div>
                     <?php } ?>

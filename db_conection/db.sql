@@ -30,11 +30,23 @@ CREATE TABLE Postagens (
     filtros varchar(50),
     titulo varchar(100),
     descricao varchar(100),
+    meta_de_arrecadacao float,
+    valor_arrecadado float,
     fk_email varchar(100),
     fk_idPost int,
     PRIMARY KEY(id),
     CONSTRAINT FK_emails FOREIGN KEY (fk_email) REFERENCES Usuario (email) ON DELETE CASCADE,
     CONSTRAINT FK_tipos_de_postagem FOREIGN KEY (fk_idPost) REFERENCES TiposPostagem (idPost) ON DELETE CASCADE
+);
+
+CREATE TABLE Doacao (
+    id_doacao int NOT NULL AUTO_INCREMENT,
+    valor float,
+    data_post date,
+    fk_email varchar(100),
+    fk_idPost int
+    CONSTRAINT FK_user_doador FOREIGN KEY (fk_email) REFERENCES Usuario (email) ON DELETE CASCADE,
+    CONSTRAINT FK_id_postagem FOREIGN KEY (fk_idPost) REFERENCES Postagens (id) ON DELETE CASCADE
 );
 
 -- INSERÇÃO DOS TIPOS DE POSTAGEM NA TABELA 'TiposPostagem' : --

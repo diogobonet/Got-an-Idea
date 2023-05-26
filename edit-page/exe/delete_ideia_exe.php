@@ -1,9 +1,9 @@
 <?php
     require "../../db_conection/conexao.php";
 
-    $id_Ideia = $_POST['id_Ideia'];
+    $id_Post = $_POST['id_Post'];
 
-    $sql = "DELETE FROM ideia WHERE id = '$id_Ideia'";  //exlui a conta logada do banco de dados
+    $sql = "DELETE FROM Postagens WHERE id = '$id_Post'";  //exlui a conta logada do banco de dados
     
     if($conn->query($sql) === true){
         // Essa mensagem está na pasta do register/verificar_mensagem.js
