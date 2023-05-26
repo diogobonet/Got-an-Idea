@@ -14,6 +14,17 @@
     <?php
         session_start();
         require("../cabeçalho/cabecalho.php");
+        require("../db_conection/conexao.php");
+        require('exe/verificarInfos.php');
+
+        $idPost = $_POST['id-post'];
+
+        $sql = "SELECT usuario.imagem, usuario.tipo_conta, usuario.apelido, usuario.nome, Postagens.* FROM Usuario INNER JOIN Postagens ON id = $idPost";
+        $result = $conn->query($sql);
+        $postagem = $result->fetch_assoc();
+        enviarBarra($postagem['valor_arrecadado'], $postagem['meta_de_arrecadacao']); // Style da barra dinâmico!
+
+
     ?>
     <header class="header-details">
         <span class="material-symbols-outlined">arrow_back</span>
@@ -25,26 +36,31 @@
             <div class="div-namephoto">
                 <div class="div-img"><img src="../img/messi.jpeg" alt=""></div>
                 <div class="nome-function">
-                    <h1>Diogo Bonet</h1>
-                    <h2>Idealizador</h2>
+                    <h1><?=$postagem['nome']?></h1>
+                    <h2><?=obterTipoConta($postagem['tipo_conta']);?></h2>
                 </div>
             </div>
-            <h3 class="data-postagem">Postado em 25/05/2023</h3>
+            <h3 class="data-postagem">Postado em <?=$postagem['data_post']?></h3>
         </section>
 
         <section class="section-content">
-            <h1>Titulo do Projeto | <span class="filtro-h1">Educação</span></h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nihil rerum illo obcaecati neque sit quod harum odio aut illum rem expedita animi ducimus, mollitia facere voluptas fugit dolor vero.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, rerum accusantium dolores sed facilis qui animi aperiam eaque veniam necessitatibus laboriosam sint nostrum assumenda minus soluta adipisci minima ratione nihil.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odio eum voluptatibus beatae omnis et possimus eveniet a praesentium modi at, distinctio, ipsa perspiciatis fuga voluptate exercitationem veniam alias! Quo?
-            </p>
-            
+            <h1><?=$postagem['titulo']?> | <span class="filtro-h1"><?=$postagem['filtros']?></span></h1>
+            <p><?=$postagem['descricao']?></p>
+            <?php
+                $tipoPostagem = verificarTipo($postagem['fk_idPost']);
+                if($tipoPostagem == "Projeto"){
+                    echo "<p>Meta = R$ " . $postagem['meta_de_arrecadacao'] . "</p>";
+                    echo "<p>Arrecadado = R$ ".$postagem['valor_arrecadado']."</p>";
+                    echo "
+                        <section class='sec-donation'>
+                            <div id='doacao_barra'></div>
+                            <button id='botao-doacao'>Doar</button>
+                        </section>
+                    ";
+                }
+            ?>
         </section>
         
-        <section class="sec-donation">
-            <div id='doacao_barra'></div>
-            <button id="botao-doacao">Doar</button>
-        </section>
     </main>
 
     <section id="modal-doacao" class="edit-modal-main">
@@ -54,8 +70,7 @@
                 <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
             </div>
             <form class="modal-form" action="exe/doacao_exe.php" method="POST">
-                <input com o id do projeto>
-                <input id='id-projeto' name='id-projeto' style='visibility:hidden; display:none;' type='text'>
+                <input id='id-projeto' name='id-projeto' style='visibility:hidden; display:none;' type='text' value='<?=$idPost?>'>
                 <input type="number" name="valor-doacao" placeholder="R$">
                 <button type="submit">Doar</button>
             </form>

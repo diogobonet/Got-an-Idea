@@ -1,4 +1,5 @@
 <?php
+    require('../../db_conection/conexao.php');
     $valor_doado = $_POST['valor-doacao'];
     $id_projeto = $_POST['id-projeto'];
 
@@ -8,12 +9,13 @@
         //Capturar o valor atingido atual
         $sql = "SELECT valor_arrecadado FROM Postagens WHERE id = '$id_projeto'";
         $result = $conn->query($sql);
-        $valor_arrecadado = $result->fetch_all(MYSQLI_ASSOC); 
-        $valor_arrecadado += $valor_doado;
+        $valor_arrecadado = $result->fetch_assoc();
+        $valor_arrecadado = $valor_arrecadado['valor_arrecadado'];
+        $valor_arrecadado += floatval($valor_doado);
 
         //Atualizar o valor atingido
-        $sql = "UPDATE postagens SET atingido = '$atingido' WHERE id = '$id_projeto'";
+        $sql = "UPDATE postagens SET valor_arrecadado = '$valor_arrecadado' WHERE id = '$id_projeto'";
         $result = $conn->query($sql); 
-        header ("Location: ../index.php?msg=sucesso");
+        header ("Location: ../../home/home.php?msg=sucesso");
     }
 ?>
