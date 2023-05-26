@@ -12,8 +12,8 @@
 </head>
 <body>
     <?php
-    session_start();
-    require("../cabeçalho/cabecalho.php")
+        session_start();
+        require("../cabeçalho/cabecalho.php");
     ?>
     <header class="header-details">
         <span class="material-symbols-outlined">arrow_back</span>
@@ -38,9 +38,11 @@
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus, rerum accusantium dolores sed facilis qui animi aperiam eaque veniam necessitatibus laboriosam sint nostrum assumenda minus soluta adipisci minima ratione nihil.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odio eum voluptatibus beatae omnis et possimus eveniet a praesentium modi at, distinctio, ipsa perspiciatis fuga voluptate exercitationem veniam alias! Quo?
             </p>
+            
         </section>
         
         <section class="sec-donation">
+            <div id='doacao_barra'></div>
             <button id="botao-doacao">Doar</button>
         </section>
     </main>
@@ -51,8 +53,10 @@
                 <h1>Insira o valor da doação</h1>
                 <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
             </div>
-            <form class="modal-form" action="exe/edit_Page_exe.php" method="POST">
-                <input type="number" name="alterar-nome" placeholder="R$">
+            <form class="modal-form" action="exe/doacao_exe.php" method="POST">
+                <input com o id do projeto>
+                <input id='id-projeto' name='id-projeto' style='visibility:hidden; display:none;' type='text'>
+                <input type="number" name="valor-doacao" placeholder="R$">
                 <button type="submit">Doar</button>
             </form>
         </div>

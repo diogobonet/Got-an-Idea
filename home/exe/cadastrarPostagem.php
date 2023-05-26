@@ -29,23 +29,36 @@
         }
 
         public function salvar():void{
-
             $today = date("d.m.y");
-            $sql = "INSERT INTO postagens(data_post, filtros, titulo, descricao, fk_email, fk_idPost) VALUES (?, ?, ?, ?, ?, ?)";
-            try{
-
-                $sql_preparado = $this->conexao->prepare($sql);
-                $sql_preparado->bind_param("sssssi", $today, $this->opcao, $this->titulo, $this->descricao, $this->usuario_post, $this->tipo_postagem);
-                $sql_preparado->execute();
-
-                header("location: ../home.php");
+            if($this->tipo_postagem == 1){
+                $sql = "INSERT INTO postagens(data_post, filtros, titulo, descricao, fk_email, fk_idPost, meta_de_arrecadacao, valor_arrecadado) VALUES (?, ?, ?, ?, ?, ?, NULL, NULL)";
+                try{
+                    $sql_preparado = $this->conexao->prepare($sql);
+                    $sql_preparado->bind_param("sssssi", $today, $this->opcao, $this->titulo, $this->descricao, $this->usuario_post, $this->tipo_postagem);
+                    $sql_preparado->execute();
+    
+                    header("location: ../home.php");
+                }
+                catch(Exception $e){
+                    echo " Erro";
+                    echo "</br>";
+                    echo $e->getMessage();
+                }
+            } else if($this->tipo_postagem == 2){
+                $sql = "INSERT INTO postagens(data_post, filtros, titulo, descricao, fk_email, fk_idPost, meta_de_arrecadacao, valor_arrecadado) VALUES (?, ?, ?, ?, ?, ?, 0, 0)";
+                try{
+                    $sql_preparado = $this->conexao->prepare($sql);
+                    $sql_preparado->bind_param("sssssi", $today, $this->opcao, $this->titulo, $this->descricao, $this->usuario_post, $this->tipo_postagem);
+                    $sql_preparado->execute();
+    
+                    header("location: ../home.php");
+                }
+                catch(Exception $e){
+                    echo " Erro";
+                    echo "</br>";
+                    echo $e->getMessage();
+                }
             }
-            catch(Exception $e){
-                echo " Erro";
-                echo "</br>";
-                echo $e->getMessage();
-            }
-
         }
     }
 
