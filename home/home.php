@@ -1,5 +1,6 @@
 <?php
     require('../db_conection/conexao.php');
+    require('exe/verificarInfos.php'); // Traz o verificarUser();
     session_start();
 
     if(!isset($_SESSION['email'])) {
@@ -9,7 +10,9 @@
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
 
-    $sql = "SELECT Postagens.*, usuario.imagem, usuario.apelido, usuario.nome FROM Postagens INNER JOIN usuario ON Postagens.fk_email = usuario.email";
+    $sql = "SELECT Postagens.*, usuario.imagem, usuario.apelido, usuario.nome FROM Postagens 
+    INNER JOIN usuario ON Postagens.fk_email = usuario.email 
+    INNER JOIN tipospostagem ON Postagens.fk_idPost = tipospostagem.idPost ORDER BY Id DESC ";
     try{
         $result = $conn->query($sql);
         $ideias = $result->fetch_all(MYSQLI_ASSOC); 
@@ -103,7 +106,7 @@
                         </div>
                         <div class="infos-user-names">
                             <h1 class="nome-user"><?php echo $ideia['nome']; ?></h1>
-                            <h2 class="persona-user">Idealizador</h2>
+                            <h2 class="persona-user">Idealizador | <?= verificarUser($ideia['fk_idPost'])?></h2>
                         </div>
                     </div>
                     <div class="botao-editar-ideia">
