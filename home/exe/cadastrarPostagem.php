@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('America/Sao_Paulo');
     require('../../db_conection/conexao.php');
     session_start();
 
@@ -29,7 +30,7 @@
         }
 
         public function salvar():void{
-            $today = date("d.m.y");
+            $today = date("d/m/y");
             if($this->tipo_postagem == 1){ // Cadastro para ideias (meta e valor NULOS)
                 $sql = "INSERT INTO postagens(data_post, filtros, titulo, descricao, fk_email, fk_idPost, meta_de_arrecadacao, valor_arrecadado) VALUES (?, ?, ?, ?, ?, ?, NULL, NULL)";
                 try{

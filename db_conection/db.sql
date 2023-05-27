@@ -42,7 +42,7 @@ CREATE TABLE Postagens (
 CREATE TABLE Doacao (
     id_doacao int NOT NULL AUTO_INCREMENT,
     valor float,
-    data_post date,
+    data_post varchar(13),
     fk_email varchar(100),
     fk_idPost int,
     PRIMARY KEY(id_doacao),

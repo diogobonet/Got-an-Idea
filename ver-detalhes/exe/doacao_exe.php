@@ -1,8 +1,10 @@
 <?php
+    session_start();
     require('../../db_conection/conexao.php');
     $valor_doado = $_POST['valor-doacao'];
     $id_projeto = $_POST['id-projeto'];
 
+    //Atualizar a tabela de Postagens
     if ($valor_doado < 0) {
         header ("Location: ../index.php?msg=valor_errado");
     } else {
@@ -14,8 +16,22 @@
         $valor_arrecadado += floatval($valor_doado);
 
         //Atualizar o valor atingido
-        $sql = "UPDATE postagens SET valor_arrecadado = '$valor_arrecadado' WHERE id = '$id_projeto'";
+        $sql = "UPDATE Postagens SET valor_arrecadado = '$valor_arrecadado' WHERE id = '$id_projeto'";
         $result = $conn->query($sql); 
-        header ("Location: ../../home/home.php?msg=sucesso");
     }
+
+    //Atualizar a tabela de Doacao
+    date_default_timezone_set('America/Sao_Paulo');
+    $today = date("d.m.y");
+    $email = $_SESSION['email'];
+    $sql = "INSERT INTO Doacao(valor, data_post, fk_email, fk_idPost) VALUES('$valor_doado', '$today', '$email', '$id_projeto')";
+    $conn->query($sql);
+
+    //id_doacao int NOT NULL AUTO_INCREMENT,
+    //valor float,
+    //data_post date,
+    //fk_email varchar(100),
+    //fk_idPost int,
+
+    header ("Location: ../../home/home.php?msg=sucesso");
 ?>

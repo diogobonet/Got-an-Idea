@@ -4,6 +4,10 @@
         require("../db_conection/conexao.php");
         require('exe/verificarInfos.php');
 
+        if(!isset($_SESSION['email'])) {
+            header ("Location: ../login/login.php");
+        }
+
         $idPost = $_POST['id-post'];
 
         $sql = "SELECT usuario.imagem, usuario.tipo_conta, usuario.apelido, usuario.nome, Postagens.* FROM Usuario INNER JOIN Postagens ON id = $idPost";

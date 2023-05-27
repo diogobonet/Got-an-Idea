@@ -23,6 +23,7 @@
     }
 
     function enviarBarra($quantiaDoada, $metaDoacao):void{
+        if($metaDoacao==0){$metaDoacao=1;}
         $porcentagem = round(($quantiaDoada/$metaDoacao)*100);
         if($porcentagem >= 100){$porcentagem = 100;}
         echo"
@@ -44,7 +45,7 @@
             #doacao_barra::before{
                 display:flex; justify-content: center; 
                 content: '$porcentagem%';
-                z-index: 100;
+                z-index: 1;
                 position: absolute;
                 width:100%; height:30px;
                 bottom: 0;
