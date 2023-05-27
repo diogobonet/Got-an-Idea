@@ -128,9 +128,7 @@
         </div>
     </section>
 
-    <?php
-    require("../cabeçalho/cabecalho.php")
-    ?>
+    <?php require("../cabeçalho/cabecalho.php"); ?>
 
     <main>
   
@@ -172,12 +170,12 @@
                 <article>
                 
                     <section id="tab1" class="sec-article active tab_opened sec-article-idea">
-                    <?php foreach ($postagens as $post) { ?>
+                    <?php foreach ($postagens as $post) : ?>
                         <div class="div-idea">
                             <div class="infos-user">
                                 <div class="infos-user-row">
                                     <div class="img-user-div">
-                                        <?php echo "<img class='img-user' src='data:image;base64,".base64_encode($post['imagem'])."' alt= 'Foto do dono da postagem'>"; ?>
+                                        <img class='img-user' src='data:image;base64,<?=base64_encode($post['imagem'])?>' alt= 'Foto do dono da postagem'>
                                     </div>
                                     <div class="infos-user-names">
                                         <h1 class="nome-user"><?php echo $post['nome']; ?></h1>
@@ -191,7 +189,7 @@
                                     </form>
                                     <form action="exe/delete_ideia_exe.php" method="POST">
                                         <input type="hidden" name="id_Post" value="<?= $post['id'];?>">
-                                        <button class="deletar" type="submit">Apagar <?= verificarTipo($post['fk_idPost'])?></button>
+                                        <button class="deletar">Apagar <?= verificarTipo($post['fk_idPost'])?></button>
                                     </form>
                                 </div>
                             </div>
@@ -200,7 +198,7 @@
                                 <p class="desc-ideia"><?php echo $post['descricao']; ?></p>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php endforeach; ?>
                     </section>
                 
                 

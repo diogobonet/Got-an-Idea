@@ -42,9 +42,10 @@ CREATE TABLE Postagens (
 CREATE TABLE Doacao (
     id_doacao int NOT NULL AUTO_INCREMENT,
     valor float,
-    data_post date,
+    data_post varchar(13),
     fk_email varchar(100),
-    fk_idPost int
+    fk_idPost int,
+    PRIMARY KEY(id_doacao),
     CONSTRAINT FK_user_doador FOREIGN KEY (fk_email) REFERENCES Usuario (email) ON DELETE CASCADE,
     CONSTRAINT FK_id_postagem FOREIGN KEY (fk_idPost) REFERENCES Postagens (id) ON DELETE CASCADE
 );
