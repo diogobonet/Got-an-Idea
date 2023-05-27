@@ -15,7 +15,7 @@
     INNER JOIN tipospostagem ON Postagens.fk_idPost = tipospostagem.idPost ORDER BY Id DESC ";
     try{
         $result = $conn->query($sql);
-        $ideias = $result->fetch_all(MYSQLI_ASSOC); 
+        $postagens = $result->fetch_all(MYSQLI_ASSOC); 
     } catch(Exception $e){
         echo"<h1 style='color:red; font-size:45px;'>Erro:</h1>";
         echo"<h1 style='color:white; font-size:35px;'>" . $e->getMessage() . "</h1>";
@@ -63,7 +63,11 @@
                             </select>
                         </div>
 
-                        <div class="div-textarea"><textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea></div>
+                        <div class="div-donationinput"><input class="input-title" type="number" placeholder="Digite o valor da meta ser arrecadada"></div>
+
+                        <div class="div-textarea">
+                            <textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea>
+                        </div>
 
                         <div class="div-save-button">
                             <input type='submit' value='Salvar' class="save-button">
@@ -97,25 +101,28 @@
             </div>
         </div>
 
-        <?php foreach ($ideias as $ideia) { ?>
+        <?php foreach ($postagens as $post) { ?>
             <div class="div-idea">
                 <div class="infos-user">
                     <div class="infos-user-row">
                         <div class="img-user-div">
-                            <?php echo "<img class='img-user' src='data:image;base64,".base64_encode($ideia['imagem'])."' alt= 'Foto do dono da postagem'>"; ?>
+                            <?php echo "<img class='img-user' src='data:image;base64,".base64_encode($post['imagem'])."' alt= 'Foto do dono da postagem'>"; ?>
                         </div>
                         <div class="infos-user-names">
-                            <h1 class="nome-user"><?php echo $ideia['nome']; ?></h1>
-                            <h2 class="persona-user">Idealizador | <?= verificarUser($ideia['fk_idPost'])?></h2>
+                            <h1 class="nome-user"><?= $post['nome']; ?></h1>
+                            <h2 class="persona-user">Idealizador | <?= verificarUser($post['fk_idPost'])?></h2>
                         </div>
                     </div>
                     <div class="botao-editar-ideia">
-                        <button>Ver Detalhes</button>
+                        <form name="form" action="../ver-detalhes/index.php" method="POST">
+                            <input style='display:none; visibility:hidden;'name='id-post' type='text' value='<?=$post['id']?>'>
+                            <button>Ver Detalhes</button>
+                        </form>
                     </div>
                 </div>
                 <div class="infos-ideia">
-                    <h1 class="titulo-ideia"><?php echo $ideia['titulo']; ?></h1>
-                    <p class="desc-ideia"><?php echo $ideia['descricao']; ?></p>
+                    <h1 class="titulo-ideia"><?= $post['titulo']; ?></h1>
+                    <p class="desc-ideia"><?= $post['descricao']; ?></p>
                 </div>
             </div>
             

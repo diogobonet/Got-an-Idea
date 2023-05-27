@@ -89,10 +89,9 @@ main {
 
 /* SECTION DONATION */
 .sec-donation {
-    display: flex; flex-direction: column;
+    display: flex; flex-direction: row;
     margin-top: 5%;
-    justify-content: end;
-    align-items: end;
+    justify-content: space-between;
 }
 
 .sec-donation button {

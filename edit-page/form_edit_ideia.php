@@ -1,5 +1,6 @@
 <?php
     require('../db_conection/conexao.php');
+    require('exe/verificarInfos.php');
 
     session_start();
     
@@ -117,23 +118,23 @@
         </a> -->
     </header>
     <section class="container">
-            <h1>Aletração de ideia</h1>
+            <?php
+                $id_Post = $_POST['id_Post'];
+                $sql = "SELECT * FROM Postagens WHERE id = '$id_Post'";
+                $result = $conn->query($sql);
+                $postagens = $result->fetch_all(MYSQLI_ASSOC);
+            ?>
+            <?php foreach ($postagens as $post) { ?>
+                <h1>Aletração de <?= verificarTipo($post['fk_idPost'])?></h1>
                 <div class="div-center">
-                    <?php
-                        $id_Ideia = $_POST['id_Ideia'];
-                        $sql = "SELECT * FROM Ideia WHERE id = '$id_Ideia'";
-                        $result = $conn->query($sql);
-                        $ideias = $result->fetch_all(MYSQLI_ASSOC);
-                    ?>
-                    <?php foreach ($ideias as $ideia) { ?>
                     <form action="exe/form_edit_ideia_exe.php" method="POST">
-                        <input type="text" name="alterar-titulo" placeholder="<?php echo $ideia['titulo']; ?>" value="<?php echo $ideia['titulo']; ?>">
-                        <textarea name="alterar-descricao" placeholder="<?php echo $ideia['descricao']; ?>"><?php echo $ideia['descricao']; ?></textarea>
-                        <input type="hidden" name="id_Ideia" value="<?php echo $id_Ideia ?>">
+                        <input type="text" name="alterar-titulo" placeholder="<?= $post['titulo']; ?>" value="<?= $post['titulo']; ?>">
+                        <textarea name="alterar-descricao" placeholder="<?= $post['descricao']; ?>"><?= $post['descricao']; ?></textarea>
+                        <input type="hidden" name="id_Post" value="<?= $id_Post ?>">
                         <button type="submit">Salvar</button>
                     </form>
-                    <?php } ?>
                 </div>
+            <?php } ?>
     </section>
 </body>
 </html>
