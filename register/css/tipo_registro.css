@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+@font-face {
+font-family: Talisso;
+src: url(../fonts/tussilago_rg.otf);} 
+
+@font-face {
+font-family: Helga;
+src: url(../fonts/Helga.ttf);} 
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #0A0A0D;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    padding: 25px;
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header a:hover {
+    color: rgb(189, 185, 185)
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
+  
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Define a largura do formulário */
+    margin: 0; /* Remove a margem padrão */
+    min-height: 300px; /* Define uma altura mínima para o formulário */
+}
+select {
+    padding: 10px;
+    background-color: #0A0A0D;
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 200%;
+    font-family: "Poppins";
+    color: white;
+}
+
+button {
+    padding: 10px;
+    margin-top: 20px;
+    width: 50%;
+    font-family: "Poppins";
+    background-color: #0583f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #0583f3;
+}
+

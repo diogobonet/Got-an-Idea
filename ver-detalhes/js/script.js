@@ -7,3 +7,7 @@ function configurarModal(botao, modal) {
 const botaoDoacao = document.getElementById("botao-doacao");
 const modalDoacao = document.getElementById("modal-doacao");
 configurarModal(botaoDoacao, modalDoacao);
+
+function redirecionar(url){
+  window.location.href = url;
+}
