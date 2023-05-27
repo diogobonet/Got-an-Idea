@@ -80,6 +80,10 @@ const botaoApagar = document.getElementById("botao-apagar");
 const modalApagar = document.getElementById("modal-apagar");
 configurarModal(botaoApagar, modalApagar);
 
+const botaoApagarideia = document.getElementById("botao-apagar-ideia");
+const modalApagarideia = document.getElementById("modal-apagar-ideia");
+configurarModal(botaoApagarideia, modalApagarideia);
+
 // Telefone REGEX
 function formatarTelefone(input) {
   var numero = input.value.replace(/\D/g, '');

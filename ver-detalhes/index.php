@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titulo do Projeto | Got an Idea💡</title>
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <?php
+<?php
         session_start();
         require("../cabeçalho/cabecalho.php");
         require("../db_conection/conexao.php");
@@ -23,9 +10,20 @@
         $result = $conn->query($sql);
         $postagem = $result->fetch_assoc();
         enviarBarra($postagem['valor_arrecadado'], $postagem['meta_de_arrecadacao']); // Style da barra dinâmico!
-
-
     ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?=$postagem['titulo']?> | Got an Idea💡</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
     <header class="header-details">
         <span class="material-symbols-outlined">arrow_back</span>
         <h2>Ideia ou Projeto</h2>

@@ -38,10 +38,12 @@ const ideiaDiv = document.querySelector('#select-ideia');
 const projetoDiv = document.querySelector('#select-projeto');
 const cadastroIdeiaDiv = document.querySelector('.cadastro-div');
 const cadastroProjetoDiv = document.querySelectorAll('.cadastro-div')[1];
+const donationInputDiv = document.querySelector('.div-donationinput'); // ADD RECENTLY
 
 ideiaDiv.addEventListener('click', function() {
   cadastroIdeiaDiv.style.display = 'flex';
   cadastroProjetoDiv.style.display = 'none';
+  donationInputDiv.style.display = 'none'; // ADD RECENTLY
   ideiaDiv.classList.add('active');
   projetoDiv.classList.remove('active');
 });
@@ -49,6 +51,7 @@ ideiaDiv.addEventListener('click', function() {
 projetoDiv.addEventListener('click', function() {
   cadastroProjetoDiv.style.display = 'flex';
   cadastroIdeiaDiv.style.display = 'none';
+  donationInputDiv.style.display = 'block'; // ADD RECENTLY
   projetoDiv.classList.add('active');
   ideiaDiv.classList.remove('active');
 });
@@ -58,3 +61,5 @@ function verDetalhes() {
   var url = "../ver-detalhes/index.php"
   window.location.href = url
 }
+
+// Aparecer a div da donation no modal do projeto

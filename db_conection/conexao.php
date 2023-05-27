@@ -1,7 +1,7 @@
 <?php
     $host = 'localhost'; // Conexão no Servidor
-    $user = 'gb'; // alt
-    $pass = 'mysql@204'; // alt
+    $user = 'root'; // alt
+    $pass = ''; // alt
     $db = 'gaidb';
 
     try{

@@ -136,7 +136,6 @@
             </div>
             <p>Você tem certeza que quer apagar sua conta?</p>
             <form action="../deletarProfile/deletarprofile_exe.php" method="post">
-                    
                   <button id="botao-apagar-conta" name="botao-apagar-conta" type="submit">Apagar minha conta</button>
             </form>
         </div>

@@ -44,7 +44,8 @@ CREATE TABLE Doacao (
     valor float,
     data_post date,
     fk_email varchar(100),
-    fk_idPost int
+    fk_idPost int,
+    PRIMARY KEY(id_doacao),
     CONSTRAINT FK_user_doador FOREIGN KEY (fk_email) REFERENCES Usuario (email) ON DELETE CASCADE,
     CONSTRAINT FK_id_postagem FOREIGN KEY (fk_idPost) REFERENCES Postagens (id) ON DELETE CASCADE
 );

@@ -63,7 +63,11 @@
                             </select>
                         </div>
 
-                        <div class="div-textarea"><textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea></div>
+                        <div class="div-donationinput"><input class="input-title" type="number" placeholder="Digite o valor da meta ser arrecadada"></div>
+
+                        <div class="div-textarea">
+                            <textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea>
+                        </div>
 
                         <div class="div-save-button">
                             <input type='submit' value='Salvar' class="save-button">
