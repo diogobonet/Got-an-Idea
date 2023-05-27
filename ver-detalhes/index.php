@@ -4,7 +4,7 @@
         require("../db_conection/conexao.php");
         require('exe/verificarInfos.php');
 
-        if(!isset($_SESSION['email'])) {
+        if(!isset($_SESSION['logado'])) {
             header ("Location: ../login/login.php");
         }
 
@@ -29,7 +29,7 @@
 </head>
 <body>
     <header class="header-details">
-        <span class="material-symbols-outlined">arrow_back</span>
+        <span onclick='redirecionar("../home/home.php")' class="material-symbols-outlined">arrow_back</span>
         <h2>Ideia ou Projeto</h2>
     </header>
 

@@ -3,14 +3,14 @@
     require('exe/verificarInfos.php'); // Traz o verificarUser();
     session_start();
 
-    if(!isset($_SESSION['email'])) {
+    if(!isset($_SESSION['logado'])) {
         header ("Location: ../login/login.php");
     }
 
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
 
-    $sql = "SELECT Postagens.*, usuario.imagem, usuario.apelido, usuario.nome FROM Postagens 
+    $sql = "SELECT Postagens.*, usuario.imagem, usuario.apelido, usuario.nome, usuario.tipo_conta FROM Postagens 
     INNER JOIN usuario ON Postagens.fk_email = usuario.email 
     INNER JOIN tipospostagem ON Postagens.fk_idPost = tipospostagem.idPost ORDER BY Id DESC ";
     try{
@@ -34,6 +34,11 @@
     <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
 </head>
 <body>
+    <div id="fundo_para_notificacao" class="hide">
+        <div id="notificacao_div">
+            <p id="mensagem_notificacao"></p>
+        </div>
+    </div>
 
     <!-- DIV INTEIRA DO MODAL -->
     <!-- MODAL IDEIA -->
@@ -49,7 +54,7 @@
                         <input id='inputTipoPostagem' name='input-tipo-postagem' style='visibility:hidden; display:none;' type='text'>
 
                         <div class="modal-idea-row">
-                            <input name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
+                            <input id='input_titulo' name='input-titulo-cadastro' class="input-title" type="text" placeholder="Titulo...">
                             <select id="meu-select" name="input-select-opcao">
                                 <option value="Categoria">Categoria</option>
                                 <option value="Tecnologia">Ciência e Tecnologia</option>
@@ -63,14 +68,14 @@
                             </select>
                         </div>
 
-                        <div class="div-donationinput"><input class="input-title" type="number" placeholder="Digite o valor da meta ser arrecadada"></div>
+                        <div class="div-donationinput"><input id='input_doacao' name='input-meta' class="input-title" type="number" placeholder="Digite o valor da meta ser arrecadada"></div>
 
                         <div class="div-textarea">
-                            <textarea placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea>
+                            <textarea id='input_descricao' placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea>
                         </div>
 
                         <div class="div-save-button">
-                            <input type='submit' value='Salvar' class="save-button">
+                            <section id='botao_submit' onclick='verificarInputsPostagem()' class="save-button">Salvar</section>
                         </div>
                     </form>
                 </div>
@@ -110,7 +115,7 @@
                         </div>
                         <div class="infos-user-names">
                             <h1 class="nome-user"><?= $post['nome']; ?></h1>
-                            <h2 class="persona-user">Idealizador | <?= verificarUser($post['fk_idPost'])?></h2>
+                            <h2 class="persona-user"><?= obterTipoConta($post['tipo_conta'])?> | <?= verificarTipo($post['fk_idPost'])?></h2>
                         </div>
                     </div>
                     <div class="botao-editar-ideia">
@@ -156,7 +161,9 @@
             </div>
         </section>
         
+        <script src='js/notificacao.js'></script>
         <script src="js/script.js"></script>
+        <script src='js/verificadorForm.js'></script>
     </main>  
     
 </body>

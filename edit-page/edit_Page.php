@@ -151,7 +151,7 @@
         <section class="sec-esquerda">     
                 <div class="centerimg">
                     <div class="div-profileimage">
-                        <?php echo "<img class='imagem-perfil' src='data:image;base64,$imagemUsu' alt= 'Foto do Perfil'>"; ?>
+                        <img class='imagem-perfil' src='data:image;base64,<?=$imagemUsu?>' alt= 'Foto do Perfil'>
                         <input type="file" class="input-imagem" name="arquivo">
                     </div>
                 </div>
