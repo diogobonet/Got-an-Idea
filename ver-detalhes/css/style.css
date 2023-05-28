@@ -187,3 +187,23 @@ main {
 .modal-changes-infos form button:hover {
     background-color: rgb(83, 223, 125);
 }
+
+/* DOAÇÃO INFOS */
+.doacao-infos {
+    display: flex; flex-direction: row;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doacao-infos p {
+    color: gray;
+}
+
+.valor-arrecadado {
+    font-size: 20px;
+    color: rgb(210, 210, 211);
+}
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}

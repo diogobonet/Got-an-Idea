@@ -22,10 +22,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$postagem['titulo']?> | Got an Idea💡</title>
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 <body>
     <header class="header-details">
@@ -51,14 +51,20 @@
             <?php
                 $tipoPostagem = verificarTipo($postagem['fk_idPost']);
                 if($tipoPostagem == "Projeto"){
-                    echo "<p>Meta = R$ " . $postagem['meta_de_arrecadacao'] . "</p>";
-                    echo "<p>Arrecadado = R$ ".$postagem['valor_arrecadado']."</p>";
                     echo "
                         <section class='sec-donation'>
                             <div id='doacao_barra'></div>
                             <button id='botao-doacao'>Doar</button>
                         </section>
                     ";
+                    echo "
+                        <section class='doacao-infos'>
+                            <p><span class='valor-arrecadado'>R$ " . $postagem['valor_arrecadado'] . "</span> doados</p>
+                            <p>R$" . $postagem['meta_de_arrecadacao'] . " de alvo</p>
+                        </section>";
+
+                    
+                    
                 }
             ?>
         </section>
