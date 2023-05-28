@@ -63,7 +63,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../edit-page/css/style.css">
     <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
     <title><?= $nomeUsu ?> (Editar Perfil) | Got an Idea💡</title>
 </head>
@@ -160,10 +160,15 @@
                 <!-- Código retirado: <h2 class="select-user">@Colaborador(a)</h2> -->
             </div>
 
+            <div class="buttons-user">
+                <button><a href="../edit-page/edit_Page.php" style="color: white;">Editar Perfil</a></button>
+                <!-- <a href="#">Reportar usuário</a> -->
+            </div>
+
             <div>
                 <ul class="menu">
                     <li class="selected"><a href="#"><span class="material-symbols-outlined">emoji_objects</span>Ideias/Projetos</a></li>
-                    <li><a href="edit_Page.php"><span class="material-symbols-outlined">person</span>Informações</a></li>
+                    <li><a href="index.php"><span class="material-symbols-outlined">person</span>Informações</a></li>
                 </ul>
                 
                 <article>
@@ -180,16 +185,6 @@
                                         <h1 class="nome-user"><?= $nomeUsu ?></h1>
                                         <h2 class="persona-user">Idealizador | <?= verificarTipo($post['fk_idPost'])?></h2>
                                     </div>
-                                </div>
-                                <div class="botao-editar-e-deletar-ideia">
-                                    <form action="form_edit_ideia.php" method="POST">
-                                        <input type="hidden" name="id_Post" value="<?= $post['id'];?>">
-                                        <button class="editar" type="submit">Editar <?= verificarTipo($post['fk_idPost'])?></button>
-                                    </form>
-                                    <form action="exe/delete_ideia_exe.php" method="POST">
-                                        <input type="hidden" name="id_Post" value="<?= $post['id'];?>">
-                                        <button class="deletar">Apagar <?= verificarTipo($post['fk_idPost'])?></button>
-                                    </form>
                                 </div>
                             </div>
                             <div class="infos-ideia">

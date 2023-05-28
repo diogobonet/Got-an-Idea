@@ -9,6 +9,7 @@
     else if (isset($_POST['alterar-telefone'])) {$opcao = 2;}
     else if (isset($_POST['alterar-cidade'])) {$opcao = 3;}
     else if (isset($_POST['alterar-formacao'])) {$opcao = 4;}
+    else if (isset($_FILES['arquivo']['tmp_name'])) {$opcao = 5;}
 
     //Switch case das alterações de:
     switch($opcao) {
@@ -44,6 +45,14 @@
             $result = $conn->query($sql);
 
             header ("Location: ../edit_Page.php?msg=sucesso");
+            break;
+        case 5:
+            $imagem = addslashes(file_get_contents($_FILES['arquivo']['tmp_name']));
+
+            $sql = "UPDATE usuario SET imagem = '$imagem' WHERE email = '$email'";
+            $result = $conn->query($sql);
+
+            header ("Location: ../edit_Page.php?msg=sucessoImagem"); 
             break;
         default:
             header ("Location: ../edit_Page.php");

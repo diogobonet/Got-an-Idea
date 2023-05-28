@@ -8,13 +8,12 @@
         }
 
         $emailUsu = $_SESSION['email'];
-        $imagemUsu = $_SESSION['imagem'];
         $nomeUsu = $_SESSION['nome'];
 
 
         try{
 
-            $sql = "SELECT telefone, cidade, bio, formacao, apelido, tipo_conta from Usuario WHERE email = '$emailUsu'";
+            $sql = "SELECT imagem, telefone, cidade, bio, formacao, apelido, tipo_conta from Usuario WHERE email = '$emailUsu'";
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
 
@@ -25,6 +24,11 @@
             $apelidoUsu = $row['apelido'];
             $tipoUsu = $row['tipo_conta'];
 
+
+            $imagemUsu = base64_encode($row['imagem']);
+            $_SESSION['imagem'] = $imagemUsu;
+
+            
             if ($tipoUsu == 1) {
                 $tipoUsu = "Idealizador";
             } elseif ($tipoUsu == 2) {
@@ -141,19 +145,18 @@
         </div>
     </section>
 
-    <?php
-    require("../cabeçalho/cabecalho.php")
-    ?>
+    <?php require("../cabeçalho/cabecalho.php"); ?>
 
 
     <main>
   
         <section class="sec-esquerda">     
                 <div class="centerimg">
-                    <div class="div-profileimage">
+                    <form action="exe/edit_Page_exe.php" method="POST" class="div-profileimage" enctype="multipart/form-data">
                         <img class='imagem-perfil' src='data:image;base64,<?=$imagemUsu?>' alt= 'Foto do Perfil'>
-                        <input type="file" class="input-imagem" name="arquivo">
-                    </div>
+                        <input name="arquivo" type="file" class="input-imagem">
+                        <button>Salvar</button>
+                    </form>
                 </div>
 
                 <div class="sobre-divesquerda">
@@ -180,7 +183,7 @@
             <div>
                 <ul class="menu">
                     <li class="selected"><a href="#"><span class="material-symbols-outlined">person</span>Informações</a></li>
-                    <li><a href="edit_ideia_Page.php"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
+                    <li><a href="edit_ideia_Page.php"><span class="material-symbols-outlined">emoji_objects</span>Ideias/Projetos</a></li>
                 </ul>
                 
                 <article>

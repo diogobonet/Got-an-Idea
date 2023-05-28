@@ -617,3 +617,40 @@ article {
     background-color: rgb(230, 75, 75);
     box-shadow: 0px 15px 20px rgba(229, 46, 46, 0.4);
 }
+
+/* A página "profilePage/profile_posts.php" está linkada neste css, então precisei trazer o css desse buttons-user pra cá */
+.buttons-user {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .buttons-user button {
+    background-color: #0583F2;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .buttons-user button:hover {
+    background-color: #3c98e9;
+  }
+  
+  .buttons-user a {
+    text-decoration: none;
+    color: #0583F2;
+    font-size: 13px;
+  } 
+  
+  .buttons-user a:hover {
+    color: #63aff1;
+}

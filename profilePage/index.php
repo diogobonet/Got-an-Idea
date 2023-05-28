@@ -107,8 +107,8 @@
 
             <div>
                 <ul class="menu">
-                    <li><a onclick="open_infos()" href="#"><span class="material-symbols-outlined">person</span>Informações</a></li>
-                    <li><a onclick="open_ideas()" href="#"><span class="material-symbols-outlined">emoji_objects</span>Ideias</a></li>
+                    <li><a href="#"><span class="material-symbols-outlined">person</span>Informações</a></li>
+                    <li><a href="profile_posts.php"><span class="material-symbols-outlined">emoji_objects</span>Ideias/Projetos</a></li>
                 </ul>
                 
                 <article>
