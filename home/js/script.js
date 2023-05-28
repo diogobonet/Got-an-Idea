@@ -61,5 +61,3 @@ function verDetalhes() {
   var url = "../ver-detalhes/index.php"
   window.location.href = url
 }
-
-// Aparecer a div da donation no modal do projeto

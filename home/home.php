@@ -10,16 +10,11 @@
     $email = $_SESSION['email'];
     $imagem = $_SESSION['imagem'];
 
-    $sql = "SELECT Postagens.*, usuario.imagem, usuario.apelido, usuario.nome, usuario.tipo_conta FROM Postagens 
-    INNER JOIN usuario ON Postagens.fk_email = usuario.email 
-    INNER JOIN tipospostagem ON Postagens.fk_idPost = tipospostagem.idPost ORDER BY Id DESC ";
-    try{
-        $result = $conn->query($sql);
-        $postagens = $result->fetch_all(MYSQLI_ASSOC); 
-    } catch(Exception $e){
-        echo"<h1 style='color:red; font-size:45px;'>Erro:</h1>";
-        echo"<h1 style='color:white; font-size:35px;'>" . $e->getMessage() . "</h1>";
-    }
+
+    require('exe/sqlBusca.php');
+
+    if(isset($_GET['filtros'])) {$postagens = pesquisar($conn, $_GET['filtros']);}
+    else{$postagens = pesquisar($conn, NULL);}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,8 +27,11 @@
     <title>Página Inicial | got an Idea💡</title>
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
+    <link rel="stylesheet" href="css/fundo.css">
 </head>
 <body>
+    <div id='esfera_fundo_esquerda'></div>
+    <div id='esfera_fundo_direita_abaixo'></div>
     <div id="fundo_para_notificacao" class="hide">
         <div id="notificacao_div">
             <p id="mensagem_notificacao"></p>
@@ -82,7 +80,7 @@
         </div>
 
     <?php
-    require("../cabeçalho/cabecalho.php")
+        require("../cabeçalho/cabecalho.php")
     ?>
 
     <main>
@@ -106,32 +104,51 @@
             </div>
         </div>
 
-        <?php foreach ($postagens as $post) { ?>
-            <div class="div-idea">
-                <div class="infos-user">
-                    <div class="infos-user-row">
-                        <div class="img-user-div">
-                            <?php echo "<img class='img-user' src='data:image;base64,".base64_encode($post['imagem'])."' alt= 'Foto do dono da postagem'>"; ?>
+        <div class="div-filtro">
+            <form id="form-filtro" action="home.php" method="GET">
+                <select id="select-filtros" name="filtros">
+                    <option value="Filtros">Filtros</option>
+                    <option value="Tecnologia">Ciência e Tecnologia</option>
+                    <option value="Culinaria">Culinária</option>
+                    <option value="Engenharia">Engenharia</option>
+                    <option value="Saúde e Bem-estar">Saúde e Bem-estar</option>
+                    <option value="Automobilística">Automobilística</option>
+                    <option value="Educação">Educação</option>
+                    <option value="Negócios e Empreendedorismo">Negócios e Empreendedorismo</option>
+                    <option value="Finanças e Investimentos">Finanças e Investimentos</option>
+                    <option value="Semfiltro">Sem filtro</option>
+                </select>
+            </form>
+        </div>
+
+        <?php
+            if($postagens == "nao-encontrado") {echo "<h1 class='msg-notfound'>Nenhuma postagem foi encontrada... 😔</h1>";} 
+            else { foreach ($postagens as $post) : 
+        ?>
+                <div class="div-idea">
+                    <div class="infos-user">
+                        <div class="infos-user-row">
+                            <div class="img-user-div">
+                                <img class='img-user' src='data:image;base64,<?=base64_encode($post['imagem'])?>' alt= 'Foto do dono da postagem'>
+                            </div>
+                            <div class="infos-user-names">
+                                <h1 class="nome-user"><?= $post['nome']; ?></h1>
+                                <h2 class="persona-user"><?= obterTipoConta($post['tipo_conta'])?> | <?= verificarTipo($post['fk_idPost'])?></h2>
+                            </div>
                         </div>
-                        <div class="infos-user-names">
-                            <h1 class="nome-user"><?= $post['nome']; ?></h1>
-                            <h2 class="persona-user"><?= obterTipoConta($post['tipo_conta'])?> | <?= verificarTipo($post['fk_idPost'])?></h2>
+                        <div class="botao-editar-ideia">
+                            <form name="form" action="../ver-detalhes/index.php" method="POST">
+                                <input style='display:none; visibility:hidden;'name='id-post' type='text' value='<?=$post['id']?>'>
+                                <button>Ver Detalhes</button>
+                            </form>
                         </div>
                     </div>
-                    <div class="botao-editar-ideia">
-                        <form name="form" action="../ver-detalhes/index.php" method="POST">
-                            <input style='display:none; visibility:hidden;'name='id-post' type='text' value='<?=$post['id']?>'>
-                            <button>Ver Detalhes</button>
-                        </form>
+                    <div class="infos-ideia">
+                        <h1 class="titulo-ideia"><?= $post['titulo']; ?></h1>
+                        <p class="desc-ideia"><?= $post['descricao']; ?></p>
                     </div>
                 </div>
-                <div class="infos-ideia">
-                    <h1 class="titulo-ideia"><?= $post['titulo']; ?></h1>
-                    <p class="desc-ideia"><?= $post['descricao']; ?></p>
-                </div>
-            </div>
-            
-        <?php } ?>
+        <?php endforeach; } ?>
         </section>
 
         <section class="best-idea">
@@ -164,6 +181,7 @@
         <script src='js/notificacao.js'></script>
         <script src="js/script.js"></script>
         <script src='js/verificadorForm.js'></script>
+        <script src='js/filtro_home.js'></script>
     </main>  
     
 </body>
