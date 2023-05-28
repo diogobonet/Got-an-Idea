@@ -106,8 +106,8 @@ body {
 .chat-input {
 	
 	width: 100%;
-	top: 85%;
-	position: static;
+	top: 91%;
+	position: absolute;
 	display: inline-flex;
 	align-items: center;
 	padding: 10px;
