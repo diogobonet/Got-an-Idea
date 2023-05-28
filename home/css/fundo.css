@@ -1,0 +1,18 @@
+#esfera_fundo_esquerda{
+    position:absolute;
+    top:20%; left:-20%;
+    width:30%; height: 80%;
+    border-radius: 100%;
+    background-color: rgba(0, 204, 255, 0.326);
+    filter: blur(100px);
+    z-index: -1;
+}
+#esfera_fundo_direita_abaixo{
+    position:absolute;
+    bottom:-30%; right:10%;
+    width:30%; height: 60%;
+    border-radius: 100%;
+    background-color: rgba(0, 106, 255, 0.326);
+    z-index: -1;
+    filter: blur(100px);
+}
