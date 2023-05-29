@@ -145,7 +145,7 @@
                     </div>
                     <div class="infos-ideia">
                         <h1 class="titulo-ideia"><?= $post['titulo']; ?></h1>
-                        <p class="desc-ideia"><?= $post['descricao']; ?></p>
+                        <p class="desc-ideia" id="descricao-ideia"><?= strlen($post['descricao']) > 300 ? substr($post['descricao'], 0, 300) . "<span style='color: #0583F2; font-size: 20px;'>...</span>" : $post['descricao']; ?></p>
                     </div>
                 </div>
         <?php endforeach; } ?>
@@ -186,3 +186,4 @@
     
 </body>
 </html>
+

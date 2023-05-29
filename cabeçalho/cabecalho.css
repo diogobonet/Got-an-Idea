@@ -71,7 +71,6 @@ nav {
     border: 2px solid rgb(110, 109, 109);
     border-radius: 50%;
     aspect-ratio: 1/1;
-    object-fit: contain;
   }
   
   /* Estilos para telas menores que 768px */
