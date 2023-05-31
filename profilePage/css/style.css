@@ -389,3 +389,7 @@ footer {
 .modal-changes-infos form button:hover {
     background-color: #4397e0;
 }
+
+.desc-ideia {
+    text-align: justify;
+}

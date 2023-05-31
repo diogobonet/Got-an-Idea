@@ -278,6 +278,7 @@ main {
 .desc-ideia {
     font-size: 14px;
     margin-top: 5px;
+    text-align: justify;
 }
 
 /* MELHORES IDEIAS */

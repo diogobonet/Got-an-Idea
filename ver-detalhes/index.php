@@ -25,9 +25,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/notificacao.css">
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 <body>
+    <div id="fundo_para_notificacao" class="hide">
+        <div id="notificacao_div">
+            <p id="mensagem_notificacao"></p>
+        </div>
+    </div>
     <header class="header-details">
         <span onclick='redirecionar("../home/home.php")' class="material-symbols-outlined">arrow_back</span>
         <h2>Ideia ou Projeto</h2>
@@ -88,5 +94,6 @@
 
     </footer>
     <script src="js/script.js"></script>
+    <script src="../home/js/notificacao.js"></script>
 </body>
 </html>

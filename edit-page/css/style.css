@@ -654,3 +654,7 @@ article {
   .buttons-user a:hover {
     color: #63aff1;
 }
+.desc-ideia {
+    overflow-wrap: break-word;
+    text-align: justify;
+}

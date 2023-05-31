@@ -63,7 +63,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="../cabeçalho/cabecalho.css">
     <title><?= $nomeUsu ?> (Editar Perfil) | Got an Idea💡</title>
 </head>
@@ -82,7 +82,7 @@
                 <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
             </div>
             <form class="modal-form" action="exe/edit_Page_exe.php" method="POST">
-                <input type="text" name="alterar-nome" placeholder="Digite seu nome: ">
+                <input type="text" id="nome-input" name="alterar-nome" placeholder="Digite seu nome: ">
                 <button type="submit">Salvar</button>
             </form>
         </div>
@@ -95,7 +95,7 @@
                 <span id="fechar-modal" class="material-symbols-outlined button-close">close</span>
             </div>
             <form class="modal-form" action="exe/edit_Page_exe.php" method="POST">
-                <input id="input-telefone" type="tel" name="alterar-telefone" placeholder="Digite seu telefone: ">
+                <input id="input-telefone" type="text" name="alterar-telefone" pattern="^(\d{0,2})?(\d{0,5})?(\d{0,4})?$" placeholder="Digite seu telefone: ">
                 <button type="submit">Salvar</button>
             </form>
         </div>
