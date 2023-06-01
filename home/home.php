@@ -137,8 +137,8 @@
                             </div>
                         </div>
                         <div class="botao-editar-ideia">
-                            <form name="form" action="../ver-detalhes/index.php" method="POST">
-                                <input style='display:none; visibility:hidden;'name='id-post' type='text' value='<?=$post['id']?>'>
+                            <form name="form" action="../ver-detalhes/index.php" method="GET">
+                                <input style='display:none; visibility:hidden;'name='id-get' type='text' value='<?=$post['id']?>'>
                                 <button>Ver Detalhes</button>
                             </form>
                         </div>

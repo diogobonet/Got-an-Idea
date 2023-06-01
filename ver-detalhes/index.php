@@ -8,12 +8,18 @@
             header ("Location: ../login/login.php");
         }
 
-        $idPost = $_POST['id-post'];
+        $idPost = $_GET['id-get'];
 
         $sql = "SELECT usuario.imagem, usuario.tipo_conta, usuario.apelido, usuario.nome, Postagens.* FROM Usuario INNER JOIN Postagens ON id = $idPost";
         $result = $conn->query($sql);
-        $postagem = $result->fetch_assoc();
-        enviarBarra($postagem['valor_arrecadado'], $postagem['meta_de_arrecadacao']); // Style da barra dinâmico!
+        if($result->num_rows > 0){
+            $postagem = $result->fetch_assoc();
+            enviarBarra($postagem['valor_arrecadado'], $postagem['meta_de_arrecadacao']); // Style da barra dinâmico!
+        }
+        else{
+            var_dump($result);
+            header('location: ../home/home.php');
+        }
     ?>
 <!DOCTYPE html>
 <html lang="pt-br">

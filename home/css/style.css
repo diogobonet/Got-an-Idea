@@ -241,7 +241,6 @@ main {
   height: 50px;   
   border-radius: 50%;
   aspect-ratio: 1/1;
-  object-fit: contain;
 }
 
 .botao-editar-ideia {
