@@ -1,4 +1,5 @@
 # Got an Idea 💡
+> Tem uma ideia? Vamos torná-la realidade! 💡
 ---
 ### O que é o Got an Idea?
 O Got an Idea é uma rede social, onde possibilita que pessoas postem suas ideias e as concretize através da ajuda de desenvolvedores e investidores.
