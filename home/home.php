@@ -69,7 +69,7 @@
                         <div class="div-donationinput"><input id='input_doacao' name='input-meta' class="input-title" type="number" placeholder="Digite o valor da meta ser arrecadada"></div>
 
                         <div class="div-textarea">
-                            <textarea id='input_descricao' placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea>
+                            <textarea maxlength="600" id='input_descricao' placeholder="Descrição..." name="input-descricao-cadastro" cols="30" rows="10"></textarea>
                         </div>
 
                         <div class="div-save-button">
@@ -137,15 +137,15 @@
                             </div>
                         </div>
                         <div class="botao-editar-ideia">
-                            <form name="form" action="../ver-detalhes/index.php" method="POST">
-                                <input style='display:none; visibility:hidden;'name='id-post' type='text' value='<?=$post['id']?>'>
+                            <form name="form" action="../ver-detalhes/index.php" method="GET">
+                                <input style='display:none; visibility:hidden;'name='id-get' type='text' value='<?=$post['id']?>'>
                                 <button>Ver Detalhes</button>
                             </form>
                         </div>
                     </div>
                     <div class="infos-ideia">
                         <h1 class="titulo-ideia"><?= $post['titulo']; ?></h1>
-                        <p class="desc-ideia" id="descricao-ideia"><?= strlen($post['descricao']) > 300 ? substr($post['descricao'], 0, 300) . "<span style='color: #0583F2; font-size: 20px;'>...</span>" : $post['descricao']; ?></p>
+                        <p class="desc-ideia" id="descricao-ideia"><?= strlen($post['descricao']) > 300 ? substr($post['descricao'], 0, 300) . "<span style='color: #0583F2;'>...</span>" : $post['descricao']; ?></p>
                     </div>
                 </div>
         <?php endforeach; } ?>
@@ -174,7 +174,7 @@
                     <img src="img/incendio.png" alt="Fogo">
                     <h1>Titulo Ideia</h1>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p><?php if(isset($_GET['msgem'])){echo $_GET['msgem'];}?></p>
             </div>
         </section>
         
@@ -182,8 +182,11 @@
         <script src="js/script.js"></script>
         <script src='js/verificadorForm.js'></script>
         <script src='js/filtro_home.js'></script>
+        <script src='js/verificar_mensagem.js'></script>
     </main>  
-    
+        <script language='Javascript'>
+            verificar_mensagem(<?php if(  isset($_GET['msgem'])  ){  echo ''.$_GET['msgem'];  }?>);
+        </script>
 </body>
 </html>
 

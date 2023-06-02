@@ -29,7 +29,7 @@ CREATE TABLE Postagens (
     data_post varchar(13),
     filtros varchar(50),
     titulo varchar(100),
-    descricao varchar(100),
+    descricao varchar(600),
     meta_de_arrecadacao float,
     valor_arrecadado float,
     fk_email varchar(100),

@@ -84,12 +84,23 @@ const botaoApagarideia = document.getElementById("botao-apagar-ideia");
 const modalApagarideia = document.getElementById("modal-apagar-ideia");
 configurarModal(botaoApagarideia, modalApagarideia);
 
-// Telefone REGEX
-function formatarTelefone(input) {
-  var numero = input.value.replace(/\D/g, '');
+// TELEFONE
+document.getElementById('input-telefone').addEventListener('input', function() {
+  var telefone2 = this.value.replace(/\D/g, '');
+  var formattedTelefone = telefone2.replace(/^(\d{0,2})?(\d{0,5})?(\d{0,4})?$/, function(match, p1, p2, p3) {
+    var formatted = '';
+    if (p1) {
+      formatted += '(' + p1;
+    }
+    if (p2) {
+      formatted += ') ' + p2;
+    }
+    if (p3) {
+      formatted += '-' + p3;
+    }
+    return formatted;
+  });
+  this.value = formattedTelefone;
+});
 
-  // Formatação do telefone
-  var formatado = numero.replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, '($1) $2 $3-$4');
-
-  input.value = formatado;
-}
+// INPUTS REGEX

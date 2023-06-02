@@ -241,7 +241,6 @@ main {
   height: 50px;   
   border-radius: 50%;
   aspect-ratio: 1/1;
-  object-fit: contain;
 }
 
 .botao-editar-ideia {
@@ -278,6 +277,7 @@ main {
 .desc-ideia {
     font-size: 14px;
     margin-top: 5px;
+    text-align: justify;
 }
 
 /* MELHORES IDEIAS */
