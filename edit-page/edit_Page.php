@@ -155,7 +155,7 @@
                     <form action="exe/edit_Page_exe.php" method="POST" class="div-profileimage" enctype="multipart/form-data">
                         <img class='imagem-perfil' src='data:image;base64,<?=$imagemUsu?>' alt= 'Foto do Perfil'>
                         <input name="arquivo" type="file" class="input-imagem">
-                        <button>Salvar</button>
+                        <button class="save-image">Salvar</button>
                     </form>
                 </div>
 

@@ -120,7 +120,7 @@ main {
     max-width: 300px;
     max-height: 300px;
     cursor: pointer;
-  }
+}
   
   .div-profileimage img {
     width: 100%;
@@ -657,4 +657,14 @@ article {
 .desc-ideia {
     overflow-wrap: break-word;
     text-align: justify;
+}
+
+.save-image {
+    display: flex;
+    justify-content: center; align-items: center;
+    padding: 10px;
+    border: none;
+    background-color: #0583F2; color: white; font-family: 'Poppins';
+    cursor: pointer;
+    border-radius: 10px;
 }

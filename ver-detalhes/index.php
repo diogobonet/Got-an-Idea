@@ -9,7 +9,7 @@
         }
 
         $idPost = $_GET['id-get'];
-
+        
         $sql = "SELECT usuario.imagem, usuario.tipo_conta, usuario.apelido, usuario.nome, Postagens.* FROM Usuario INNER JOIN Postagens ON id = $idPost";
         $result = $conn->query($sql);
         if($result->num_rows > 0){
@@ -42,13 +42,20 @@
     </div>
     <header class="header-details">
         <span onclick='redirecionar("../home/home.php")' class="material-symbols-outlined">arrow_back</span>
-        <h2>Ideia ou Projeto</h2>
+        <h2><?php 
+        $tipoPostagem1 = verificarTipo($postagem['fk_idPost']);
+        if($tipoPostagem1 == "Projeto"){
+            echo "Projeto";
+        } else {
+            echo("Ideia");
+        }
+        ?></h2>
     </header>
 
     <main>
         <section class="sec-infouser">
             <div class="div-namephoto">
-                <div class="div-img"><img src="../img/messi.jpeg" alt=""></div>
+                <div class="div-img"><img src="data:image;base64,<?=base64_encode($postagem['imagem'])?>" alt=""></div>
                 <div class="nome-function">
                     <h1><?=$postagem['nome']?></h1>
                     <h2><?=obterTipoConta($postagem['tipo_conta']);?></h2>
@@ -71,8 +78,8 @@
                     ";
                     echo "
                         <section class='doacao-infos'>
-                            <p><span class='valor-arrecadado'>R$ " . $postagem['valor_arrecadado'] . "</span> doados</p>
-                            <p>R$" . $postagem['meta_de_arrecadacao'] . " de alvo</p>
+                            <p><span class='valor-arrecadado'>R$ " . $postagem['valor_arrecadado'] . ".00 </span> doados</p>
+                            <p>R$" . $postagem['meta_de_arrecadacao'] . ".00 de alvo</p>
                         </section>";
 
                     
