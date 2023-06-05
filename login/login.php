@@ -35,6 +35,10 @@
                             <input type="password" id="password" name="password" required>
                             <span>Senha</span>
                         </div>
+                        <div class="input-group">
+                            <input type="text" id="city" name="city" required>
+                            <span>Cidade</span>
+                        </div>
                         <div class="links">
                             <a href="#">Esqueci a senha</a>
                             <a href="../register/registro.php">Cadastrar-se</a>

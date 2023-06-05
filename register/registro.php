@@ -26,6 +26,7 @@
                 <label>Email<input name='email_input' placeholder='exemplo@ex.com' class= 'info-email form_input' type="text"></label>
                 <label>Apelido<input name='apelido_input' placeholder='ExemploEx' class= 'info-apelido form_input' type="text"></label>
                 <label>Senha<input name='senha_input' placeholder='Senha' class= 'info-senha form_input' type="password"></label>
+                <label>Cidade<input name='cidade_input' placeholder='Cidade' class= 'info-cidade form_input' type="text"></label>
                 <label>Confirmar<input name='confirmar_input' placeholder='Senha' class= 'info-confirmar form_input' type="password"></label>
             </form>
             <div class="div-button"><button id="botao_submit" class="button">REGISTRAR</button></div>
