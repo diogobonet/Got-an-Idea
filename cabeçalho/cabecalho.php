@@ -17,7 +17,7 @@
                 <a href="">Conectado</a>
                 <a href="../profilePage/index.php">Perfil</a>
                 <div class="div-userimg">
-                <img class='user-img' src='data:image;base64,<?=$imagem?>' alt= 'Foto do usuário'>;
+                <img class='user-img' src='data:image;base64,<?=$imagem?>' alt= 'Foto do usuário'>
         </nav>
         <script>
             function trocarDePagina(link){
